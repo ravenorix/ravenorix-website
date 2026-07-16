@@ -1,3 +1,6 @@
+---
+---
+
 <nav
 class="
 fixed
@@ -5,7 +8,7 @@ top-0
 left-0
 right-0
 z-50
-bg-raven-black/80
+bg-black/70
 backdrop-blur-md
 border-b
 border-white/10
@@ -24,6 +27,7 @@ justify-between
 "
 >
 
+
 <a
 href="#home"
 class="
@@ -33,8 +37,9 @@ font-bold
 tracking-wide
 "
 >
-Raven0rix
+RavenØrix
 </a>
+
 
 
 <div
@@ -69,6 +74,86 @@ Contact
 </div>
 
 
+<!-- Mobile Menu -->
+
+<div class="md:hidden">
+
+<button
+id="menu-button"
+class="text-white text-2xl"
+aria-label="Open menu"
+>
+☰
+</button>
+
+
+<div
+id="mobile-menu"
+class="
+hidden
+absolute
+top-20
+left-0
+right-0
+bg-black/90
+border-b
+border-white/10
+"
+>
+
+<div
+class="
+flex
+flex-col
+p-6
+gap-5
+"
+>
+
+<a href="#about">
+About
+</a>
+
+<a href="#portfolio">
+Portfolio
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#shop">
+Shop
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
 </div>
 
 </nav>
+
+
+<script>
+const button = document.getElementById("menu-button");
+const menu = document.getElementById("mobile-menu");
+
+button?.addEventListener("click", () => {
+  menu?.classList.toggle("hidden");
+});
+
+
+document.querySelectorAll("#mobile-menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menu?.classList.add("hidden");
+  });
+});
+</script>

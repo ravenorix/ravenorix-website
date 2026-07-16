@@ -55,3 +55,8 @@ h4 {
   color: #0B0F14;
 
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
