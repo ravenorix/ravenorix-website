@@ -1,1 +1,58 @@
 @import "tailwindcss";
+
+@theme {
+
+  --color-raven-black: #0B0F14;
+  --color-raven-dark: #121820;
+  --color-raven-steel: #1C2733;
+
+  --color-glacier-blue: #72B4E5;
+  --color-glacier-ice: #DCEFFF;
+
+  --color-arctic-white: #F8FAFC;
+
+  --color-accent-gold: #C89B3C;
+
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+html {
+
+  background: #0B0F14;
+  color: #F8FAFC;
+
+}
+
+
+body {
+
+  font-family: "Inter", sans-serif;
+  background: #0B0F14;
+  color: #F8FAFC;
+
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+
+  font-family: "Space Grotesk", sans-serif;
+
+}
+
+
+::selection {
+
+  background: #72B4E5;
+  color: #0B0F14;
+
+}
