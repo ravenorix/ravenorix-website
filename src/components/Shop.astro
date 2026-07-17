@@ -1,62 +1,108 @@
+---
+import Container from "./ui/Container.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
+import Card from "./ui/Card.astro";
+import Metadata from "./ui/Metadata.astro";
+import Button from "./ui/Button.astro";
+---
+
 <section
 id="shop"
 class="
-py-24
-bg-raven-black
+section
+section-dark
 "
 >
+
+<Container>
+
+
+<SectionHeader
+
+eyebrow="EXPEDITION ARCHIVE // 04"
+
+title="Featured"
+
+subtitle="Expeditions"
+
+description="Original cinematic collections inspired by Alaska's landscapes, created for filmmakers, creators, and explorers."
+
+/>
+
+
 
 <div
 class="
-max-w-7xl
-mx-auto
-px-6
-lg:px-8
+grid
+md:grid-cols-2
+gap-8
 "
 >
 
 
-<div class="max-w-3xl">
+<!-- Windward -->
 
+<Card
+padding="p-0"
+>
+
+
+<div
+class="
+aspect-[16/9]
+overflow-hidden
+border-b
+border-white/10
+relative
+"
+>
+
+<img
+src="/images/windward-cover.png"
+alt="Windward cinematic score collection"
+class="
+w-full
+h-full
+object-cover
+transition
+duration-700
+group-hover:scale-105
+"
+/>
+
+
+<div
+class="
+absolute
+inset-0
+bg-gradient-to-t
+from-black/70
+via-black/20
+to-transparent
+"
+></div>
+
+
+<div
+class="
+absolute
+bottom-5
+left-6
+"
+>
 
 <p
 class="
+text-xs
 uppercase
-tracking-[0.3em]
-text-glacier-blue
-text-sm
-font-semibold
+tracking-[0.35em]
+text-white/60
 "
 >
-Shop
+Archive 01
 </p>
 
-
-<h2
-class="
-mt-5
-text-4xl
-md:text-5xl
-font-heading
-font-bold
-"
->
-Digital Assets & Apparel
-</h2>
-
-
-<p
-class="
-mt-6
-text-lg
-text-gray-300
-"
->
-
-Bring the Alaskan frontier into your own projects,
-workspace, and everyday adventures.
-
-</p>
+</div>
 
 
 </div>
@@ -65,7 +111,271 @@ workspace, and everyday adventures.
 
 <div
 class="
-mt-14
+p-8
+space-y-6
+"
+>
+
+
+<h3
+class="
+font-heading
+text-4xl
+uppercase
+"
+>
+Windward
+</h3>
+
+
+<p
+class="
+text-gray-400
+leading-relaxed
+"
+>
+A cinematic ambient score collection inspired by
+coastal Alaska, glaciers, and remote wilderness.
+</p>
+
+
+
+<div
+class="
+grid
+grid-cols-2
+gap-6
+"
+>
+
+<Metadata
+label="Format"
+value="Music Collection"
+/>
+
+
+<Metadata
+label="License"
+value="Commercial Use"
+/>
+
+</div>
+
+
+
+<Button
+
+href="https://ravenorix.gumroad.com/l/rtzxlj"
+
+text="View Expedition →"
+
+/>
+
+
+</div>
+
+
+</Card>
+
+
+
+
+
+<!-- Point Bridget -->
+
+<Card
+padding="p-0"
+>
+
+
+<div
+class="
+aspect-[16/9]
+overflow-hidden
+border-b
+border-white/10
+relative
+"
+>
+
+<img
+src="/images/point-bridget-cover.jpeg"
+alt="Point Bridget Alaska aerial footage collection"
+class="
+w-full
+h-full
+object-cover
+transition
+duration-700
+group-hover:scale-105
+"
+/>
+
+
+<div
+class="
+absolute
+inset-0
+bg-gradient-to-t
+from-black/70
+via-black/20
+to-transparent
+"
+></div>
+
+
+<div
+class="
+absolute
+bottom-5
+left-6
+"
+>
+
+<p
+class="
+text-xs
+uppercase
+tracking-[0.35em]
+text-white/60
+"
+>
+Archive 02
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<div
+class="
+p-8
+space-y-6
+"
+>
+
+
+<h3
+class="
+font-heading
+text-4xl
+uppercase
+"
+>
+Point Bridget
+</h3>
+
+
+<p
+class="
+text-gray-400
+leading-relaxed
+"
+>
+A cinematic aerial footage collection capturing
+Alaska's dramatic coastlines, mountains, and wilderness.
+</p>
+
+
+
+<div
+class="
+grid
+grid-cols-2
+gap-6
+"
+>
+
+<Metadata
+label="Format"
+value="4K Footage"
+/>
+
+
+<Metadata
+label="License"
+value="Creator Use"
+/>
+
+</div>
+
+
+
+<Button
+
+href="https://ravenorix.gumroad.com/l/suqanm"
+
+text="View Expedition →"
+
+/>
+
+
+</div>
+
+
+</Card>
+
+
+
+</div>
+
+
+
+
+
+<!-- Full Archive -->
+
+<div
+class="
+mt-20
+border-t
+border-white/10
+pt-12
+"
+>
+
+
+<div
+class="
+mb-10
+"
+>
+
+<p
+class="
+uppercase
+tracking-[0.45em]
+text-xs
+text-glacier-blue
+font-semibold
+"
+>
+Explore The Archive
+</p>
+
+
+<h3
+class="
+mt-4
+font-heading
+text-4xl
+uppercase
+"
+>
+Complete Collections
+</h3>
+
+
+</div>
+
+
+
+
+<div
+class="
 grid
 md:grid-cols-3
 gap-8
@@ -73,165 +383,148 @@ gap-8
 >
 
 
-<!-- Drone Footage -->
-
-
-<div
-class="
-rounded-2xl
-border
-border-white/10
-bg-raven-dark
-p-8
-hover:border-glacier-blue/50
-transition
-"
->
-
-<h3
-class="
-text-2xl
-font-heading
-font-semibold
-"
->
-Alaska Drone Footage
-</h3>
-
-
-<p
-class="
-mt-4
-text-gray-400
-"
->
-Cinematic aerial footage collections from Alaska's
-glaciers, coastlines, mountains, and wilderness.
-</p>
-
-
 <a
 href="https://ravenorix.gumroad.com/?section=LMs1yucv-DLMlDy7K3opXw%3D%3D"
 class="
-inline-block
-mt-6
-text-glacier-blue
-hover:underline
+group
 "
 >
-Browse Footage →
-</a>
 
-
-</div>
-
-
-
-<!-- Music -->
-
-
-<div
+<p
 class="
-rounded-2xl
-border
-border-white/10
-bg-raven-dark
-p-8
-hover:border-glacier-blue/50
+text-xs
+uppercase
+tracking-[0.35em]
+text-white/40
+"
+>
+Archive 03
+</p>
+
+
+<h4
+class="
+mt-3
+font-heading
+text-2xl
+uppercase
+group-hover:text-glacier-blue
 transition
 "
 >
-
-<h3
-class="
-text-2xl
-font-heading
-font-semibold
-"
->
-Cinematic Music
-</h3>
+Aerial Footage →
+</h4>
 
 
 <p
 class="
-mt-4
+mt-3
 text-gray-400
 "
 >
-Atmospheric soundscapes designed for filmmakers,
-creators, documentaries, and travel content.
+Original cinematic drone collections from Alaska.
 </p>
 
 
-<a
-href="https://ravenorix.gumroad.com/?section=bXqvCMhuq1L1ZIhOiIbHjw%3D%3D"
-class="
-inline-block
-mt-6
-text-glacier-blue
-hover:underline
-"
->
-Explore Music →
 </a>
 
 
-</div>
 
 
 
-<!-- Apparel -->
-
-
-<div
+<a
+href="https://ravenorix.gumroad.com/?section=bXqvCMhuq1L1ZIhOiIbHjw==#bXqvCMhuq1L1ZIhOiIbHjw=="
 class="
-rounded-2xl
-border
-border-white/10
-bg-raven-dark
-p-8
-hover:border-glacier-blue/50
+group
+"
+>
+
+<p
+class="
+text-xs
+uppercase
+tracking-[0.35em]
+text-white/40
+"
+>
+Archive 04
+</p>
+
+
+<h4
+class="
+mt-3
+font-heading
+text-2xl
+uppercase
+group-hover:text-glacier-blue
 transition
 "
 >
-
-<h3
-class="
-text-2xl
-font-heading
-font-semibold
-"
->
-RavenØrix Apparel
-</h3>
+Audio Archive →
+</h4>
 
 
 <p
 class="
-mt-4
+mt-3
 text-gray-400
 "
 >
-Outdoor-inspired designs built around Alaska,
-exploration, and the northern frontier.
+Ambient scores and wilderness-inspired compositions.
 </p>
 
 
-<a
-href="#"
-class="
-inline-block
-mt-6
-text-glacier-blue
-hover:underline
-"
->
-Shop Collection →
 </a>
 
 
-</div>
+
+
+
+<a
+href="https://ravenorix.gumroad.com/?section=5SfYruP-TlQcizb964Y0gg%3D%3D"
+class="
+group
+"
+>
+
+<p
+class="
+text-xs
+uppercase
+tracking-[0.35em]
+text-white/40
+"
+>
+Archive 05
+</p>
+
+
+<h4
+class="
+mt-3
+font-heading
+text-2xl
+uppercase
+group-hover:text-glacier-blue
+transition
+"
+>
+Digital Assets →
+</h4>
+
+
+<p
+class="
+mt-3
+text-gray-400
+"
+>
+Wallpapers, artwork, and creator resources.
+</p>
+
+
+</a>
 
 
 
@@ -240,5 +533,9 @@ Shop Collection →
 
 </div>
 
+
+
+
+</Container>
 
 </section>

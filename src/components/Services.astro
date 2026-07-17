@@ -1,236 +1,209 @@
+---
+import Container from "./ui/Container.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
+import Card from "./ui/Card.astro";
+import Metadata from "./ui/Metadata.astro";
+import Button from "./ui/Button.astro";
+---
+
 <section
 id="services"
 class="
-py-24
-bg-raven-dark
+section
+section-slate
 "
 >
 
-<div
-class="
-max-w-7xl
-mx-auto
-px-6
-lg:px-8
-"
->
+<Container>
 
 
-<div
-class="
-max-w-3xl
-"
->
+<SectionHeader
 
-<p
-class="
-uppercase
-tracking-[0.3em]
-text-glacier-blue
-text-sm
-font-semibold
-"
->
-Services
-</p>
+eyebrow="OPERATIONS // 03"
 
+title="Commercial"
 
-<h2
-class="
-mt-5
-text-4xl
-md:text-5xl
-font-heading
-font-bold
-"
->
-Commercial Drone Services
-</h2>
+subtitle="Services"
 
+description="Professional aerial media solutions for organizations, creators, and businesses requiring cinematic perspectives from Alaska's unique environments."
 
-<p
-class="
-mt-6
-text-lg
-text-gray-300
-"
->
-
-Professional aerial content created for businesses,
-brands, and organizations looking to showcase Alaska
-from a unique perspective.
-
-</p>
-
-
-</div>
+/>
 
 
 
 <div
 class="
-mt-14
 grid
-md:grid-cols-2
-lg:grid-cols-3
-gap-6
+md:grid-cols-3
+gap-8
 "
 >
+
+
+
+<Card>
+
+
+<h3
+class="
+font-heading
+text-3xl
+uppercase
+"
+>
+Aerial Production
+</h3>
+
+
+<p
+class="
+mt-4
+text-gray-400
+leading-relaxed
+"
+>
+Cinematic aerial footage and photography created for
+documentaries, marketing campaigns, tourism projects,
+and visual storytelling.
+</p>
 
 
 <div
 class="
-rounded-2xl
-border
-border-white/10
-bg-black/20
-p-8
-hover:border-glacier-blue/50
-transition
+mt-8
 "
 >
 
-<h3 class="text-xl font-heading font-semibold">
-Real Estate Media
-</h3>
-
-<p class="mt-4 text-gray-400">
-Cinematic aerial photography and video for homes,
-properties, vacation rentals, and developments.
-</p>
+<Metadata
+label="Output"
+value="4K Cinematic Media"
+/>
 
 </div>
 
 
+</Card>
+
+
+
+
+
+<Card>
+
+
+<h3
+class="
+font-heading
+text-3xl
+uppercase
+"
+>
+Location Media
+</h3>
+
+
+<p
+class="
+mt-4
+text-gray-400
+leading-relaxed
+"
+>
+Showcase destinations, properties, and experiences with
+authentic aerial perspectives built around Alaska's
+remote environments.
+</p>
+
 
 <div
 class="
-rounded-2xl
-border
-border-white/10
-bg-black/20
-p-8
-hover:border-glacier-blue/50
-transition
+mt-8
 "
 >
 
-<h3 class="text-xl font-heading font-semibold">
-Tourism & Hospitality
-</h3>
-
-<p class="mt-4 text-gray-400">
-Showcase Alaska destinations, lodges, tours,
-and experiences through immersive aerial footage.
-</p>
+<Metadata
+label="Focus"
+value="Tourism & Brand Media"
+/>
 
 </div>
 
 
+</Card>
 
-<div
+
+
+
+
+<Card>
+
+
+<h3
 class="
-rounded-2xl
-border
-border-white/10
-bg-black/20
-p-8
-hover:border-glacier-blue/50
-transition
+font-heading
+text-3xl
+uppercase
 "
 >
-
-<h3 class="text-xl font-heading font-semibold">
-Commercial Content
-</h3>
-
-<p class="mt-4 text-gray-400">
-Professional drone footage for marketing campaigns,
-websites, advertisements, and social media.
-</p>
-
-</div>
-
-
-
-<div
-class="
-rounded-2xl
-border
-border-white/10
-bg-black/20
-p-8
-hover:border-glacier-blue/50
-transition
-"
->
-
-<h3 class="text-xl font-heading font-semibold">
-Outdoor Brands
-</h3>
-
-<p class="mt-4 text-gray-400">
-Cinematic adventure footage for companies,
-creators, and Alaska-focused brands.
-</p>
-
-</div>
-
-
-
-<div
-class="
-rounded-2xl
-border
-border-white/10
-bg-black/20
-p-8
-hover:border-glacier-blue/50
-transition
-"
->
-
-<h3 class="text-xl font-heading font-semibold">
-Footage Licensing
-</h3>
-
-<p class="mt-4 text-gray-400">
-License original Alaska aerial footage for films,
-documentaries, and digital productions.
-</p>
-
-</div>
-
-
-
-<div
-class="
-rounded-2xl
-border
-border-white/10
-bg-black/20
-p-8
-hover:border-glacier-blue/50
-transition
-"
->
-
-<h3 class="text-xl font-heading font-semibold">
 Custom Projects
 </h3>
 
-<p class="mt-4 text-gray-400">
-Have a unique idea? Contact RavenØrix to discuss
-a custom aerial media project.
+
+<p
+class="
+mt-4
+text-gray-400
+leading-relaxed
+"
+>
+Collaborative aerial solutions designed around unique
+locations, creative concepts, and specialized production
+requirements.
 </p>
 
+
+<div
+class="
+mt-8
+"
+>
+
+<Metadata
+label="Certification"
+value="FAA Part 107"
+/>
+
+</div>
+
+
+</Card>
+
+
+
 </div>
 
 
 
+
+<div
+class="
+mt-12
+"
+>
+
+<Button
+
+href="#contact"
+
+text="Start A Project →"
+
+/>
+
 </div>
 
 
-</div>
+
+
+</Container>
 
 </section>

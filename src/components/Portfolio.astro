@@ -1,156 +1,58 @@
+---
+import Container from "./ui/Container.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
+import Card from "./ui/Card.astro";
+import Button from "./ui/Button.astro";
+import Metadata from "./ui/Metadata.astro";
+---
+
 <section
 id="portfolio"
 class="
-py-24
-bg-raven-black
+section
+section-dark
 "
 >
 
-<div
-class="
-max-w-7xl
-mx-auto
-px-6
-lg:px-8
-"
->
+<Container>
 
 
-<div class="max-w-3xl">
+<SectionHeader
 
-<p
-class="
-uppercase
-tracking-[0.3em]
-text-glacier-blue
-text-sm
-font-semibold
-"
->
-Portfolio
-</p>
+eyebrow="VISUAL ARCHIVE // 02"
 
+title="Alaska"
 
-<h2
-class="
-mt-5
-text-4xl
-md:text-5xl
-font-heading
-font-bold
-"
->
-Alaska From Above
-</h2>
+subtitle="Unseen"
 
+description="A curated archive of aerial expeditions documenting Alaska's coastlines, mountains, glaciers, and remote wilderness."
 
-<p
-class="
-mt-6
-text-lg
-text-gray-300
-"
->
-
-A collection of cinematic aerial footage captured throughout
-Southeast Alaska.
-
-</p>
-
-</div>
+/>
 
 
 
 <div
 class="
-mt-14
 grid
-lg:grid-cols-3
+md:grid-cols-2
 gap-8
 "
 >
 
 
-<!-- Video Card -->
 
-<div
-class="
-overflow-hidden
-rounded-2xl
-border
-border-white/10
-bg-black/20
-"
+
+
+<!-- Outer Point -->
+
+<Card
+padding="p-0"
 >
-
 
 <div
 class="
 aspect-video
-"
->
-
-<iframe
-class="
-w-full
-h-full
-"
-src="https://www.youtube.com/embed/eED70PqU-hI"
-title="Point Bridget State Park"
-allowfullscreen
->
-</iframe>
-
-</div>
-
-
-<div class="p-6">
-
-<h3
-class="
-text-xl
-font-heading
-font-semibold
-"
->
-Point Bridget State Park
-</h3>
-
-
-<p
-class="
-mt-2
-text-gray-400
-"
->
-Juneau, Alaska
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- Video Card -->
-
-
-<div
-class="
 overflow-hidden
-rounded-2xl
-border
-border-white/10
-bg-black/20
-"
->
-
-
-<div
-class="
-aspect-video
 "
 >
 
@@ -160,7 +62,8 @@ w-full
 h-full
 "
 src="https://www.youtube.com/embed/syklTmTOyRg"
-title="Outer Point Coastal Footage"
+title="Outer Point Expedition"
+frameborder="0"
 allowfullscreen
 >
 </iframe>
@@ -168,53 +71,78 @@ allowfullscreen
 </div>
 
 
-<div class="p-6">
+<div
+class="
+p-6
+space-y-6
+"
+>
 
 <h3
 class="
-text-xl
 font-heading
-font-semibold
+text-3xl
+uppercase
 "
 >
-Outer Point
+Outer Point Expedition
 </h3>
 
 
 <p
 class="
-mt-2
 text-gray-400
+leading-relaxed
 "
 >
-Juneau, Alaska
+Coastal aerial documentation exploring the rugged shoreline,
+forests, and island landscapes of Southeast Alaska.
 </p>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- Video Card -->
 
 
 <div
 class="
-overflow-hidden
-rounded-2xl
-border
-border-white/10
-bg-black/20
+grid
+grid-cols-2
+gap-6
 "
 >
 
+<Metadata
+label="Region"
+value="Juneau, Alaska"
+/>
+
+
+<Metadata
+label="Format"
+value="4K Aerial"
+/>
+
+</div>
+
+
+</div>
+
+
+</Card>
+
+
+
+
+
+
+
+<!-- Point Bridget -->
+
+<Card
+padding="p-0"
+>
 
 <div
 class="
 aspect-video
+overflow-hidden
 "
 >
 
@@ -223,8 +151,9 @@ class="
 w-full
 h-full
 "
-src="https://www.youtube.com/embed/C6NmO8s28fY"
-title="Eagle Beach Tidal Flats"
+src="https://www.youtube.com/embed/eED70PqU-hI"
+title="Point Bridget Expedition"
+frameborder="0"
 allowfullscreen
 >
 </iframe>
@@ -232,39 +161,90 @@ allowfullscreen
 </div>
 
 
-<div class="p-6">
+<div
+class="
+p-6
+space-y-6
+"
+>
 
 <h3
 class="
-text-xl
 font-heading
-font-semibold
+text-3xl
+uppercase
 "
 >
-Eagle Beach
+Point Bridget Expedition
 </h3>
 
 
 <p
 class="
-mt-2
 text-gray-400
+leading-relaxed
 "
 >
-Juneau, Alaska
+Aerial exploration of Alaska's coastal wilderness,
+capturing the connection between forest, mountains,
+and ocean.
 </p>
 
 
+<div
+class="
+grid
+grid-cols-2
+gap-6
+"
+>
+
+<Metadata
+label="Environment"
+value="Coastal Wilderness"
+/>
+
+
+<Metadata
+label="Capture"
+value="Drone Media"
+/>
+
 </div>
 
 
 </div>
 
 
-</div>
+</Card>
 
 
 </div>
 
+
+
+
+
+
+
+<div
+class="
+mt-12
+"
+>
+
+<Button
+
+href="https://www.youtube.com/channel/UC_3iTbiuo9_5zGLFFsWH-Vg"
+
+text="Access Full Archive →"
+
+/>
+
+</div>
+
+
+
+</Container>
 
 </section>

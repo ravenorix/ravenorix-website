@@ -1,0 +1,42 @@
+---
+const {
+  href = "#",
+  variant = "primary",
+  text = ""
+} = Astro.props;
+
+const styles = {
+  primary: `
+    bg-glacier-blue
+    text-raven-black
+    hover:scale-[1.03]
+  `,
+  secondary: `
+    border
+    border-white/30
+    text-white
+    hover:bg-white/10
+  `
+};
+
+---
+
+<a
+href={href}
+class={`
+inline-flex
+items-center
+justify-center
+px-8
+py-4
+rounded-lg
+font-semibold
+transition
+duration-300
+${styles[variant]}
+`}
+>
+
+{text}
+
+</a>

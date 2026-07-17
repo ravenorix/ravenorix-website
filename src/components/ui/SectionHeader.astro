@@ -1,0 +1,92 @@
+---
+const {
+  eyebrow = "",
+  title = "",
+  subtitle = "",
+  description = "",
+  align = "left"
+} = Astro.props;
+---
+
+<div
+class={`
+mb-16
+${align === "center" ? "text-center mx-auto" : ""}
+`}
+>
+
+{eyebrow && (
+
+<p
+class="
+uppercase
+tracking-[0.45em]
+text-xs
+text-glacier-blue
+font-semibold
+"
+>
+{eyebrow}
+</p>
+
+)}
+
+
+
+<h2
+class="
+mt-5
+font-heading
+text-5xl
+md:text-7xl
+uppercase
+leading-[0.9]
+"
+>
+
+{title}
+
+{subtitle && (
+
+<>
+<br />
+<span class="text-white/70">
+{subtitle}
+</span>
+</>
+
+)}
+
+</h2>
+
+
+
+{description && (
+
+<p
+class="
+mt-6
+max-w-2xl
+text-lg
+text-gray-300
+leading-relaxed
+"
+>
+{description}
+</p>
+
+)}
+
+
+
+<div
+class="
+mt-8
+h-px
+w-full
+bg-white/10
+"
+></div>
+
+
+</div>

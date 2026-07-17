@@ -1,108 +1,65 @@
+---
+import Container from "./ui/Container.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
+import Card from "./ui/Card.astro";
+import Metadata from "./ui/Metadata.astro";
+---
+
 <section
 id="about"
 class="
-py-24
-bg-raven-dark
+section
+section-slate
 "
 >
 
-<div
-class="
-max-w-7xl
-mx-auto
-px-6
-lg:px-8
-"
->
+<Container>
+
+
+<SectionHeader
+
+eyebrow="FIELD DOSSIER // 01"
+
+title="Aerial Stories"
+
+subtitle="From Alaska"
+
+description="RavenØrix documents Alaska's remote environments through cinematic aerial media, capturing the scale, isolation, and beauty of the landscapes that define the Last Frontier."
+
+/>
+
 
 
 <div
 class="
 grid
 lg:grid-cols-2
-gap-16
-items-center
+gap-10
+items-start
 "
 >
 
 
-<!-- Text -->
 
-<div>
-
-
-<p
+<div
 class="
-uppercase
-tracking-[0.3em]
-text-glacier-blue
-text-sm
-font-semibold
-"
->
-About RavenØrix
-</p>
-
-
-<h2
-class="
-mt-5
-text-4xl
-md:text-5xl
-font-heading
-font-bold
-"
->
-Capturing Alaska From A Different Perspective
-</h2>
-
-
-<p
-class="
-mt-6
+space-y-6
 text-gray-300
-text-lg
 leading-relaxed
 "
 >
 
-RavenØrix specializes in cinematic aerial photography
-and drone media inspired by the rugged landscapes of
-Alaska.
-
+<p>
+Based in Southeast Alaska, RavenØrix creates cinematic aerial
+media for filmmakers, creators, brands, tourism organizations,
+and projects seeking authentic wilderness imagery.
 </p>
 
 
-<p
-class="
-mt-5
-text-gray-300
-text-lg
-leading-relaxed
-"
->
-
-From glacier fields and coastal wilderness to commercial
-projects and creative productions, we capture the scale,
-isolation, and character of the northern frontier.
-
-</p>
-
-
-<p
-class="
-mt-5
-text-gray-300
-text-lg
-leading-relaxed
-"
->
-
-As an FAA Part 107 commercially licensed remote pilot,
-RavenØrix provides professional aerial content for
-businesses, tourism organizations, creators, and
-private clients.
-
+<p>
+Our work explores remote coastlines, mountain ranges, glaciers,
+and wild landscapes through a visual approach inspired by
+expedition documentation and outdoor storytelling.
 </p>
 
 
@@ -110,60 +67,74 @@ private clients.
 
 
 
-<!-- Credentials Card -->
+
+
+<Card>
 
 <div
 class="
-rounded-2xl
-border
-border-white/10
-bg-black/20
-p-8
-shadow-glow
+space-y-8
 "
 >
+
+
+<div>
+
+<p
+class="
+text-xs
+uppercase
+tracking-[0.35em]
+text-glacier-blue
+"
+>
+Commercial Certification
+</p>
 
 
 <h3
 class="
+mt-4
 font-heading
-text-2xl
-font-semibold
+text-4xl
+uppercase
 "
 >
-Capabilities
+FAA Part 107
 </h3>
 
 
-<ul
+<p
 class="
-mt-6
-space-y-4
-text-gray-300
+mt-2
+text-gray-400
+"
+>
+Certified Commercial Remote Pilot
+</p>
+
+</div>
+
+
+
+<div
+class="
+grid
+grid-cols-2
+gap-6
 "
 >
 
-<li>
-✓ FAA Part 107 Licensed Remote Pilot
-</li>
+<Metadata
+label="Region"
+value="Southeast Alaska"
+/>
 
-<li>
-✓ Cinematic 4K Aerial Capture
-</li>
 
-<li>
-✓ Alaska Wilderness Locations
-</li>
-
-<li>
-✓ Commercial Content Production
-</li>
-
-<li>
-✓ Digital Media & Asset Licensing
-</li>
-
-</ul>
+<Metadata
+label="Base"
+value="Juneau"
+/>
 
 
 </div>
@@ -171,6 +142,14 @@ text-gray-300
 
 </div>
 
+
+</Card>
+
+
 </div>
+
+
+
+</Container>
 
 </section>

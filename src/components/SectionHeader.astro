@@ -1,0 +1,82 @@
+---
+interface Props {
+  number: string;
+  label: string;
+  title: string;
+  description: string;
+}
+
+const {
+  number,
+  label,
+  title,
+  description
+} = Astro.props;
+---
+
+<div class="max-w-4xl mb-20">
+
+  <p
+    class="
+    text-7xl
+    md:text-8xl
+    font-black
+    text-white/5
+    leading-none
+    select-none
+    "
+  >
+    {number}
+  </p>
+
+  <p
+    class="
+    mt-4
+    uppercase
+    tracking-[0.35em]
+    text-glacier-blue
+    text-xs
+    font-semibold
+    "
+  >
+    // {label}
+  </p>
+
+  <h2
+    class="
+    mt-5
+    font-heading
+    text-4xl
+    md:text-6xl
+    font-bold
+    leading-tight
+    "
+  >
+    {title}
+  </h2>
+
+  <p
+    class="
+    mt-6
+    text-lg
+    text-gray-400
+    max-w-2xl
+    leading-relaxed
+    "
+  >
+    {description}
+  </p>
+
+  <div
+    class="
+    mt-10
+    h-px
+    w-full
+    bg-gradient-to-r
+    from-glacier-blue/40
+    via-white/10
+    to-transparent
+    "
+  ></div>
+
+</div>

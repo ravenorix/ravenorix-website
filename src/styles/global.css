@@ -1,62 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
+
 @theme {
-
-  --color-raven-black: #0B0F14;
-  --color-raven-dark: #121820;
-  --color-raven-steel: #1C2733;
-
-  --color-glacier-blue: #72B4E5;
-  --color-glacier-ice: #DCEFFF;
-
-  --color-arctic-white: #F8FAFC;
-
-  --color-accent-gold: #C89B3C;
-
-
-  --font-heading: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-
+  --color-raven-black: #050505;
+  --color-raven-slate: #0b0d10;
+  --color-raven-steel: #11161c;
+  --color-glacier-blue: #8dd8ff;
 }
 
 
-html {
-
-  background: #0B0F14;
-  color: #F8FAFC;
-
-}
+/* =========================
+   Custom Utilities
+========================= */
 
 
-body {
-
-  font-family: "Inter", sans-serif;
-  background: #0B0F14;
-  color: #F8FAFC;
-
-}
-
-
-h1,
-h2,
-h3,
-h4 {
-
-  font-family: "Space Grotesk", sans-serif;
-
-}
-
-
-::selection {
-
-  background: #72B4E5;
-  color: #0B0F14;
-
+@utility font-heading {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: .03em;
 }
 
 
 html {
   scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #050505;
+  color: white;
+}
+
+
+
+/* =========================
+   Section System
+========================= */
+
+
+@utility section {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  overflow:hidden;
+}
+
+
+@utility section-dark {
+  background:#050505;
+}
+
+
+@utility section-slate {
+  background:#0b0d10;
+}
+
+
+@utility section-steel {
+  background:#11161c;
+}
+
+
+
+@utility section-container {
+  max-width:80rem;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:1.5rem;
+  padding-right:1.5rem;
+}
+
+
+
+@utility section-label {
+  text-transform:uppercase;
+  letter-spacing:.35em;
+  color:var(--color-glacier-blue);
+  font-size:.75rem;
+  font-weight:600;
+}
+
+
+
+@utility section-title {
+  font-family:"Bebas Neue", sans-serif;
+  font-size:3rem;
+  text-transform:uppercase;
+  line-height:1;
+}
+
+
+
+@utility section-description {
+  margin-top:1.5rem;
+  max-width:42rem;
+  color:#9ca3af;
+  font-size:1.125rem;
+  line-height:1.75;
+}
+
+
+
+/* =========================
+   Buttons
+========================= */
+
+
+@utility btn-primary {
+
+display:inline-flex;
+align-items:center;
+gap:.5rem;
+
+padding:1rem 2rem;
+
+border-radius:.5rem;
+
+background:#8dd8ff;
+
+color:#050505;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+
+
+@utility btn-secondary {
+
+display:inline-flex;
+align-items:center;
+gap:.5rem;
+
+padding:1rem 2rem;
+
+border-radius:.5rem;
+
+border:1px solid rgba(255,255,255,.2);
+
+transition:.3s;
+
+}
+
+
+
+/* =========================
+   Cards
+========================= */
+
+
+@utility card-premium {
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+border-radius:1rem;
+
+}
+
+
+
+/* =========================
+   Background Effects
+========================= */
+
+
+.tech-grid {
+
+position:absolute;
+
+inset:0;
+
+opacity:.035;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,.2) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.2) 1px,
+transparent 1px
+);
+
+background-size:48px 48px;
+
+}
+
+
+
+.section-glow {
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+border-radius:9999px;
+
+background:rgba(141,216,255,.08);
+
+filter:blur(120px);
+
+pointer-events:none;
+
 }

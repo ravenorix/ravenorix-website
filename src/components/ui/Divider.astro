@@ -1,0 +1,16 @@
+---
+const {
+  width = "full",
+  class: className = ""
+} = Astro.props;
+---
+
+<div
+class={`
+h-px
+bg-white/10
+${width === "short" ? "max-w-xs" : ""}
+${width === "medium" ? "max-w-2xl" : ""}
+${className}
+`}
+></div>
