@@ -9,9 +9,16 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+
+  site: 'https://ravenorix.com',
+
   vite: {
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap(), mdx()]
+  integrations: [
+    sitemap(),
+    mdx()
+  ]
+
 });
