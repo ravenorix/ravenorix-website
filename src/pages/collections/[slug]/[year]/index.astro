@@ -1,0 +1,287 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const collections = await getCollection("footageCollections");
+
+  return collections.map((collection) => ({
+    params: {
+      slug: collection.data.slug,
+      year: String(collection.data.year),
+    },
+    props: {
+      collection,
+    },
+  }));
+}
+
+const { collection } = Astro.props;
+const { data } = collection;
+
+const packs = await getCollection("packs", ({ data: packData }) => {
+  return (
+    packData.collectionSlug === data.slug &&
+    packData.year === data.year
+  );
+});
+
+packs.sort((a, b) => a.data.packNumber - b.data.packNumber);
+---
+
+<BaseLayout>
+
+<section class="bg-raven-dark border-t border-white/10">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
+
+    <!-- Collection Header -->
+
+    <div class="max-w-4xl">
+
+      <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+        RavenØrix Aerial Collection // {data.year}
+      </p>
+
+      <h1 class="mt-5 text-5xl md:text-7xl font-heading font-bold uppercase leading-[0.95]">
+        {data.title}
+      </h1>
+
+      <p class="mt-6 text-xl md:text-2xl text-white/60">
+        {data.location}
+      </p>
+
+      <p class="mt-8 max-w-3xl text-lg text-gray-300 leading-relaxed">
+        {data.description}
+      </p>
+
+    </div>
+
+
+    <!-- Complete Series -->
+
+    {
+      data.seriesPoster &&
+      data.seriesGumroadUrl &&
+      data.seriesPrice !== undefined && (
+
+        <div class="mt-20 rounded-2xl overflow-hidden border border-glacier-blue/20 bg-black/30">
+
+          <div class="grid lg:grid-cols-2">
+
+            <!-- Complete Series Poster -->
+
+            <div class="bg-black">
+
+              <img
+                src={data.seriesThumbnail}
+                alt={`${data.title} Complete Series`}
+                class="w-full h-full object-cover"
+              />
+
+            </div>
+
+
+            <!-- Complete Series Offer -->
+
+            <div class="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+
+              <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+                Complete Series
+              </p>
+
+              <h2 class="mt-4 text-4xl md:text-5xl font-heading font-bold uppercase">
+                All Packs. Both Versions.
+              </h2>
+
+              <p class="mt-6 text-gray-300 leading-relaxed text-lg">
+                Get the complete {data.year} {data.location} collection in one purchase,
+                including every available pack in both Standard and Pro formats.
+              </p>
+
+
+              <div class="mt-8">
+
+                <p class="text-sm uppercase tracking-[0.2em] text-white/40">
+                  Complete Series
+                </p>
+
+                <p class="mt-2 text-4xl font-heading font-bold">
+                  ${data.seriesPrice.toFixed(2)}
+                </p>
+
+              </div>
+
+
+              <a
+                href={data.seriesGumroadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-8 inline-flex items-center justify-center px-8 py-4 rounded-lg bg-glacier-blue text-raven-black font-semibold text-lg transition hover:scale-[1.02]"
+              >
+                Get Complete Series →
+              </a>
+
+
+              <p class="mt-4 text-sm text-white/30">
+                Secure purchase and digital delivery through Gumroad
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )
+    }
+
+
+    <!-- Individual Packs -->
+
+    <div class="mt-24">
+
+      <div class="mb-10">
+
+        <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+          Individual Packs
+        </p>
+
+        <h2 class="mt-3 text-4xl md:text-5xl font-heading font-bold uppercase">
+          Explore The Collection
+        </h2>
+
+        <p class="mt-5 max-w-3xl text-gray-400 text-lg">
+          Explore individual footage packs from this collection.
+          Each pack includes Standard and Pro versions.
+        </p>
+
+      </div>
+
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {packs.map((pack) => (
+
+          <a
+            href={`/collections/${pack.data.collectionSlug}/${pack.data.year}/pack-${pack.data.packNumber}/`}
+            class="group rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-glacier-blue/40 transition"
+          >
+
+            <!-- Thumbnail -->
+
+            {pack.data.thumbnail ? (
+
+              <div class="aspect-square overflow-hidden bg-black">
+
+                <img
+                  src={pack.data.thumbnail}
+                  alt={`${pack.data.location} Pack ${pack.data.packNumber}`}
+                  class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"
+                />
+
+              </div>
+
+            ) : (
+
+              <div class="aspect-square bg-black/40 flex items-center justify-center">
+
+                <span class="text-white/30 uppercase tracking-[0.2em] text-sm">
+                  Pack {pack.data.packNumber}
+                </span>
+
+              </div>
+
+            )}
+
+
+            <!-- Card Content -->
+
+            <div class="p-6">
+
+              <p class="text-xs uppercase tracking-[0.2em] text-glacier-blue font-semibold">
+                Pack {pack.data.packNumber}
+              </p>
+
+              <h3 class="mt-3 text-2xl font-heading font-bold">
+                {pack.data.title}
+              </h3>
+
+              <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                {pack.data.description}
+              </p>
+
+
+              <!-- Pricing -->
+
+              <div class="mt-6 flex items-end gap-8">
+
+                <div>
+
+                  <p class="text-xs uppercase tracking-[0.15em] text-white/30">
+                    Standard
+                  </p>
+
+                  <p class="mt-1 font-semibold">
+                    ${pack.data.standardPrice.toFixed(2)}
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <p class="text-xs uppercase tracking-[0.15em] text-glacier-blue">
+                    Pro
+                  </p>
+
+                  <p class="mt-1 font-semibold">
+                    ${pack.data.proPrice.toFixed(2)}
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <!-- View Pack Button -->
+
+              <div class="mt-6">
+
+                <span
+                  class="inline-flex w-full items-center justify-center px-6 py-3 rounded-lg border border-glacier-blue/40 text-glacier-blue font-semibold uppercase tracking-[0.12em] text-sm group-hover:bg-glacier-blue group-hover:text-raven-black transition"
+                >
+                  View Pack →
+                </span>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        ))}
+
+      </div>
+
+    </div>
+
+
+    <!-- Back To Collections -->
+
+    <div class="mt-20 border-t border-white/10 pt-10">
+
+      <a
+        href="/collections/"
+        class="text-glacier-blue hover:text-white transition"
+      >
+        ← Back To All Collections
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</BaseLayout>

@@ -1,0 +1,342 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const footageCollections = await getCollection("footageCollections");
+const music = await getCollection("music");
+---
+
+<BaseLayout>
+
+<section
+id="collections"
+class="
+py-24
+bg-raven-black
+"
+>
+
+<div
+class="
+max-w-7xl
+mx-auto
+px-6
+lg:px-8
+"
+>
+
+<!-- Header -->
+
+<div class="max-w-4xl">
+
+<p
+class="
+uppercase
+tracking-[0.3em]
+text-glacier-blue
+text-sm
+font-semibold
+"
+>
+Digital Archive // Collections
+</p>
+
+
+<h1
+class="
+mt-5
+text-5xl
+md:text-6xl
+font-heading
+font-bold
+uppercase
+"
+>
+RavenØrix Collections
+</h1>
+
+
+<p
+class="
+mt-6
+max-w-3xl
+text-lg
+md:text-xl
+text-gray-300
+leading-relaxed
+"
+>
+Cinematic aerial footage and digital assets captured across
+Alaska's wild places — built for filmmakers, creators, and
+anyone looking to bring the character of the North into their work.
+</p>
+
+</div>
+
+
+<!-- Aerial Footage -->
+
+<div class="mt-20">
+
+<div class="flex items-end justify-between gap-6">
+
+<div>
+
+<p
+class="
+uppercase
+tracking-[0.3em]
+text-glacier-blue
+text-sm
+font-semibold
+"
+>
+Collection Type // 01
+</p>
+
+
+<h2
+class="
+mt-3
+text-3xl
+md:text-4xl
+font-heading
+font-bold
+uppercase
+"
+>
+Aerial Footage
+</h2>
+
+</div>
+
+</div>
+
+<!-- Footage Cards -->
+
+<div
+class="
+mt-10
+grid
+md:grid-cols-2
+lg:grid-cols-3
+gap-6
+"
+>
+
+{footageCollections.map((collection) => (
+  <a
+    href={`/collections/${collection.data.slug}/${collection.data.year}/`}
+    class="group rounded-2xl border border-white/10 bg-black/30 overflow-hidden transition duration-300 hover:border-glacier-blue/50 hover:-translate-y-1"
+  >
+
+    <div class="aspect-square bg-black/50 overflow-hidden">
+
+      <img
+        src={collection.data.thumbnail}
+        alt={`${collection.data.location} ${collection.data.year}`}
+        class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+      />
+
+    </div>
+
+    <div class="p-6">
+
+      <p class="text-xs uppercase tracking-[0.2em] text-glacier-blue font-semibold">
+        Juneau // Southeast Alaska
+      </p>
+
+      <h3 class="mt-3 font-heading text-2xl font-semibold group-hover:text-glacier-blue transition">
+        {collection.data.location}
+      </h3>
+
+      <p class="mt-3 text-gray-400 leading-relaxed">
+        {collection.data.description}
+      </p>
+
+      <div class="mt-6 text-glacier-blue font-semibold">
+        Explore Collection →
+      </div>
+
+    </div>
+
+  </a>
+))}
+
+
+</div>
+
+</div>
+
+
+
+<!-- Music -->
+
+<div class="mt-24 border-t border-white/10 pt-20">
+
+  <p
+    class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold"
+  >
+    Collection Type // 02
+  </p>
+
+  <h2
+    class="mt-3 text-3xl md:text-4xl font-heading font-bold uppercase"
+  >
+    Cinematic Music
+  </h2>
+
+  <p
+    class="mt-5 max-w-3xl text-gray-400 leading-relaxed"
+  >
+    Original cinematic music composed for aerial footage,
+    wilderness films, documentaries, and creators working
+    in northern landscapes.
+  </p>
+
+  <div
+    class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+  >
+
+    {music.map((album) => (
+
+  <div
+    class="group rounded-2xl border border-white/10 bg-black/30 overflow-hidden transition duration-300 hover:border-glacier-blue/50 hover:-translate-y-1"
+  >
+
+    <div class="aspect-square bg-black/50 overflow-hidden">
+
+      {album.data.thumbnail ? (
+
+        <img
+          src={album.data.thumbnail}
+          alt={album.data.title}
+          class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+
+      ) : (
+
+        <div class="w-full h-full flex items-center justify-center text-white/20 uppercase tracking-[0.2em] text-xs">
+          Album Artwork
+        </div>
+
+      )}
+
+    </div>
+
+    <div class="p-6">
+
+      <p class="text-xs uppercase tracking-[0.2em] text-glacier-blue font-semibold">
+        Music // Cinematic Collection
+      </p>
+
+      <h3 class="mt-3 font-heading text-2xl font-semibold group-hover:text-glacier-blue transition">
+        {album.data.title}
+      </h3>
+
+      <p class="mt-3 text-gray-400 leading-relaxed">
+        {album.data.description}
+      </p>
+
+    <div class="mt-5 flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.15em] text-white/40">
+
+  <span>
+    {album.data.trackCount} Tracks
+  </span>
+
+  <span class="text-glacier-blue/50">
+    //
+  </span>
+
+  <span>
+    Sample: 1 of {album.data.trackCount}
+  </span>
+
+</div>
+
+      <div
+        class="music-preview mt-6 w-full"
+        data-audio={album.data.previewUrl}
+      >
+
+        <div class="flex justify-center gap-4">
+
+          <button
+            type="button"
+            class="music-play-button rounded-lg border border-glacier-blue/50 bg-glacier-blue/10 px-7 py-3 text-sm font-semibold text-glacier-blue transition hover:bg-glacier-blue/20 hover:text-white"
+          >
+            ▶ Play
+          </button>
+
+          <button
+            type="button"
+            class="music-pause-button rounded-lg border border-white/10 bg-white/5 px-7 py-3 text-sm font-semibold text-gray-300 transition hover:bg-white/10 hover:text-white"
+          >
+            ❚❚ Pause
+          </button>
+
+        </div>
+
+        <div class="mt-5">
+
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            class="music-progress w-full cursor-pointer"
+            aria-label={`Preview progress for ${album.data.title}`}
+          />
+
+          <div class="mt-2 flex justify-between text-xs text-white/40">
+
+            <span class="music-current-time">
+              0:00
+            </span>
+
+            <span class="music-duration">
+              0:00
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mt-5 flex justify-center">
+
+        <a
+          href={album.data.gumroadUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg border border-glacier-blue/50 bg-glacier-blue/10 px-7 py-3 text-sm font-semibold text-glacier-blue transition hover:bg-glacier-blue/20 hover:text-white"
+        >
+          View Collection →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+))}
+
+  </div>
+
+</div>
+
+<!-- END MUSIC -->
+
+</div>
+
+</section>
+
+<script>
+  import "../scripts/music-player.js";
+</script>
+
+</BaseLayout>

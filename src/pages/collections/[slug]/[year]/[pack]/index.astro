@@ -1,0 +1,428 @@
+---
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const packs = await getCollection("packs");
+
+  return packs.map((pack) => ({
+    params: {
+      slug: pack.data.collectionSlug,
+      year: String(pack.data.year),
+      pack: `pack-${pack.data.packNumber}`,
+    },
+    props: {
+      pack,
+    },
+  }));
+}
+
+const { pack } = Astro.props;
+const { data } = pack;
+
+const matchingCollections = await getCollection(
+  "footageCollections",
+  ({ data: collectionData }) =>
+    collectionData.slug === data.collectionSlug &&
+    collectionData.year === data.year
+);
+
+const parentCollection = matchingCollections[0];
+const collectionData = parentCollection?.data;
+---
+
+<BaseLayout>
+
+<section class="bg-raven-dark border-t border-white/10">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20">
+
+    <!-- Back Link -->
+
+    <div class="mb-10">
+
+      <a
+        href={`/collections/${data.collectionSlug}/${data.year}/`}
+        class="inline-flex items-center text-sm uppercase tracking-[0.2em] text-glacier-blue hover:text-white transition"
+      >
+        ← Back To {data.location}
+      </a>
+
+    </div>
+
+
+    <!-- Hero -->
+
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+      <div>
+
+        <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+          Aerial Footage // {data.year}
+        </p>
+
+        <h1 class="mt-5 text-5xl md:text-6xl xl:text-7xl font-heading font-bold uppercase leading-[0.95]">
+          {data.location}
+        </h1>
+
+        <p class="mt-5 text-2xl md:text-3xl font-heading text-white/60">
+          Pack {data.packNumber}
+        </p>
+
+        <p class="mt-8 max-w-2xl text-lg md:text-xl text-gray-300 leading-relaxed">
+          {data.description}
+        </p>
+
+      </div>
+
+
+      {data.heroImage && (
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl">
+
+          <img
+            src={data.heroImage}
+            alt={`${data.location} Pack ${data.packNumber}`}
+            class="w-full h-auto block"
+          />
+
+        </div>
+      )}
+
+    </div>
+
+
+    <!-- Preview Video -->
+
+    {data.previewVideo && (
+      <div class="mt-20">
+
+        <div class="mb-8">
+
+          <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+            Field Preview
+          </p>
+
+          <h2 class="mt-3 text-3xl md:text-4xl font-heading font-bold">
+            See The Footage
+          </h2>
+
+          <p class="mt-4 max-w-3xl text-gray-400">
+            A condensed preview featuring footage from throughout the collection.
+          </p>
+
+        </div>
+
+
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl">
+
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            class="w-full aspect-video object-cover"
+          >
+
+            <source
+              src={data.previewVideo}
+              type="video/mp4"
+            />
+
+            Your browser does not support the video element.
+
+          </video>
+
+        </div>
+
+      </div>
+    )}
+
+
+    <!-- Specifications -->
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="rounded-xl border border-white/10 bg-black/20 p-6">
+
+        <p class="text-xs uppercase tracking-[0.2em] text-white/40">
+          Clips
+        </p>
+
+        <p class="mt-2 text-xl font-semibold">
+          {data.clipCount ?? "Multiple"}
+        </p>
+
+      </div>
+
+
+      <div class="rounded-xl border border-white/10 bg-black/20 p-6">
+
+        <p class="text-xs uppercase tracking-[0.2em] text-white/40">
+          Resolution
+        </p>
+
+        <p class="mt-2 text-xl font-semibold">
+          4K
+        </p>
+
+      </div>
+
+
+      <div class="rounded-xl border border-white/10 bg-black/20 p-6">
+
+        <p class="text-xs uppercase tracking-[0.2em] text-white/40">
+          Format
+        </p>
+
+        <p class="mt-2 text-xl font-semibold">
+          MP4
+        </p>
+
+      </div>
+
+
+      <div class="rounded-xl border border-white/10 bg-black/20 p-6">
+
+        <p class="text-xs uppercase tracking-[0.2em] text-white/40">
+          Season
+        </p>
+
+        <p class="mt-2 text-xl font-semibold">
+          {data.season ?? "Not specified"}
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- Details + Purchase -->
+
+    <div class="mt-20 grid lg:grid-cols-2 gap-12">
+
+
+      <!-- Details -->
+
+      <div>
+
+        <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+          Pack Details
+        </p>
+
+        <h2 class="mt-4 text-3xl md:text-4xl font-heading font-bold">
+          Captured For The Field
+        </h2>
+
+        <p class="mt-6 text-gray-400 leading-relaxed">
+          This footage was captured in Southeast Alaska and prepared
+          for creators, filmmakers, editors, and storytellers looking
+          for authentic aerial footage of the region.
+        </p>
+
+
+        <div class="mt-8 space-y-4 text-gray-300">
+
+          <div class="flex gap-3">
+            <span class="text-glacier-blue">◆</span>
+            <span>{data.clipCount ?? "Multiple"} individual clips</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="text-glacier-blue">◆</span>
+            <span>4K aerial footage</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="text-glacier-blue">◆</span>
+            <span>MP4 delivery</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="text-glacier-blue">◆</span>
+            <span>Standard and Pro versions available</span>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="text-glacier-blue">◆</span>
+            <span>Commercial-use licensing</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Purchase -->
+
+      <div class="rounded-2xl border border-glacier-blue/20 bg-black/30 p-8 lg:p-10 shadow-xl">
+
+        <p class="uppercase tracking-[0.25em] text-white/40 text-xs font-semibold">
+          RavenØrix Digital Collection
+        </p>
+
+        <h2 class="mt-4 text-3xl font-heading font-bold">
+          {data.title}
+        </h2>
+
+        <p class="mt-5 text-gray-400 leading-relaxed">
+          Choose the version that fits your workflow.
+        </p>
+
+
+        <!-- Version Pricing -->
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+
+
+          <!-- Standard -->
+
+          <div class="rounded-xl border border-white/10 bg-black/20 p-5">
+
+            <p class="text-xs uppercase tracking-[0.2em] text-white/40 font-semibold">
+              Standard
+            </p>
+
+            <p class="mt-3 text-3xl font-heading font-bold">
+              ${data.standardPrice.toFixed(2)}
+            </p>
+
+            <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+              Cinematic RavenØrix grade, ready for immediate use in your timeline.
+            </p>
+
+          </div>
+
+
+          <!-- Pro -->
+
+          <div class="rounded-xl border border-glacier-blue/40 bg-glacier-blue/5 p-5">
+
+            <p class="text-xs uppercase tracking-[0.2em] text-glacier-blue font-semibold">
+              Pro
+            </p>
+
+            <p class="mt-3 text-3xl font-heading font-bold">
+              ${data.proPrice.toFixed(2)}
+            </p>
+
+            <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+              Native 5.1K D-Log footage with maximum dynamic range for professional grading.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Purchase Button -->
+
+        <a
+          href={data.gumroadUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-8 w-full inline-flex items-center justify-center px-8 py-4 rounded-lg bg-glacier-blue text-raven-black font-semibold text-lg uppercase tracking-[0.08em] transition hover:scale-[1.02] hover:shadow-lg"
+        >
+          View Pack & Options →
+        </a>
+
+
+        <p class="mt-4 text-center text-xs text-white/30">
+          Standard and Pro versions available through Gumroad
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- Complete Series -->
+
+    {
+      collectionData?.seriesThumbnail &&
+      collectionData?.seriesGumroadUrl &&
+      collectionData?.seriesPrice !== undefined && (
+
+        <div class="mt-20 rounded-2xl overflow-hidden border border-glacier-blue/20 bg-black/30">
+
+          <div class="grid lg:grid-cols-2">
+
+            <!-- Series Thumbnail -->
+
+            <div class="bg-black">
+
+              <img
+                src={collectionData.seriesThumbnail}
+                alt={`${data.location} Complete Series`}
+                class="w-full aspect-square object-cover"
+              />
+
+            </div>
+
+
+            <!-- Series Offer -->
+
+            <div class="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+
+              <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+                Complete Series
+              </p>
+
+              <h2 class="mt-4 text-4xl md:text-5xl font-heading font-bold uppercase">
+                Want The Complete Collection?
+              </h2>
+
+              <p class="mt-6 text-gray-300 leading-relaxed text-lg">
+                Get every available {data.location} pack from {data.year}
+                in both Standard and Pro versions.
+              </p>
+
+
+              <div class="mt-8">
+
+                <p class="text-sm uppercase tracking-[0.2em] text-white/40">
+                  Complete Series
+                </p>
+
+                <p class="mt-2 text-4xl font-heading font-bold">
+                  ${collectionData.seriesPrice.toFixed(2)}
+                </p>
+
+              </div>
+
+
+              <a
+                href={collectionData.seriesGumroadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-8 inline-flex items-center justify-center px-8 py-4 rounded-lg bg-glacier-blue text-raven-black font-semibold text-lg uppercase tracking-[0.08em] transition hover:scale-[1.02] hover:shadow-lg"
+              >
+                Get Complete Series →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )
+    }
+
+
+    <!-- Collection Navigation -->
+
+    <div class="mt-20 border-t border-white/10 pt-10">
+
+      <a
+        href={`/collections/${data.collectionSlug}/${data.year}/`}
+        class="inline-flex items-center text-glacier-blue hover:text-white transition"
+      >
+        ← Explore The {data.location} Collection
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</BaseLayout>
