@@ -70,12 +70,39 @@ Field Dossier
 </a>
 
 
-<a
-href="/collections/"
-class="text-white/60 hover:text-white transition"
->
-Collections
-</a>
+<div class="relative group">
+  <a
+    href="/collections/"
+    class="text-white/60 hover:text-white transition inline-flex items-center gap-2"
+  >
+    Collections
+    <span class="text-[0.6rem] opacity-60">▼</span>
+  </a>
+
+  <div
+    class="absolute left-1/2 top-full hidden w-52 -translate-x-1/2 pt-4 group-hover:block group-focus-within:block"
+  >
+    <div
+      class="rounded-xl border border-white/10 bg-black/95 p-2 shadow-2xl backdrop-blur-lg"
+    >
+
+      <a
+        href="/collections/"
+        class="block rounded-lg px-4 py-3 text-xs tracking-[0.2em] text-white/60 transition hover:bg-white/5 hover:text-white"
+      >
+        Aerial Footage
+      </a>
+
+      <a
+        href="/music/"
+        class="block rounded-lg px-4 py-3 text-xs tracking-[0.2em] text-white/60 transition hover:bg-white/5 hover:text-white"
+      >
+        Music
+      </a>
+
+    </div>
+  </div>
+</div>
 
 
 <a
@@ -260,9 +287,31 @@ text-sm
 Field Dossier
 </a>
 
-<a href="/collections/">
-Collections
-</a>
+<div class="flex flex-col gap-3">
+
+  <a href="/collections/">
+    Collections
+  </a>
+
+  <div class="flex flex-col gap-3 pl-5 text-white/50 text-xs tracking-[0.15em]">
+
+    <a
+      href="/collections/"
+      class="hover:text-white transition"
+    >
+      Aerial Footage
+    </a>
+
+    <a
+      href="/music/"
+      class="hover:text-white transition"
+    >
+      Music
+    </a>
+
+  </div>
+
+</div>
 
 <a href="/#services">
 Operations

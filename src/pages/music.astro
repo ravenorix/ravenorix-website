@@ -1,0 +1,306 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const music = await getCollection("music");
+---
+
+<BaseLayout>
+
+  <section class="max-w-7xl mx-auto px-6 pt-32 pb-24">
+
+    <!-- Page Header -->
+
+    <div class="max-w-4xl">
+
+      <p class="uppercase tracking-[0.3em] text-glacier-blue text-sm font-semibold">
+        RavenØrix Music // Cinematic Collection
+      </p>
+
+      <h1 class="mt-5 text-5xl md:text-7xl font-heading font-bold uppercase leading-[0.95]">
+        Cinematic Music
+      </h1>
+
+      <p class="mt-6 text-xl md:text-2xl text-white/60">
+        Original music for cinematic storytelling.
+      </p>
+
+      <p class="mt-8 max-w-3xl text-lg text-gray-300 leading-relaxed">
+        Explore the RavenØrix cinematic music collection. Each album contains
+        original tracks created for atmospheric film, aerial footage,
+        documentary work, and visual storytelling.
+      </p>
+
+    </div>
+
+
+    <!-- Music Albums -->
+
+    <div class="mt-20">
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {music.map((album) => (
+
+          <div
+            class="group rounded-2xl border border-white/10 bg-black/30 overflow-hidden transition duration-300 hover:border-glacier-blue/50 hover:-translate-y-1"
+          >
+
+            <!-- Album Artwork -->
+
+            <div class="aspect-square bg-black/50 overflow-hidden">
+
+              {album.data.thumbnail ? (
+
+                <img
+                  src={album.data.thumbnail}
+                  alt={album.data.title}
+                  class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+
+              ) : (
+
+                <div class="w-full h-full flex items-center justify-center text-white/20 uppercase tracking-[0.2em] text-xs">
+                  Album Artwork
+                </div>
+
+              )}
+
+            </div>
+
+
+            <!-- Album Information -->
+
+            <div class="p-6">
+
+              <p class="text-xs uppercase tracking-[0.2em] text-glacier-blue font-semibold">
+                Music // Cinematic Collection
+              </p>
+
+              <h2 class="mt-3 font-heading text-2xl font-semibold group-hover:text-glacier-blue transition">
+                {album.data.title}
+              </h2>
+
+              <p class="mt-3 text-gray-400 leading-relaxed">
+                {album.data.description}
+              </p>
+
+
+              <!-- Track Information -->
+
+              {album.data.trackCount && (
+
+                <p class="mt-4 text-sm uppercase tracking-[0.15em] text-white/40">
+                  {album.data.trackCount} Tracks
+                  <span class="mx-2 text-white/20">•</span>
+                  Preview Sample
+                </p>
+
+              )}
+
+
+              <!-- Music Preview -->
+
+              {album.data.previewUrl && (
+
+                <div
+                  class="music-preview mt-6 w-full"
+                  data-audio={album.data.previewUrl}
+                >
+
+                  <div class="flex justify-center gap-4">
+
+                    <button
+                      type="button"
+                      class="music-play-button rounded-lg border border-glacier-blue/50 bg-glacier-blue/10 px-7 py-3 text-sm font-semibold text-glacier-blue transition hover:bg-glacier-blue/20 hover:text-white"
+                    >
+                      ▶ Play
+                    </button>
+
+                    <button
+                      type="button"
+                      class="music-pause-button rounded-lg border border-white/10 bg-white/5 px-7 py-3 text-sm font-semibold text-gray-300 transition hover:bg-white/10 hover:text-white"
+                    >
+                      ❚❚ Pause
+                    </button>
+
+                  </div>
+
+
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                    class="music-progress mt-5 w-full cursor-pointer"
+                    aria-label={`Preview progress for ${album.data.title}`}
+                  />
+
+
+                  <div class="mt-2 flex justify-between text-xs text-white/40">
+
+                    <span class="music-current-time">
+                      0:00
+                    </span>
+
+                    <span class="music-duration">
+                      0:00
+                    </span>
+
+                  </div>
+
+                </div>
+
+              )}
+
+
+              <!-- Gumroad -->
+
+              {album.data.gumroadUrl && (
+
+                <div class="mt-5 flex justify-center">
+
+                  <a
+                    href={album.data.gumroadUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="rounded-lg border border-glacier-blue/50 bg-glacier-blue/10 px-7 py-3 text-sm font-semibold text-glacier-blue transition hover:bg-glacier-blue/20 hover:text-white"
+                  >
+                    View Collection →
+                  </a>
+
+                </div>
+
+              )}
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+
+    <!-- Back To Collections -->
+
+    <div class="mt-20 border-t border-white/10 pt-10">
+
+      <a
+        href="/collections/"
+        class="text-glacier-blue hover:text-white transition"
+      >
+        ← Back To Aerial Footage
+      </a>
+
+    </div>
+
+  </section>
+
+</BaseLayout>
+
+
+<script>
+  const previews = document.querySelectorAll<HTMLElement>(".music-preview");
+
+  let activeAudio: HTMLAudioElement | null = null;
+  let activePreview: HTMLElement | null = null;
+
+  previews.forEach((preview) => {
+    const audioUrl = preview.dataset.audio;
+
+    if (!audioUrl) return;
+
+    const audio = new Audio(audioUrl);
+
+    const playButton =
+      preview.querySelector<HTMLButtonElement>(".music-play-button");
+
+    const pauseButton =
+      preview.querySelector<HTMLButtonElement>(".music-pause-button");
+
+    const progress =
+      preview.querySelector<HTMLInputElement>(".music-progress");
+
+    const currentTime =
+      preview.querySelector<HTMLElement>(".music-current-time");
+
+    const duration =
+      preview.querySelector<HTMLElement>(".music-duration");
+
+
+    const formatTime = (seconds: number) => {
+      if (!Number.isFinite(seconds)) return "0:00";
+
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+
+      return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+    };
+
+
+    audio.addEventListener("loadedmetadata", () => {
+      if (duration) {
+        duration.textContent = formatTime(audio.duration);
+      }
+    });
+
+
+    audio.addEventListener("timeupdate", () => {
+      if (currentTime) {
+        currentTime.textContent = formatTime(audio.currentTime);
+      }
+
+      if (progress && audio.duration) {
+        progress.value = String(
+          (audio.currentTime / audio.duration) * 100
+        );
+      }
+    });
+
+
+    playButton?.addEventListener("click", async () => {
+
+      if (activeAudio && activeAudio !== audio) {
+        activeAudio.pause();
+
+        if (activePreview) {
+          const previousProgress =
+            activePreview.querySelector<HTMLInputElement>(".music-progress");
+
+          if (previousProgress) {
+            previousProgress.value = "0";
+          }
+        }
+      }
+
+      activeAudio = audio;
+      activePreview = preview;
+
+      await audio.play();
+
+    });
+
+
+    pauseButton?.addEventListener("click", () => {
+      audio.pause();
+    });
+
+
+    progress?.addEventListener("input", () => {
+
+      if (!audio.duration) return;
+
+      const percentage = Number(progress.value);
+
+      audio.currentTime =
+        (percentage / 100) * audio.duration;
+
+    });
+
+  });
+</script>
