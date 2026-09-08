@@ -7,13 +7,440 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
   description="RavenGrid is a field-focused UAS flight planning and conditions reference tool."
 >
 
-  <main>
-    <section>
-      <h1>RavenGrid</h1>
-      <p>UAS flight planning. Weather. Airspace. Conditions.</p>
+  <header>
+    <div class="nav">
+      <div class="brand">RAVEN<span>GRID</span></div>
 
-      <a href="/privacy">Privacy Policy</a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#field">Built for the Field</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">UAS FLIGHT PLANNING / FIELD REFERENCE</div>
+
+        <h1>
+          CHECK CONDITIONS.<br />
+          <span>MAKE A DECISION.</span><br />
+          FLY.
+        </h1>
+
+        <p>
+          RavenGrid brings weather, aviation conditions, GNSS,
+          airspace information, and flight planning into one
+          focused field reference.
+        </p>
+
+        <div class="actions">
+          <a class="primary" href="#">
+            GET RAVENGRID
+          </a>
+
+          <a class="secondary" href="#features">
+            EXPLORE FEATURES
+          </a>
+        </div>
+      </div>
     </section>
+
+
+    <section class="intro">
+      <div class="section-label">01 / THE CONCEPT</div>
+
+      <h2>
+        LESS BLOAT.<br />
+        <span>MORE CLARITY.</span>
+      </h2>
+
+      <p>
+        Preflight information shouldn't take a dozen screens to
+        understand. RavenGrid is designed around a simple idea:
+        give UAS pilots the information that matters most,
+        quickly and clearly.
+      </p>
+    </section>
+
+
+    <section id="features" class="features">
+      <div class="section-label">02 / CAPABILITIES</div>
+
+      <h2>FIELD INFORMATION.<br /><span>ONE WORKFLOW.</span></h2>
+
+      <div class="feature-grid">
+
+        <article>
+          <div class="number">01</div>
+          <h3>WEATHER</h3>
+          <p>
+            Wind, gusts, visibility, ceiling, precipitation,
+            UV index, and live aviation weather.
+          </p>
+        </article>
+
+        <article>
+          <div class="number">02</div>
+          <h3>GNSS</h3>
+          <p>
+            Satellite information and device positioning
+            for location-aware flight planning.
+          </p>
+        </article>
+
+        <article>
+          <div class="number">03</div>
+          <h3>AIRSPACE</h3>
+          <p>
+            TFR information and direct access to FAA NOTAM
+            resources for additional awareness.
+          </p>
+        </article>
+
+        <article>
+          <div class="number">04</div>
+          <h3>MAPPING</h3>
+          <p>
+            Standard, topographic, and flight map layers
+            for planning and situational awareness.
+          </p>
+        </article>
+
+        <article>
+          <div class="number">05</div>
+          <h3>FLIGHT PROFILES</h3>
+          <p>
+            Commercial, recreational, and cinematic profiles
+            designed around different operating thresholds.
+          </p>
+        </article>
+
+        <article>
+          <div class="number">06</div>
+          <h3>GEOMAGNETIC</h3>
+          <p>
+            Kp index information to help provide additional
+            awareness of current geomagnetic conditions.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <section id="field" class="field">
+      <div class="field-content">
+        <div class="section-label">03 / BUILT FOR THE FIELD</div>
+
+        <h2>
+          KNOW WHAT'S<br />
+          <span>HAPPENING AROUND YOU.</span>
+        </h2>
+
+        <p>
+          RavenGrid is built for pilots who need a fast,
+          focused reference before putting an aircraft into
+          the air.
+        </p>
+
+        <p>
+          Dark. Tactical. Purpose-built.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="cta">
+      <div class="section-label">04 / RAVENGRID</div>
+
+      <h2>READY TO<br /><span>FLY INFORMED?</span></h2>
+
+      <a class="primary" href="#">
+        GET RAVENGRID
+      </a>
+    </section>
+
   </main>
 
+
+  <footer>
+    <div>RAVEN<span>GRID</span></div>
+
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="https://ravenorix.com">RavenØrix</a>
+    </div>
+
+    <div class="copyright">
+      © 2026 RavenØrix
+    </div>
+  </footer>
+
 </RavenGridLayout>
+
+
+<style>
+  :global(body) {
+    background: #08090b;
+    color: #e5e7eb;
+  }
+
+  header {
+    border-bottom: 1px solid #24262a;
+    background: rgba(8, 9, 11, 0.96);
+  }
+
+  .nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand,
+  footer > div:first-child {
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: #f3f4f6;
+  }
+
+  .brand span,
+  footer span,
+  h1 span,
+  h2 span {
+    color: #a71930;
+  }
+
+  nav,
+  .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+
+  nav a,
+  .footer-links a {
+    color: #8b9098;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  nav a:hover,
+  .footer-links a:hover {
+    color: #e5e7eb;
+  }
+
+  .hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #24262a;
+    background:
+      linear-gradient(90deg, rgba(8,9,11,0.98), rgba(8,9,11,0.72)),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(255,255,255,0.025) 40px
+      );
+  }
+
+  .hero-content,
+  .intro,
+  .features,
+  .field-content,
+  .cta {
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .eyebrow,
+  .section-label {
+    color: #a71930;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+
+  h1 {
+    margin: 22px 0;
+    font-size: clamp(48px, 8vw, 92px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    font-weight: 900;
+  }
+
+  .hero p {
+    max-width: 620px;
+    color: #9ca1a9;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+
+  .primary,
+  .secondary {
+    display: inline-block;
+    padding: 15px 22px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+  }
+
+  .primary {
+    background: #a71930;
+    color: white;
+  }
+
+  .secondary {
+    border: 1px solid #3a3d42;
+    color: #d1d5db;
+  }
+
+  .intro,
+  .features,
+  .field,
+  .cta {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .intro {
+    max-width: 900px;
+  }
+
+  .intro p,
+  .field p {
+    max-width: 700px;
+    color: #9ca1a9;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .features {
+    border-top: 1px solid #24262a;
+    border-bottom: 1px solid #24262a;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
+    border-top: 1px solid #24262a;
+    border-left: 1px solid #24262a;
+  }
+
+  article {
+    padding: 34px;
+    min-height: 220px;
+    border-right: 1px solid #24262a;
+    border-bottom: 1px solid #24262a;
+  }
+
+  .number {
+    color: #a71930;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  h3 {
+    margin: 28px 0 14px;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+  }
+
+  article p {
+    color: #8b9098;
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  .field {
+    background: #0d0f12;
+  }
+
+  .field-content {
+    max-width: 900px;
+  }
+
+  .cta {
+    text-align: center;
+    border-top: 1px solid #24262a;
+  }
+
+  .cta .primary {
+    margin-top: 20px;
+  }
+
+  footer {
+    border-top: 1px solid #24262a;
+    padding: 30px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: #666b73;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .copyright {
+    color: #555960;
+  }
+
+  @media (max-width: 800px) {
+    nav {
+      display: none;
+    }
+
+    .hero {
+      min-height: 600px;
+    }
+
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .intro,
+    .features,
+    .field,
+    .cta {
+      padding-top: 85px;
+      padding-bottom: 85px;
+    }
+
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
