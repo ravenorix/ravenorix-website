@@ -1,0 +1,987 @@
+---
+import RavenGridLayout from "../../layouts/RavenGridLayout.astro";
+
+const playLink =
+  "https://play.google.com/apps/testing/com.ravenorix.ravengrid";
+
+const formspreeEndpoint =
+  "https://formspree.io/f/mqpkgwer";
+---
+
+<RavenGridLayout
+  title="RavenGrid | Request Beta Access"
+  description="Request access to the RavenGrid closed beta for Android."
+>
+
+  <header>
+    <div class="nav">
+
+      <a href="/ravengrid" class="brand">
+        RAVEN<span>GRID</span>
+      </a>
+
+      <nav>
+        <a href="/ravengrid">RavenGrid</a>
+        <a href="#request">Request Access</a>
+        <a href="#install">Install</a>
+        <a href="/ravengrid/privacy">Privacy</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-grid"></div>
+
+      <div class="hero-content">
+
+        <div class="status">
+          <span class="status-dot"></span>
+          CLOSED BETA / ANDROID
+        </div>
+
+        <div class="eyebrow">
+          RAVENØRIX / RAVENGRID
+        </div>
+
+        <h1>
+          REQUEST<br />
+          <span>ACCESS.</span>
+        </h1>
+
+        <div class="hero-divider"></div>
+
+        <p class="hero-tagline">
+          HELP BUILD<br />
+          <strong>RAVENGRID.</strong>
+        </p>
+
+        <p class="hero-description">
+          RavenGrid is currently in closed beta. Submit the
+          Google account you use with Google Play and we'll
+          add you to the tester list.
+        </p>
+
+      </div>
+
+      <div class="hero-corner">
+        <span>RG / BETA</span>
+        <span>ACCESS REQUEST</span>
+      </div>
+
+    </section>
+
+
+    <!-- REQUEST ACCESS -->
+
+    <section id="request" class="request">
+
+      <div class="request-intro">
+
+        <div class="section-label">
+          01 / REQUEST ACCESS
+        </div>
+
+        <h2>
+          GET ON<br />
+          <span>THE LIST.</span>
+        </h2>
+
+        <p>
+          Google Play requires closed-beta testers to be
+          added to the approved tester list before they can
+          install RavenGrid.
+        </p>
+
+        <p>
+          Submit the Google account you use with Google Play.
+          Once your account has been added, you can return to
+          this page and use the installation link.
+        </p>
+
+        <div class="process">
+
+          <div>
+            <span>01</span>
+            <strong>SUBMIT</strong>
+            <p>Send us your Google Play account email.</p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <strong>APPROVE</strong>
+            <p>We'll add your account to the beta tester list.</p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <strong>INSTALL</strong>
+            <p>Use the Google Play link to enroll and install.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <form
+        action={formspreeEndpoint}
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="RavenGrid Beta Access Request"
+        />
+
+        <label>
+          Name
+          <span>(optional)</span>
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+          />
+
+        </label>
+
+
+        <label>
+          Google Play email
+          <span>required</span>
+
+          <input
+            type="email"
+            name="google_play_email"
+            required
+            placeholder="The Google account you use with Google Play"
+          />
+
+        </label>
+
+
+        <label>
+          UAS experience
+
+          <select name="uas_experience">
+            <option value="">Select one</option>
+            <option value="Commercial pilot">
+              Commercial pilot
+            </option>
+            <option value="Recreational pilot">
+              Recreational pilot
+            </option>
+            <option value="Aviation professional">
+              Aviation professional
+            </option>
+            <option value="Drone enthusiast">
+              Drone enthusiast
+            </option>
+            <option value="Other">
+              Other
+            </option>
+          </select>
+
+        </label>
+
+
+        <label>
+          What would you like to test?
+
+          <textarea
+            name="testing_focus"
+            placeholder="Weather, flight planning, maps, GNSS, aviation information, or everything."
+          ></textarea>
+
+        </label>
+
+
+        <label>
+          Additional comments
+          <span>(optional)</span>
+
+          <textarea
+            name="comments"
+            placeholder="Tell us anything else you'd like us to know."
+          ></textarea>
+
+        </label>
+
+
+        <div class="form-note">
+          <span class="status-dot"></span>
+
+          <p>
+            Submitting this form does not immediately grant
+            Google Play access. Your account must first be
+            added to the RavenGrid closed-test tester list.
+          </p>
+        </div>
+
+
+        <button type="submit" class="primary">
+          REQUEST BETA ACCESS
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- INSTALL -->
+
+    <section id="install" class="install">
+
+      <div class="install-inner">
+
+        <div class="section-label">
+          02 / ALREADY APPROVED?
+        </div>
+
+        <h2>
+          READY TO<br />
+          <span>INSTALL?</span>
+        </h2>
+
+        <p>
+          If you've already been added to the RavenGrid
+          closed-test tester list, use the Google Play link
+          below to enroll and install the app.
+        </p>
+
+        <a
+          class="primary"
+          href={playLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          INSTALL RAVENGRID
+        </a>
+
+        <div class="install-warning">
+
+          <span class="status-dot"></span>
+
+          <p>
+            If Google Play says you're not eligible for the
+            test, make sure you're signed into Google Play
+            with the same account you submitted above.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER CTA -->
+
+    <section class="closing">
+
+      <div class="closing-inner">
+
+        <div class="section-label">
+          RAVENØRIX / RAVENGRID
+        </div>
+
+        <h2>
+          CHECK CONDITIONS.<br />
+          <span>FLY INFORMED.</span>
+        </h2>
+
+        <a href="/ravengrid" class="secondary">
+          RETURN TO RAVENGRID
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-brand">
+      RAVEN<span>GRID</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/ravengrid">RavenGrid</a>
+      <a href="/ravengrid/privacy">Privacy Policy</a>
+      <a
+        href="https://ravenorix.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        RavenØrix
+      </a>
+    </div>
+
+    <div class="copyright">
+      © 2026 RavenØrix
+    </div>
+
+  </footer>
+
+</RavenGridLayout>
+
+
+<style>
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+
+  :global(body) {
+    background: #08090b;
+    color: #e5e7eb;
+  }
+
+
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+
+  header {
+    position: relative;
+    z-index: 20;
+    border-bottom: 1px solid #24262a;
+    background: rgba(8, 9, 11, 0.96);
+  }
+
+
+  .nav {
+    max-width: 1280px;
+    margin: auto;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .brand {
+    color: #f3f4f6;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+  }
+
+
+  .brand span,
+  footer span,
+  h1 span,
+  h2 span {
+    color: #a71930;
+  }
+
+
+  nav {
+    display: flex;
+    gap: 28px;
+  }
+
+
+  nav a,
+  .footer-links a {
+    color: #777c84;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+  }
+
+
+  nav a:hover,
+  .footer-links a:hover {
+    color: #f3f4f6;
+  }
+
+
+  /* HERO */
+
+
+  .hero {
+    position: relative;
+    min-height: 650px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #24262a;
+    background:
+      radial-gradient(
+        circle at 80% 30%,
+        rgba(167, 25, 48, 0.12),
+        transparent 32%
+      ),
+      #08090b;
+  }
+
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 55%,
+        rgba(167,25,48,0.04) 100%
+      );
+    pointer-events: none;
+  }
+
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.16;
+
+    background-image:
+      linear-gradient(
+        rgba(255,255,255,0.07) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,0.07) 1px,
+        transparent 1px
+      );
+
+    background-size: 60px 60px;
+
+    mask-image: linear-gradient(
+      90deg,
+      black,
+      transparent 90%
+    );
+  }
+
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 110px 28px;
+  }
+
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #c0203b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    margin-bottom: 24px;
+  }
+
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #a71930;
+    box-shadow: 0 0 14px rgba(167, 25, 48, 0.8);
+  }
+
+
+  .eyebrow,
+  .section-label {
+    color: #a71930;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+  }
+
+
+  h1 {
+    margin: 22px 0 0;
+    font-size: clamp(58px, 9vw, 112px);
+    line-height: 0.86;
+    letter-spacing: -0.055em;
+    font-weight: 900;
+  }
+
+
+  .hero-divider {
+    width: 90px;
+    height: 2px;
+    margin: 34px 0 25px;
+    background: #a71930;
+  }
+
+
+  .hero-tagline {
+    margin: 0;
+    color: #f3f4f6;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+
+  .hero-tagline strong {
+    font-weight: 900;
+  }
+
+
+  .hero-description {
+    max-width: 590px;
+    margin: 24px 0 0;
+    color: #a3a8b0;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+
+  .hero-corner {
+    position: absolute;
+    z-index: 2;
+    right: 28px;
+    bottom: 28px;
+    display: flex;
+    gap: 22px;
+    color: #62666d;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+
+  /* REQUEST */
+
+
+  .request {
+    max-width: 1280px;
+    margin: auto;
+    padding: 120px 28px;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 100px;
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .request-intro h2 {
+    margin-bottom: 28px;
+  }
+
+
+  .request-intro > p {
+    max-width: 520px;
+    color: #92979f;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+
+  .process {
+    margin-top: 55px;
+    border-top: 1px solid #24262a;
+  }
+
+
+  .process > div {
+    padding: 18px 0;
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .process span {
+    display: block;
+    margin-bottom: 9px;
+    color: #a71930;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+  }
+
+
+  .process strong {
+    color: #d7dae0;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+
+  .process p {
+    margin: 7px 0 0;
+    color: #686d75;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+
+  form {
+    max-width: 760px;
+  }
+
+
+  label {
+    display: block;
+    margin-bottom: 25px;
+    color: #c8ccd2;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+
+  label span {
+    color: #5f646b;
+    font-weight: 400;
+  }
+
+
+  input,
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px 15px;
+    border: 1px solid #2d3035;
+    border-radius: 0;
+    outline: none;
+    background: #0d0f12;
+    color: #e5e7eb;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+  }
+
+
+  input,
+  select {
+    min-height: 48px;
+  }
+
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #4f535a;
+  }
+
+
+  select {
+    appearance: none;
+  }
+
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #a71930;
+  }
+
+
+  .form-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 5px 0 25px;
+    padding: 17px;
+    border: 1px solid #2d3035;
+    background: #0c0e11;
+  }
+
+
+  .form-note .status-dot {
+    margin-top: 4px;
+  }
+
+
+  .form-note p {
+    margin: 0;
+    color: #777c84;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+
+  .primary,
+  .secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+
+  .primary {
+    border: 1px solid #a71930;
+    background: #a71930;
+    color: #fff;
+  }
+
+
+  .primary:hover {
+    background: #c0203b;
+    border-color: #c0203b;
+  }
+
+
+  .secondary {
+    border: 1px solid #4a4e55;
+    background: transparent;
+    color: #d7dae0;
+  }
+
+
+  .secondary:hover {
+    border-color: #9a9fa7;
+  }
+
+
+  /* INSTALL */
+
+
+  .install {
+    border-bottom: 1px solid #24262a;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(167,25,48,0.07),
+        transparent 55%
+      ),
+      #0a0c0f;
+  }
+
+
+  .install-inner {
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 28px;
+    text-align: center;
+  }
+
+
+  .install-inner h2 {
+    margin-bottom: 25px;
+  }
+
+
+  .install-inner > p {
+    max-width: 600px;
+    margin: 0 auto 32px;
+    color: #858a92;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+
+  .install-warning {
+    max-width: 570px;
+    margin: 32px auto 0;
+    padding: 17px;
+    border: 1px solid #2d3035;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+
+  .install-warning .status-dot {
+    margin-top: 4px;
+  }
+
+
+  .install-warning p {
+    margin: 0;
+    color: #6e737b;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+
+  /* CLOSING */
+
+
+  .closing {
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .closing-inner {
+    max-width: 1280px;
+    margin: auto;
+    padding: 110px 28px;
+    text-align: center;
+  }
+
+
+  .closing-inner h2 {
+    margin-bottom: 30px;
+  }
+
+
+  /* FOOTER */
+
+
+  footer {
+    max-width: 1280px;
+    margin: auto;
+    padding: 30px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    color: #555a61;
+  }
+
+
+  .footer-brand {
+    color: #8b9097;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+
+  .footer-links {
+    display: flex;
+    gap: 25px;
+  }
+
+
+  .footer-links a {
+    font-size: 9px;
+  }
+
+
+  .copyright {
+    color: #454950;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+
+
+  /* RESPONSIVE */
+
+
+  @media (max-width: 850px) {
+
+    .request {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+  }
+
+
+  @media (max-width: 650px) {
+
+    nav {
+      display: none;
+    }
+
+
+    .nav {
+      padding: 18px 20px;
+    }
+
+
+    .hero {
+      min-height: 600px;
+    }
+
+
+    .hero-content {
+      padding: 80px 20px;
+    }
+
+
+    .hero-description {
+      font-size: 14px;
+    }
+
+
+    .hero-corner {
+      display: none;
+    }
+
+
+    .request,
+    .install-inner,
+    .closing-inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+
+    .request {
+      padding-top: 85px;
+      padding-bottom: 85px;
+    }
+
+
+    .install-inner {
+      padding-top: 85px;
+      padding-bottom: 85px;
+    }
+
+
+    .closing-inner {
+      padding-top: 85px;
+      padding-bottom: 85px;
+    }
+
+
+    footer {
+      padding: 25px 20px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+
+    .footer-links {
+      flex-wrap: wrap;
+    }
+
+  }
+
+</style>

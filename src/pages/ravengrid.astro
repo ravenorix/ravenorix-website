@@ -1,5 +1,11 @@
 ---
 import RavenGridLayout from "../layouts/RavenGridLayout.astro";
+
+const playLink =
+  "https://play.google.com/apps/testing/com.ravenorix.ravengrid";
+
+const formspreeEndpoint =
+  "https://formspree.io/f/mppzokaj";
 ---
 
 <RavenGridLayout
@@ -7,16 +13,23 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
   description="RavenGrid is a field-focused UAS flight planning and conditions reference tool. Join the RavenGrid closed beta."
 >
 
+  <!-- NAVIGATION -->
+
   <header>
     <div class="nav">
-      <div class="brand">RAVEN<span>GRID</span></div>
+
+      <a href="/" class="brand">
+        RAVEN<span>GRID</span>
+      </a>
 
       <nav>
         <a href="#beta">Beta</a>
+        <a href="#screens">App</a>
         <a href="#features">Features</a>
         <a href="#feedback">Feedback</a>
         <a href="/privacy">Privacy</a>
       </nav>
+
     </div>
   </header>
 
@@ -26,6 +39,11 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     <!-- HERO -->
 
     <section class="hero">
+
+      <div class="hero-image"></div>
+
+      <div class="hero-grid"></div>
+
       <div class="hero-content">
 
         <div class="status">
@@ -33,34 +51,245 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
           CLOSED BETA / ANDROID
         </div>
 
-        <div class="eyebrow">RAVENØRIX / UAS FLIGHT SYSTEM</div>
+        <div class="eyebrow">
+          RAVENØRIX / UAS FLIGHT SYSTEM
+        </div>
 
         <h1>
-          CHECK CONDITIONS.<br />
-          <span>MAKE A DECISION.</span><br />
-          FLY.
+          CHECK<br />
+          <span>CONDITIONS.</span>
         </h1>
 
-        <p>
+        <div class="hero-divider"></div>
+
+        <p class="hero-tagline">
+          MAKE A DECISION.<br />
+          <strong>FLY INFORMED.</strong>
+        </p>
+
+        <p class="hero-description">
           RavenGrid brings weather, aviation conditions, GNSS,
           airspace information, and flight planning into one
           focused field reference for UAS pilots.
         </p>
 
         <div class="actions">
+
           <a
             class="primary"
-            href="https://play.google.com/apps/testing/com.ravenorix.ravengrid"
-            >       
+            href={playLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             JOIN THE BETA
-            </a>
-
-          <a class="secondary" href="#beta">
-            LEARN MORE
           </a>
+
+          <a class="secondary" href="#screens">
+            SEE THE APP
+          </a>
+
         </div>
 
       </div>
+
+      <div class="hero-corner">
+        <span>RG / 01</span>
+        <span>FIELD REFERENCE</span>
+      </div>
+
+    </section>
+
+
+    <!-- INTRO / PRODUCT STATEMENT -->
+
+    <section class="intro">
+
+      <div class="intro-mark">
+        <span>01</span>
+        <div></div>
+      </div>
+
+      <div class="intro-copy">
+
+        <div class="section-label">
+          BUILT FOR THE FIELD
+        </div>
+
+        <h2>
+          THE INFORMATION<br />
+          <span>YOU NEED.</span>
+        </h2>
+
+        <p>
+          RavenGrid is designed around a simple idea:
+          preflight information shouldn't take a dozen
+          screens to understand.
+        </p>
+
+        <p>
+          Weather, positioning, aviation information,
+          airspace awareness, and flight planning are
+          organized into a single workflow built for
+          quick reference before you fly.
+        </p>
+
+      </div>
+
+      <div class="intro-specs">
+
+        <div>
+          <span>PLATFORM</span>
+          <strong>ANDROID</strong>
+        </div>
+
+        <div>
+          <span>STATUS</span>
+          <strong>CLOSED BETA</strong>
+        </div>
+
+        <div>
+          <span>FOCUS</span>
+          <strong>UAS / DRONE</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- APP SCREENSHOTS -->
+
+    <section id="screens" class="screens">
+
+      <div class="screens-header">
+
+        <div>
+          <div class="section-label">
+            02 / THE APPLICATION
+          </div>
+
+          <h2>
+            SEE RAVENGRID<br />
+            <span>IN ACTION.</span>
+          </h2>
+        </div>
+
+        <p>
+          A focused flight-planning workflow built around
+          the information pilots actually need before launch.
+        </p>
+
+      </div>
+
+
+      <div class="phone-showcase">
+
+        <div class="phone phone-1">
+          <div class="phone-frame">
+            <img
+              src="/images/ravengrid/1636.jpg"
+              alt="RavenGrid application weather screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="phone-label">
+            <span>01</span>
+            CONDITIONS
+          </div>
+        </div>
+
+
+        <div class="phone phone-2">
+          <div class="phone-frame">
+            <img
+              src="/images/ravengrid/1638.jpg"
+              alt="RavenGrid application flight planning screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="phone-label">
+            <span>02</span>
+            FLIGHT PLANNING
+          </div>
+        </div>
+
+
+        <div class="phone phone-3">
+          <div class="phone-frame">
+            <img
+              src="/images/ravengrid/1640.jpg"
+              alt="RavenGrid application aviation information screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="phone-label">
+            <span>03</span>
+            AVIATION
+          </div>
+        </div>
+
+
+        <div class="phone phone-4">
+          <div class="phone-frame">
+            <img
+              src="/images/ravengrid/1642.jpg"
+              alt="RavenGrid application map screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="phone-label">
+            <span>04</span>
+            MAPPING
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURE IMAGE -->
+
+    <section class="feature-visual">
+
+      <div class="feature-visual-image">
+        <img
+          src="/images/ravengrid/ravengrid-featureimage-1024.png"
+          alt="RavenGrid UAS flight planning application"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="feature-visual-overlay"></div>
+
+      <div class="feature-visual-content">
+
+        <div class="section-label">
+          RAVENØRIX / RAVENGRID
+        </div>
+
+        <h2>
+          LESS BLOAT.<br />
+          <span>MORE CLARITY.</span>
+        </h2>
+
+        <p>
+          RavenGrid keeps the preflight picture focused,
+          giving pilots a faster way to understand the
+          conditions around their operating area.
+        </p>
+
+        <a
+          class="primary"
+          href={playLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          JOIN THE CLOSED BETA
+        </a>
+
+      </div>
+
     </section>
 
 
@@ -68,56 +297,88 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
     <section id="beta" class="beta">
 
-      <div class="section-label">01 / CLOSED BETA</div>
+      <div class="section-label">
+        03 / CLOSED BETA
+      </div>
 
-      <h2>
-        HELP BUILD<br />
-        <span>RAVENGRID.</span>
-      </h2>
+      <div class="beta-heading">
 
-      <p class="lead">
-        RavenGrid is currently in closed beta ahead of its
-        public launch on Google Play. We're looking for Android
-        users, UAS pilots, and aviation enthusiasts to put the
-        app through real-world use and help identify anything
-        that needs improvement.
-      </p>
+        <h2>
+          HELP BUILD<br />
+          <span>RAVENGRID.</span>
+        </h2>
 
-      <div class="beta-grid">
-
-        <div class="beta-card">
-          <div class="number">01</div>
-          <h3>JOIN</h3>
-          <p>
-            Join the RavenGrid closed test through Google Play
-            using the beta enrollment link.
-          </p>
-        </div>
-
-        <div class="beta-card">
-          <div class="number">02</div>
-          <h3>TEST</h3>
-          <p>
-            Use RavenGrid for weather, mapping, positioning,
-            aviation information, and flight planning.
-          </p>
-        </div>
-
-        <div class="beta-card">
-          <div class="number">03</div>
-          <h3>REPORT</h3>
-          <p>
-            Tell us what works, what doesn't, and what you
-            think would make RavenGrid better.
-          </p>
-        </div>
+        <p>
+          RavenGrid is currently being tested ahead of its
+          public launch on Google Play. We're looking for
+          Android users, UAS pilots, and aviation enthusiasts
+          to put the app through real-world use.
+        </p>
 
       </div>
 
+
+      <div class="beta-grid">
+
+        <article class="beta-card">
+
+          <div class="number">01</div>
+
+          <div>
+            <h3>JOIN</h3>
+
+            <p>
+              Open the enrollment link, join the RavenGrid
+              closed test, and install the app through
+              Google Play.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="beta-card">
+
+          <div class="number">02</div>
+
+          <div>
+            <h3>TEST</h3>
+
+            <p>
+              Use RavenGrid for weather, mapping,
+              positioning, aviation information, and
+              flight planning.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="beta-card">
+
+          <div class="number">03</div>
+
+          <div>
+            <h3>REPORT</h3>
+
+            <p>
+              Tell us what works, what doesn't, and what
+              would make RavenGrid better.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+
       <div class="requirements">
 
-        <div>
-          <div class="section-label">BETA REQUIREMENTS</div>
+        <div class="requirements-list">
+
+          <div class="section-label">
+            BETA REQUIREMENTS
+          </div>
 
           <ul>
             <li>Android device</li>
@@ -126,15 +387,35 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
             <li>Remain enrolled in the beta for 14 days</li>
             <li>Use the app and provide honest feedback</li>
           </ul>
+
         </div>
 
+
         <div class="requirement-note">
-          <div class="note-title">NO COST TO PARTICIPATE</div>
+
+          <div class="note-top">
+            <span class="status-dot"></span>
+            OPEN FOR TESTERS
+          </div>
+
+          <div class="note-title">
+            NO COST TO PARTICIPATE
+          </div>
 
           <p>
-            RavenGrid is currently being tested ahead of its
-            public launch. Beta participation is free.
+            RavenGrid is currently being tested ahead of
+            its public launch. Beta participation is free.
           </p>
+
+          <a
+            href={playLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OPEN GOOGLE PLAY
+            <span>→</span>
+          </a>
+
         </div>
 
       </div>
@@ -146,67 +427,110 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
     <section id="features" class="features">
 
-      <div class="section-label">02 / WHAT YOU'LL TEST</div>
+      <div class="section-label">
+        04 / WHAT YOU'LL TEST
+      </div>
 
-      <h2>
-        FIELD INFORMATION.<br />
-        <span>ONE WORKFLOW.</span>
-      </h2>
+      <div class="features-heading">
+
+        <h2>
+          FIELD INFORMATION.<br />
+          <span>ONE WORKFLOW.</span>
+        </h2>
+
+        <p>
+          RavenGrid combines the core information needed
+          for a fast preflight assessment without forcing
+          pilots through unnecessary layers of information.
+        </p>
+
+      </div>
+
 
       <div class="feature-grid">
 
         <article>
+
           <div class="number">01</div>
+
           <h3>WEATHER</h3>
+
           <p>
             Wind, gusts, visibility, ceiling, precipitation,
             UV index, and live aviation weather.
           </p>
+
         </article>
 
+
         <article>
+
           <div class="number">02</div>
+
           <h3>GNSS</h3>
+
           <p>
             Satellite information and device positioning
             for location-aware flight planning.
           </p>
+
         </article>
 
+
         <article>
+
           <div class="number">03</div>
+
           <h3>AIRSPACE</h3>
+
           <p>
             TFR information and direct access to FAA NOTAM
             resources for additional awareness.
           </p>
+
         </article>
 
+
         <article>
+
           <div class="number">04</div>
+
           <h3>MAPPING</h3>
+
           <p>
             Standard, topographic, and flight map layers
             for planning and situational awareness.
           </p>
+
         </article>
 
+
         <article>
+
           <div class="number">05</div>
+
           <h3>FLIGHT PROFILES</h3>
+
           <p>
-            Commercial, recreational, and cinematic profiles
-            designed around different operating thresholds.
+            Commercial, recreational, and cinematic
+            profiles designed around different operating
+            thresholds.
           </p>
+
         </article>
 
+
         <article>
+
           <div class="number">06</div>
+
           <h3>GEOMAGNETIC</h3>
+
           <p>
             Kp index information to provide additional
             awareness of current geomagnetic conditions.
           </p>
+
         </article>
 
       </div>
@@ -218,72 +542,99 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
     <section id="feedback" class="feedback">
 
-      <div class="section-label">03 / BETA FEEDBACK</div>
+      <div class="feedback-intro">
 
-      <h2>
-        TELL US WHAT<br />
-        <span>YOU FIND.</span>
-      </h2>
+        <div class="section-label">
+          05 / BETA FEEDBACK
+        </div>
 
-      <p class="lead">
-        Your feedback during the beta directly helps shape the
-        final RavenGrid release.
-      </p>
+        <h2>
+          TELL US WHAT<br />
+          <span>YOU FIND.</span>
+        </h2>
+
+        <p>
+          Your feedback during the beta directly helps
+          shape the final RavenGrid release.
+        </p>
+
+      </div>
+
 
       <form
-        action="https://formspree.io/f/mppzokaj"
+        action={formspreeEndpoint}
         method="POST"
       >
 
         <label>
           What did you test?
+
           <textarea
             name="tested"
             required
             placeholder="Weather, maps, GNSS, TFRs, NOTAMs, etc."
           ></textarea>
+
         </label>
+
 
         <label>
           What worked well?
+
           <textarea
             name="worked"
             placeholder="Tell us what you liked."
           ></textarea>
+
         </label>
+
 
         <label>
           What didn't work?
+
           <textarea
             name="problems"
             placeholder="Describe anything broken, confusing, or unexpected."
           ></textarea>
+
         </label>
+
 
         <label>
           What would you change?
+
           <textarea
             name="changes"
             placeholder="Features, layout, information, usability, etc."
           ></textarea>
+
         </label>
 
+
         <label>
-          Device / model <span>(optional)</span>
+          Device / model
+          <span>(optional)</span>
+
           <input
             type="text"
             name="device"
             placeholder="Example: Pixel 9 Pro"
           />
+
         </label>
 
+
         <label>
-          Additional comments <span>(optional)</span>
+          Additional comments
+          <span>(optional)</span>
+
           <textarea
             name="comments"
             placeholder="Anything else you'd like us to know."
           ></textarea>
+
         </label>
+
 
         <button type="submit" class="primary">
           SUBMIT FEEDBACK
@@ -298,33 +649,56 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
     <section class="cta">
 
-      <div class="section-label">04 / RAVENGRID</div>
+      <div class="cta-inner">
 
-      <h2>
-        READY TO<br />
-        <span>FLY INFORMED?</span>
-      </h2>
+        <div class="section-label">
+          06 / RAVENGRID
+        </div>
 
-      <a
-        class="primary"
-        href="PASTE-YOUR-GOOGLE-PLAY-BETA-LINK-HERE"
-      >
-        JOIN THE BETA
-      </a>
+        <h2>
+          READY TO<br />
+          <span>FLY INFORMED?</span>
+        </h2>
+
+        <p>
+          Join the closed beta and help shape the next
+          generation of field-focused UAS flight planning.
+        </p>
+
+        <a
+          class="primary"
+          href={playLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          JOIN THE BETA
+        </a>
+
+      </div>
 
     </section>
 
   </main>
 
 
+  <!-- FOOTER -->
+
   <footer>
 
-    <div>RAVEN<span>GRID</span></div>
+    <div class="footer-brand">
+      RAVEN<span>GRID</span>
+    </div>
 
     <div class="footer-links">
       <a href="/">RavenGrid</a>
       <a href="/privacy">Privacy Policy</a>
-      <a href="https://ravenorix.com">RavenØrix</a>
+      <a
+        href="https://ravenorix.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        RavenØrix
+      </a>
     </div>
 
     <div class="copyright">
@@ -333,11 +707,15 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
   </footer>
 
-
 </RavenGridLayout>
 
 
 <style>
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
 
   :global(body) {
     background: #08090b;
@@ -345,16 +723,23 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
   }
 
 
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+
   header {
+    position: relative;
+    z-index: 20;
     border-bottom: 1px solid #24262a;
-    background: rgba(8, 9, 11, 0.97);
+    background: rgba(8, 9, 11, 0.96);
   }
 
 
   .nav {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: auto;
-    padding: 22px 28px;
+    padding: 20px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -362,9 +747,11 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
 
   .brand {
-    font-weight: 900;
-    letter-spacing: 0.12em;
     color: #f3f4f6;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
   }
 
 
@@ -376,8 +763,7 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
   }
 
 
-  nav,
-  .footer-links {
+  nav {
     display: flex;
     gap: 28px;
   }
@@ -385,56 +771,86 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
   nav a,
   .footer-links a {
-    color: #8b9098;
+    color: #777c84;
     text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
+    transition: color 0.2s ease;
   }
 
 
   nav a:hover,
   .footer-links a:hover {
-    color: #e5e7eb;
+    color: #f3f4f6;
   }
+
+
+  /* HERO */
 
 
   .hero {
-    min-height: 680px;
+    position: relative;
+    min-height: 760px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #24262a;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgba(8,9,11,0.99),
-        rgba(8,9,11,0.76)
-      ),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        rgba(255,255,255,0.025) 40px
-      );
   }
 
 
-  .hero-content,
-  .intro,
-  .features,
-  .beta,
-  .feedback,
-  .cta {
-    max-width: 1200px;
-    margin: auto;
-    padding-left: 28px;
-    padding-right: 28px;
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(8, 9, 11, 0.98) 0%,
+        rgba(8, 9, 11, 0.88) 38%,
+        rgba(8, 9, 11, 0.48) 70%,
+        rgba(8, 9, 11, 0.66) 100%
+      ),
+      url("/images/ravengrid/ravengrid-featureimage-1024.png");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.01);
+  }
+
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.14;
+
+    background-image:
+      linear-gradient(
+        rgba(255,255,255,0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255,255,255,0.08) 1px,
+        transparent 1px
+      );
+
+    background-size: 60px 60px;
+
+    mask-image: linear-gradient(
+      90deg,
+      black,
+      transparent 85%
+    );
   }
 
 
   .hero-content {
+    position: relative;
+    z-index: 2;
     width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 100px 28px;
   }
 
 
@@ -442,11 +858,11 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    margin-bottom: 25px;
-    color: #a71930;
+    color: #c0203b;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.18em;
+    margin-bottom: 24px;
   }
 
 
@@ -455,115 +871,412 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     height: 7px;
     border-radius: 50%;
     background: #a71930;
-    box-shadow: 0 0 12px rgba(167,25,48,0.7);
+    box-shadow: 0 0 14px rgba(167, 25, 48, 0.8);
   }
 
 
   .eyebrow,
   .section-label {
     color: #a71930;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 10px;
+    font-weight: 800;
     letter-spacing: 0.2em;
   }
 
 
   h1 {
-    margin: 22px 0;
-    font-size: clamp(48px, 8vw, 92px);
-    line-height: 0.95;
-    letter-spacing: -0.04em;
+    margin: 22px 0 0;
+    font-size: clamp(58px, 9vw, 112px);
+    line-height: 0.86;
+    letter-spacing: -0.055em;
     font-weight: 900;
   }
 
 
-  h2 {
-    margin-top: 20px;
-    font-size: clamp(38px, 6vw, 68px);
-    line-height: 0.98;
-    letter-spacing: -0.035em;
+  .hero-divider {
+    width: 90px;
+    height: 2px;
+    margin: 34px 0 25px;
+    background: #a71930;
+  }
+
+
+  .hero-tagline {
+    margin: 0;
+    color: #f3f4f6;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+
+  .hero-tagline strong {
     font-weight: 900;
   }
 
 
-  .hero p,
-  .lead {
-    max-width: 700px;
-    color: #9ca1a9;
-    font-size: 18px;
+  .hero-description {
+    max-width: 590px;
+    margin: 24px 0 0;
+    color: #a3a8b0;
+    font-size: 16px;
     line-height: 1.75;
   }
 
 
   .actions {
     display: flex;
-    gap: 14px;
-    margin-top: 34px;
     flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
   }
 
 
   .primary,
   .secondary {
-    display: inline-block;
-    padding: 15px 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
     text-decoration: none;
-    font-size: 11px;
-    font-weight: 800;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 900;
     letter-spacing: 0.16em;
-    border: 0;
+    text-transform: uppercase;
     cursor: pointer;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
   }
 
 
   .primary {
+    border: 1px solid #a71930;
     background: #a71930;
-    color: white;
+    color: #fff;
   }
 
 
   .primary:hover {
     background: #c0203b;
+    border-color: #c0203b;
   }
 
 
   .secondary {
-    border: 1px solid #3a3d42;
-    color: #d1d5db;
+    border: 1px solid #4a4e55;
+    background: rgba(8, 9, 11, 0.3);
+    color: #d7dae0;
   }
 
 
   .secondary:hover {
-    border-color: #666b73;
+    border-color: #9a9fa7;
   }
 
 
-  .beta,
-  .features,
-  .feedback,
-  .cta {
-    padding-top: 120px;
-    padding-bottom: 120px;
+  .hero-corner {
+    position: absolute;
+    z-index: 2;
+    right: 28px;
+    bottom: 28px;
+    display: flex;
+    gap: 22px;
+    color: #62666d;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
   }
+
+
+  /* INTRO */
+
+
+  .intro {
+    max-width: 1280px;
+    margin: auto;
+    padding: 120px 28px;
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1.5fr) minmax(260px, 0.8fr);
+    gap: 55px;
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .intro-mark {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #a71930;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+
+  .intro-mark div {
+    width: 34px;
+    height: 1px;
+    margin-top: 5px;
+    background: #a71930;
+  }
+
+
+  h2 {
+    margin: 18px 0 28px;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+    font-weight: 900;
+  }
+
+
+  .intro-copy p {
+    max-width: 670px;
+    color: #92979f;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+
+  .intro-specs {
+    align-self: end;
+    border-top: 1px solid #24262a;
+  }
+
+
+  .intro-specs div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .intro-specs span {
+    color: #5f646b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+  }
+
+
+  .intro-specs strong {
+    color: #c9cdd3;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+
+
+  /* SCREENSHOTS */
+
+
+  .screens {
+    padding: 120px 28px 130px;
+    border-bottom: 1px solid #24262a;
+    overflow: hidden;
+  }
+
+
+  .screens-header {
+    max-width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 0.65fr;
+    gap: 80px;
+    align-items: end;
+  }
+
+
+  .screens-header p {
+    margin: 0 0 8px;
+    max-width: 460px;
+    color: #858a92;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+
+  .phone-showcase {
+    max-width: 1200px;
+    margin: 75px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: end;
+  }
+
+
+  .phone {
+    min-width: 0;
+  }
+
+
+  .phone:nth-child(even) {
+    transform: translateY(42px);
+  }
+
+
+  .phone-frame {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #34373d;
+    border-radius: 25px;
+    background: #111317;
+    box-shadow:
+      0 28px 60px rgba(0,0,0,0.45),
+      0 0 0 1px rgba(255,255,255,0.015);
+  }
+
+
+  .phone-frame::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    left: 50%;
+    width: 34%;
+    height: 17px;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    background: #08090b;
+  }
+
+
+  .phone-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+  }
+
+
+  .phone-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 17px;
+    color: #777c84;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+  }
+
+
+  .phone-label span {
+    color: #a71930;
+  }
+
+
+  /* FEATURE VISUAL */
+
+
+  .feature-visual {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .feature-visual-image {
+    position: absolute;
+    inset: 0;
+  }
+
+
+  .feature-visual-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+
+  .feature-visual-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(8,9,11,0.98),
+        rgba(8,9,11,0.72) 46%,
+        rgba(8,9,11,0.35)
+      );
+  }
+
+
+  .feature-visual-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    width: 100%;
+    margin: auto;
+    padding: 100px 28px;
+  }
+
+
+  .feature-visual-content h2 {
+    max-width: 680px;
+    margin-bottom: 28px;
+  }
+
+
+  .feature-visual-content p {
+    max-width: 530px;
+    color: #a2a7ae;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+
+  /* BETA */
 
 
   .beta {
+    max-width: 1280px;
+    margin: auto;
+    padding: 120px 28px;
     border-bottom: 1px solid #24262a;
+  }
+
+
+  .beta-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 80px;
+    align-items: end;
+  }
+
+
+  .beta-heading p {
+    color: #92979f;
+    font-size: 16px;
+    line-height: 1.8;
   }
 
 
   .beta-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 60px;
+    margin-top: 65px;
     border-top: 1px solid #24262a;
     border-left: 1px solid #24262a;
   }
 
 
   .beta-card {
-    padding: 34px;
-    min-height: 210px;
+    min-height: 250px;
+    padding: 30px;
     border-right: 1px solid #24262a;
     border-bottom: 1px solid #24262a;
   }
@@ -571,121 +1284,205 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
   .number {
     color: #a71930;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
   }
 
 
   h3 {
-    margin: 28px 0 14px;
-    font-size: 15px;
-    letter-spacing: 0.12em;
+    margin: 30px 0 13px;
+    color: #f1f2f4;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
   }
 
 
   .beta-card p,
-  article p,
-  .requirement-note p {
-    color: #8b9098;
-    line-height: 1.7;
+  article p {
+    color: #858a92;
     font-size: 14px;
+    line-height: 1.75;
   }
 
 
   .requirements {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.8fr;
     gap: 80px;
-    margin-top: 70px;
+    margin-top: 75px;
     padding-top: 50px;
     border-top: 1px solid #24262a;
   }
 
 
   ul {
-    margin: 25px 0 0;
+    margin: 24px 0 0;
     padding: 0;
     list-style: none;
   }
 
 
   li {
-    padding: 13px 0;
+    padding: 14px 0;
     border-bottom: 1px solid #24262a;
     color: #b8bdc5;
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
   li::before {
     content: "—";
-    margin-right: 12px;
+    margin-right: 13px;
     color: #a71930;
   }
 
 
   .requirement-note {
-    padding: 30px;
-    border: 1px solid #24262a;
     align-self: start;
+    padding: 30px;
+    border: 1px solid #34373d;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(167,25,48,0.06),
+        transparent 55%
+      ),
+      #0c0e11;
+  }
+
+
+  .note-top {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #a71930;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    margin-bottom: 28px;
   }
 
 
   .note-title {
-    color: #f3f4f6;
-    font-size: 12px;
-    font-weight: 800;
+    color: #f1f2f4;
+    font-size: 13px;
+    font-weight: 900;
     letter-spacing: 0.15em;
   }
 
 
+  .requirement-note p {
+    margin: 15px 0 25px;
+    color: #858a92;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+
+  .requirement-note a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #c9cdd3;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+  }
+
+
+  .requirement-note a span {
+    color: #a71930;
+    font-size: 18px;
+  }
+
+
+  /* FEATURES */
+
+
   .features {
+    max-width: 1280px;
+    margin: auto;
+    padding: 120px 28px;
     border-bottom: 1px solid #24262a;
+  }
+
+
+  .features-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 80px;
+    align-items: end;
+  }
+
+
+  .features-heading p {
+    margin-bottom: 7px;
+    color: #858a92;
+    font-size: 15px;
+    line-height: 1.8;
   }
 
 
   .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 60px;
+    margin-top: 65px;
     border-top: 1px solid #24262a;
     border-left: 1px solid #24262a;
   }
 
 
-  article {
-    padding: 34px;
-    min-height: 220px;
+  .feature-grid article {
+    min-height: 235px;
+    padding: 30px;
     border-right: 1px solid #24262a;
     border-bottom: 1px solid #24262a;
   }
 
 
+  /* FEEDBACK */
+
+
   .feedback {
+    max-width: 1280px;
+    margin: auto;
+    padding: 120px 28px;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 100px;
     border-bottom: 1px solid #24262a;
   }
 
 
+  .feedback-intro p {
+    max-width: 440px;
+    color: #858a92;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+
   form {
-    max-width: 800px;
-    margin-top: 55px;
+    max-width: 760px;
   }
 
 
   label {
     display: block;
-    margin-bottom: 28px;
-    color: #c7cbd1;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    margin-bottom: 25px;
+    color: #c8ccd2;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
 
   label span {
-    color: #666b73;
+    color: #5f646b;
     font-weight: 400;
   }
 
@@ -695,20 +1492,32 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     display: block;
     width: 100%;
     margin-top: 10px;
-    padding: 15px;
-    box-sizing: border-box;
+    padding: 14px 15px;
     border: 1px solid #2d3035;
+    border-radius: 0;
+    outline: none;
     background: #0d0f12;
     color: #e5e7eb;
     font-family: inherit;
-    font-size: 14px;
-    outline: none;
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+  }
+
+
+  input {
+    min-height: 48px;
   }
 
 
   textarea {
-    min-height: 130px;
+    min-height: 115px;
     resize: vertical;
+  }
+
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #4f535a;
   }
 
 
@@ -719,70 +1528,292 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 
 
   form .primary {
-    margin-top: 5px;
+    margin-top: 3px;
   }
 
 
+  /* CTA */
+
+
   .cta {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .cta-inner {
+    max-width: 1280px;
+    margin: auto;
+    padding: 130px 28px;
     text-align: center;
   }
 
 
-  .cta .primary {
-    margin-top: 20px;
+  .cta-inner h2 {
+    margin-bottom: 25px;
   }
 
 
+  .cta-inner p {
+    max-width: 570px;
+    margin: 0 auto 32px;
+    color: #858a92;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+
+  /* FOOTER */
+
+
   footer {
-    border-top: 1px solid #24262a;
+    max-width: 1280px;
+    margin: auto;
     padding: 30px 28px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 25px;
     flex-wrap: wrap;
-    color: #666b73;
+    color: #555a61;
+  }
+
+
+  .footer-brand {
+    color: #8b9097;
     font-size: 11px;
-    letter-spacing: 0.08em;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+
+  .footer-links {
+    display: flex;
+    gap: 25px;
+  }
+
+
+  .footer-links a {
+    font-size: 9px;
   }
 
 
   .copyright {
-    color: #555960;
+    color: #454950;
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
 
 
-  @media (max-width: 800px) {
+  /* RESPONSIVE */
+
+
+  @media (max-width: 950px) {
+
+    .intro {
+      grid-template-columns: 50px 1fr;
+    }
+
+
+    .intro-specs {
+      grid-column: 2;
+    }
+
+
+    .screens-header,
+    .beta-heading,
+    .features-heading {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+
+    .phone-showcase {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;
+    }
+
+
+    .phone:nth-child(even) {
+      transform: translateY(0);
+    }
+
+
+    .requirements,
+    .feedback {
+      grid-template-columns: 1fr;
+      gap: 55px;
+    }
+
+
+    .feature-grid,
+    .beta-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+
+
+  @media (max-width: 650px) {
 
     nav {
       display: none;
     }
 
+
+    .nav {
+      padding: 18px 20px;
+    }
+
+
     .hero {
-      min-height: 600px;
+      min-height: 700px;
     }
 
-    .beta-grid,
-    .feature-grid,
-    .requirements {
-      grid-template-columns: 1fr;
+
+    .hero-content {
+      padding: 80px 20px;
     }
 
-    .requirements {
-      gap: 40px;
+
+    .hero-image {
+      background-position: 64% center;
     }
 
+
+    .hero-grid {
+      opacity: 0.08;
+      background-size: 42px 42px;
+    }
+
+
+    .hero-description {
+      font-size: 14px;
+    }
+
+
+    .hero-corner {
+      display: none;
+    }
+
+
+    .intro,
+    .screens,
     .beta,
     .features,
     .feedback,
-    .cta {
+    .feature-visual-content,
+    .cta-inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+
+    .intro {
+      display: block;
       padding-top: 85px;
       padding-bottom: 85px;
     }
 
+
+    .intro-mark {
+      margin-bottom: 40px;
+    }
+
+
+    .intro-specs {
+      margin-top: 45px;
+    }
+
+
+    .screens,
+    .beta,
+    .features,
+    .feedback {
+      padding-top: 85px;
+      padding-bottom: 85px;
+    }
+
+
+    .phone-showcase {
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 50px;
+    }
+
+
+    .phone-frame {
+      padding: 5px;
+      border-radius: 17px;
+    }
+
+
+    .phone-frame img {
+      border-radius: 13px;
+    }
+
+
+    .phone-frame::before {
+      top: 8px;
+      height: 11px;
+    }
+
+
+    .phone-label {
+      font-size: 7px;
+      gap: 6px;
+    }
+
+
+    .feature-visual {
+      min-height: 560px;
+    }
+
+
+    .feature-visual-content {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+
+    .feature-visual-overlay {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(8,9,11,0.97),
+          rgba(8,9,11,0.72)
+        );
+    }
+
+
+    .beta-grid,
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+
+
+    .beta-card,
+    .feature-grid article {
+      min-height: auto;
+    }
+
+
+    .requirements {
+      margin-top: 55px;
+      padding-top: 40px;
+    }
+
+
     footer {
-      flex-direction: column;
+      padding: 25px 20px;
       align-items: flex-start;
+      flex-direction: column;
+    }
+
+
+    .footer-links {
+      flex-wrap: wrap;
     }
 
   }
