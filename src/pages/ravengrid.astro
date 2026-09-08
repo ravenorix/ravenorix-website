@@ -3,8 +3,8 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
 ---
 
 <RavenGridLayout
-  title="RavenGrid | UAS Flight Planning"
-  description="RavenGrid is a field-focused UAS flight planning and conditions reference tool."
+  title="RavenGrid | Closed Beta"
+  description="RavenGrid is a field-focused UAS flight planning and conditions reference tool. Join the RavenGrid closed beta."
 >
 
   <header>
@@ -12,18 +12,28 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
       <div class="brand">RAVEN<span>GRID</span></div>
 
       <nav>
+        <a href="#beta">Beta</a>
         <a href="#features">Features</a>
-        <a href="#field">Built for the Field</a>
+        <a href="#feedback">Feedback</a>
         <a href="/privacy">Privacy</a>
       </nav>
     </div>
   </header>
 
+
   <main>
+
+    <!-- HERO -->
 
     <section class="hero">
       <div class="hero-content">
-        <div class="eyebrow">UAS FLIGHT PLANNING / FIELD REFERENCE</div>
+
+        <div class="status">
+          <span class="status-dot"></span>
+          CLOSED BETA / ANDROID
+        </div>
+
+        <div class="eyebrow">RAVENØRIX / UAS FLIGHT SYSTEM</div>
 
         <h1>
           CHECK CONDITIONS.<br />
@@ -34,43 +44,114 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
         <p>
           RavenGrid brings weather, aviation conditions, GNSS,
           airspace information, and flight planning into one
-          focused field reference.
+          focused field reference for UAS pilots.
         </p>
 
         <div class="actions">
-          <a class="primary" href="#">
-            GET RAVENGRID
-          </a>
+          <a
+            class="primary"
+            href="https://play.google.com/apps/testing/com.ravenorix.ravengrid"
+            >       
+            JOIN THE BETA
+            </a>
 
-          <a class="secondary" href="#features">
-            EXPLORE FEATURES
+          <a class="secondary" href="#beta">
+            LEARN MORE
           </a>
         </div>
+
       </div>
     </section>
 
 
-    <section class="intro">
-      <div class="section-label">01 / THE CONCEPT</div>
+    <!-- BETA -->
+
+    <section id="beta" class="beta">
+
+      <div class="section-label">01 / CLOSED BETA</div>
 
       <h2>
-        LESS BLOAT.<br />
-        <span>MORE CLARITY.</span>
+        HELP BUILD<br />
+        <span>RAVENGRID.</span>
       </h2>
 
-      <p>
-        Preflight information shouldn't take a dozen screens to
-        understand. RavenGrid is designed around a simple idea:
-        give UAS pilots the information that matters most,
-        quickly and clearly.
+      <p class="lead">
+        RavenGrid is currently in closed beta ahead of its
+        public launch on Google Play. We're looking for Android
+        users, UAS pilots, and aviation enthusiasts to put the
+        app through real-world use and help identify anything
+        that needs improvement.
       </p>
+
+      <div class="beta-grid">
+
+        <div class="beta-card">
+          <div class="number">01</div>
+          <h3>JOIN</h3>
+          <p>
+            Join the RavenGrid closed test through Google Play
+            using the beta enrollment link.
+          </p>
+        </div>
+
+        <div class="beta-card">
+          <div class="number">02</div>
+          <h3>TEST</h3>
+          <p>
+            Use RavenGrid for weather, mapping, positioning,
+            aviation information, and flight planning.
+          </p>
+        </div>
+
+        <div class="beta-card">
+          <div class="number">03</div>
+          <h3>REPORT</h3>
+          <p>
+            Tell us what works, what doesn't, and what you
+            think would make RavenGrid better.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="requirements">
+
+        <div>
+          <div class="section-label">BETA REQUIREMENTS</div>
+
+          <ul>
+            <li>Android device</li>
+            <li>Google account</li>
+            <li>Install RavenGrid through Google Play</li>
+            <li>Remain enrolled in the beta for 14 days</li>
+            <li>Use the app and provide honest feedback</li>
+          </ul>
+        </div>
+
+        <div class="requirement-note">
+          <div class="note-title">NO COST TO PARTICIPATE</div>
+
+          <p>
+            RavenGrid is currently being tested ahead of its
+            public launch. Beta participation is free.
+          </p>
+        </div>
+
+      </div>
+
     </section>
 
 
-    <section id="features" class="features">
-      <div class="section-label">02 / CAPABILITIES</div>
+    <!-- FEATURES -->
 
-      <h2>FIELD INFORMATION.<br /><span>ONE WORKFLOW.</span></h2>
+    <section id="features" class="features">
+
+      <div class="section-label">02 / WHAT YOU'LL TEST</div>
+
+      <h2>
+        FIELD INFORMATION.<br />
+        <span>ONE WORKFLOW.</span>
+      </h2>
 
       <div class="feature-grid">
 
@@ -123,54 +204,125 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
           <div class="number">06</div>
           <h3>GEOMAGNETIC</h3>
           <p>
-            Kp index information to help provide additional
+            Kp index information to provide additional
             awareness of current geomagnetic conditions.
           </p>
         </article>
 
       </div>
+
     </section>
 
 
-    <section id="field" class="field">
-      <div class="field-content">
-        <div class="section-label">03 / BUILT FOR THE FIELD</div>
+    <!-- FEEDBACK -->
 
-        <h2>
-          KNOW WHAT'S<br />
-          <span>HAPPENING AROUND YOU.</span>
-        </h2>
+    <section id="feedback" class="feedback">
 
-        <p>
-          RavenGrid is built for pilots who need a fast,
-          focused reference before putting an aircraft into
-          the air.
-        </p>
+      <div class="section-label">03 / BETA FEEDBACK</div>
 
-        <p>
-          Dark. Tactical. Purpose-built.
-        </p>
-      </div>
+      <h2>
+        TELL US WHAT<br />
+        <span>YOU FIND.</span>
+      </h2>
+
+      <p class="lead">
+        Your feedback during the beta directly helps shape the
+        final RavenGrid release.
+      </p>
+
+      <form
+        action="https://formspree.io/f/mppzokaj"
+        method="POST"
+      >
+
+        <label>
+          What did you test?
+          <textarea
+            name="tested"
+            required
+            placeholder="Weather, maps, GNSS, TFRs, NOTAMs, etc."
+          ></textarea>
+        </label>
+
+        <label>
+          What worked well?
+          <textarea
+            name="worked"
+            placeholder="Tell us what you liked."
+          ></textarea>
+        </label>
+
+        <label>
+          What didn't work?
+          <textarea
+            name="problems"
+            placeholder="Describe anything broken, confusing, or unexpected."
+          ></textarea>
+        </label>
+
+        <label>
+          What would you change?
+          <textarea
+            name="changes"
+            placeholder="Features, layout, information, usability, etc."
+          ></textarea>
+        </label>
+
+        <label>
+          Device / model <span>(optional)</span>
+          <input
+            type="text"
+            name="device"
+            placeholder="Example: Pixel 9 Pro"
+          />
+        </label>
+
+        <label>
+          Additional comments <span>(optional)</span>
+          <textarea
+            name="comments"
+            placeholder="Anything else you'd like us to know."
+          ></textarea>
+        </label>
+
+        <button type="submit" class="primary">
+          SUBMIT FEEDBACK
+        </button>
+
+      </form>
+
     </section>
 
+
+    <!-- FINAL CTA -->
 
     <section class="cta">
+
       <div class="section-label">04 / RAVENGRID</div>
 
-      <h2>READY TO<br /><span>FLY INFORMED?</span></h2>
+      <h2>
+        READY TO<br />
+        <span>FLY INFORMED?</span>
+      </h2>
 
-      <a class="primary" href="#">
-        GET RAVENGRID
+      <a
+        class="primary"
+        href="PASTE-YOUR-GOOGLE-PLAY-BETA-LINK-HERE"
+      >
+        JOIN THE BETA
       </a>
+
     </section>
 
   </main>
 
 
   <footer>
+
     <div>RAVEN<span>GRID</span></div>
 
     <div class="footer-links">
+      <a href="/">RavenGrid</a>
       <a href="/privacy">Privacy Policy</a>
       <a href="https://ravenorix.com">RavenØrix</a>
     </div>
@@ -178,21 +330,26 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     <div class="copyright">
       © 2026 RavenØrix
     </div>
+
   </footer>
+
 
 </RavenGridLayout>
 
 
 <style>
+
   :global(body) {
     background: #08090b;
     color: #e5e7eb;
   }
 
+
   header {
     border-bottom: 1px solid #24262a;
-    background: rgba(8, 9, 11, 0.96);
+    background: rgba(8, 9, 11, 0.97);
   }
+
 
   .nav {
     max-width: 1200px;
@@ -203,12 +360,13 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     align-items: center;
   }
 
-  .brand,
-  footer > div:first-child {
+
+  .brand {
     font-weight: 900;
     letter-spacing: 0.12em;
     color: #f3f4f6;
   }
+
 
   .brand span,
   footer span,
@@ -217,11 +375,13 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     color: #a71930;
   }
 
+
   nav,
   .footer-links {
     display: flex;
     gap: 28px;
   }
+
 
   nav a,
   .footer-links a {
@@ -232,18 +392,25 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     text-transform: uppercase;
   }
 
+
   nav a:hover,
   .footer-links a:hover {
     color: #e5e7eb;
   }
+
 
   .hero {
     min-height: 680px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #24262a;
+
     background:
-      linear-gradient(90deg, rgba(8,9,11,0.98), rgba(8,9,11,0.72)),
+      linear-gradient(
+        90deg,
+        rgba(8,9,11,0.99),
+        rgba(8,9,11,0.76)
+      ),
       repeating-linear-gradient(
         0deg,
         transparent,
@@ -252,10 +419,12 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
       );
   }
 
+
   .hero-content,
   .intro,
   .features,
-  .field-content,
+  .beta,
+  .feedback,
   .cta {
     max-width: 1200px;
     margin: auto;
@@ -263,9 +432,32 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     padding-right: 28px;
   }
 
+
   .hero-content {
     width: 100%;
   }
+
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 25px;
+    color: #a71930;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+  }
+
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a71930;
+    box-shadow: 0 0 12px rgba(167,25,48,0.7);
+  }
+
 
   .eyebrow,
   .section-label {
@@ -275,6 +467,7 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     letter-spacing: 0.2em;
   }
 
+
   h1 {
     margin: 22px 0;
     font-size: clamp(48px, 8vw, 92px);
@@ -283,19 +476,24 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     font-weight: 900;
   }
 
+
   h2 {
+    margin-top: 20px;
     font-size: clamp(38px, 6vw, 68px);
     line-height: 0.98;
     letter-spacing: -0.035em;
     font-weight: 900;
   }
 
-  .hero p {
-    max-width: 620px;
+
+  .hero p,
+  .lead {
+    max-width: 700px;
     color: #9ca1a9;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.75;
   }
+
 
   .actions {
     display: flex;
@@ -303,6 +501,7 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     margin-top: 34px;
     flex-wrap: wrap;
   }
+
 
   .primary,
   .secondary {
@@ -312,42 +511,139 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.16em;
+    border: 0;
+    cursor: pointer;
   }
+
 
   .primary {
     background: #a71930;
     color: white;
   }
 
+
+  .primary:hover {
+    background: #c0203b;
+  }
+
+
   .secondary {
     border: 1px solid #3a3d42;
     color: #d1d5db;
   }
 
-  .intro,
+
+  .secondary:hover {
+    border-color: #666b73;
+  }
+
+
+  .beta,
   .features,
-  .field,
+  .feedback,
   .cta {
     padding-top: 120px;
     padding-bottom: 120px;
   }
 
-  .intro {
-    max-width: 900px;
-  }
 
-  .intro p,
-  .field p {
-    max-width: 700px;
-    color: #9ca1a9;
-    font-size: 18px;
-    line-height: 1.8;
-  }
-
-  .features {
-    border-top: 1px solid #24262a;
+  .beta {
     border-bottom: 1px solid #24262a;
   }
+
+
+  .beta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
+    border-top: 1px solid #24262a;
+    border-left: 1px solid #24262a;
+  }
+
+
+  .beta-card {
+    padding: 34px;
+    min-height: 210px;
+    border-right: 1px solid #24262a;
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .number {
+    color: #a71930;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+
+  h3 {
+    margin: 28px 0 14px;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+  }
+
+
+  .beta-card p,
+  article p,
+  .requirement-note p {
+    color: #8b9098;
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+
+  .requirements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 70px;
+    padding-top: 50px;
+    border-top: 1px solid #24262a;
+  }
+
+
+  ul {
+    margin: 25px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+
+  li {
+    padding: 13px 0;
+    border-bottom: 1px solid #24262a;
+    color: #b8bdc5;
+    font-size: 14px;
+  }
+
+
+  li::before {
+    content: "—";
+    margin-right: 12px;
+    color: #a71930;
+  }
+
+
+  .requirement-note {
+    padding: 30px;
+    border: 1px solid #24262a;
+    align-self: start;
+  }
+
+
+  .note-title {
+    color: #f3f4f6;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+  }
+
+
+  .features {
+    border-bottom: 1px solid #24262a;
+  }
+
 
   .feature-grid {
     display: grid;
@@ -357,6 +653,7 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     border-left: 1px solid #24262a;
   }
 
+
   article {
     padding: 34px;
     min-height: 220px;
@@ -364,41 +661,77 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     border-bottom: 1px solid #24262a;
   }
 
-  .number {
-    color: #a71930;
+
+  .feedback {
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  form {
+    max-width: 800px;
+    margin-top: 55px;
+  }
+
+
+  label {
+    display: block;
+    margin-bottom: 28px;
+    color: #c7cbd1;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
-  h3 {
-    margin: 28px 0 14px;
-    font-size: 15px;
-    letter-spacing: 0.12em;
+
+  label span {
+    color: #666b73;
+    font-weight: 400;
   }
 
-  article p {
-    color: #8b9098;
-    line-height: 1.7;
-    font-size: 14px;
-  }
 
-  .field {
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #2d3035;
     background: #0d0f12;
+    color: #e5e7eb;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
   }
 
-  .field-content {
-    max-width: 900px;
+
+  textarea {
+    min-height: 130px;
+    resize: vertical;
   }
+
+
+  input:focus,
+  textarea:focus {
+    border-color: #a71930;
+  }
+
+
+  form .primary {
+    margin-top: 5px;
+  }
+
 
   .cta {
     text-align: center;
-    border-top: 1px solid #24262a;
   }
+
 
   .cta .primary {
     margin-top: 20px;
   }
+
 
   footer {
     border-top: 1px solid #24262a;
@@ -413,11 +746,14 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
     letter-spacing: 0.08em;
   }
 
+
   .copyright {
     color: #555960;
   }
 
+
   @media (max-width: 800px) {
+
     nav {
       display: none;
     }
@@ -426,13 +762,19 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
       min-height: 600px;
     }
 
-    .feature-grid {
+    .beta-grid,
+    .feature-grid,
+    .requirements {
       grid-template-columns: 1fr;
     }
 
-    .intro,
+    .requirements {
+      gap: 40px;
+    }
+
+    .beta,
     .features,
-    .field,
+    .feedback,
     .cta {
       padding-top: 85px;
       padding-bottom: 85px;
@@ -442,5 +784,7 @@ import RavenGridLayout from "../layouts/RavenGridLayout.astro";
       flex-direction: column;
       align-items: flex-start;
     }
+
   }
+
 </style>
