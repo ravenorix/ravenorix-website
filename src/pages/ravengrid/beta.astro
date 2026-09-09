@@ -1,16 +1,19 @@
 ---
 import RavenGridLayout from "../../layouts/RavenGridLayout.astro";
 
-const playLink =
+const groupLink =
+  "https://groups.google.com/u/2/g/ravengrid";
+
+const optInLink =
   "https://play.google.com/apps/testing/com.ravenorix.ravengrid";
 
-const formspreeEndpoint =
-  "https://formspree.io/f/mqpkgwer";
+const installLink =
+  "https://play.google.com/store/apps/details?id=com.ravenorix.ravengrid";
 ---
 
 <RavenGridLayout
-  title="RavenGrid | Request Beta Access"
-  description="Request access to the RavenGrid closed beta for Android."
+  title="RavenGrid | Closed Beta"
+  description="Join the RavenGrid closed beta for Android."
 >
 
   <header>
@@ -22,7 +25,7 @@ const formspreeEndpoint =
 
       <nav>
         <a href="/ravengrid">RavenGrid</a>
-        <a href="#request">Request Access</a>
+        <a href="#steps">Join Beta</a>
         <a href="#install">Install</a>
         <a href="/ravengrid/privacy">Privacy</a>
       </nav>
@@ -51,78 +54,70 @@ const formspreeEndpoint =
         </div>
 
         <h1>
-          REQUEST<br />
-          <span>ACCESS.</span>
+          JOIN THE<br />
+          <span>BETA.</span>
         </h1>
 
         <div class="hero-divider"></div>
 
         <p class="hero-tagline">
-          HELP BUILD<br />
-          <strong>RAVENGRID.</strong>
+          CHECK CONDITIONS.<br />
+          <strong>MAKE A DECISION. FLY.</strong>
         </p>
 
         <p class="hero-description">
-          RavenGrid is currently in closed beta. Submit the
-          Google account you use with Google Play and we'll
-          add you to the tester list.
+          RavenGrid is currently in closed beta. Joining takes
+          three steps: join the RavenGrid group, opt into the
+          Google Play test, then install the app.
         </p>
+
+        <a href="#steps" class="primary">
+          START BETA ACCESS
+        </a>
 
       </div>
 
       <div class="hero-corner">
         <span>RG / BETA</span>
-        <span>ACCESS REQUEST</span>
+        <span>ANDROID</span>
       </div>
 
     </section>
 
 
-    <!-- REQUEST ACCESS -->
+    <!-- BETA STEPS -->
 
-    <section id="request" class="request">
+    <section id="steps" class="steps">
 
-      <div class="request-intro">
+      <div class="steps-intro">
 
         <div class="section-label">
-          01 / REQUEST ACCESS
+          BETA ACCESS
         </div>
 
         <h2>
-          GET ON<br />
-          <span>THE LIST.</span>
+          THREE STEPS.<br />
+          <span>THAT'S IT.</span>
         </h2>
 
         <p>
-          Google Play requires closed-beta testers to be
-          added to the approved tester list before they can
-          install RavenGrid.
+          RavenGrid uses a Google Group to manage closed-beta
+          access. Follow the steps in order using the same
+          Google account throughout the process.
         </p>
 
-        <p>
-          Submit the Google account you use with Google Play.
-          Once your account has been added, you can return to
-          this page and use the installation link.
-        </p>
+        <div class="account-note">
 
-        <div class="process">
+          <span class="status-dot"></span>
 
           <div>
-            <span>01</span>
-            <strong>SUBMIT</strong>
-            <p>Send us your Google Play account email.</p>
-          </div>
+            <strong>USE ONE GOOGLE ACCOUNT</strong>
 
-          <div>
-            <span>02</span>
-            <strong>APPROVE</strong>
-            <p>We'll add your account to the beta tester list.</p>
-          </div>
-
-          <div>
-            <span>03</span>
-            <strong>INSTALL</strong>
-            <p>Use the Google Play link to enroll and install.</p>
+            <p>
+              Make sure the Google account you use to join the
+              group is the same account you use for Google Play
+              testing and installation.
+            </p>
           </div>
 
         </div>
@@ -130,108 +125,125 @@ const formspreeEndpoint =
       </div>
 
 
-      <form
-        action={formspreeEndpoint}
-        method="POST"
-      >
+      <div class="step-list">
 
-        <input
-          type="hidden"
-          name="_subject"
-          value="RavenGrid Beta Access Request"
-        />
+        <!-- STEP 01 -->
 
-        <label>
-          Name
-          <span>(optional)</span>
+        <article class="step">
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-          />
+          <div class="step-number">
+            01
+          </div>
 
-        </label>
+          <div class="step-content">
 
+            <div class="step-label">
+              JOIN THE GROUP
+            </div>
 
-        <label>
-          Google Play email
-          <span>required</span>
+            <h3>
+              GET ON<br />
+              <span>THE ROSTER.</span>
+            </h3>
 
-          <input
-            type="email"
-            name="google_play_email"
-            required
-            placeholder="The Google account you use with Google Play"
-          />
+            <p>
+              Join the RavenGrid Google Group. The group is open
+              for anyone who wants to participate in the closed
+              beta.
+            </p>
 
-        </label>
+            <a
+              class="primary"
+              href={groupLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JOIN RAVENGRID GROUP
+            </a>
 
+          </div>
 
-        <label>
-          UAS experience
-
-          <select name="uas_experience">
-            <option value="">Select one</option>
-            <option value="Commercial pilot">
-              Commercial pilot
-            </option>
-            <option value="Recreational pilot">
-              Recreational pilot
-            </option>
-            <option value="Aviation professional">
-              Aviation professional
-            </option>
-            <option value="Drone enthusiast">
-              Drone enthusiast
-            </option>
-            <option value="Other">
-              Other
-            </option>
-          </select>
-
-        </label>
+        </article>
 
 
-        <label>
-          What would you like to test?
+        <!-- STEP 02 -->
 
-          <textarea
-            name="testing_focus"
-            placeholder="Weather, flight planning, maps, GNSS, aviation information, or everything."
-          ></textarea>
+        <article class="step">
 
-        </label>
+          <div class="step-number">
+            02
+          </div>
+
+          <div class="step-content">
+
+            <div class="step-label">
+              OPT INTO THE TEST
+            </div>
+
+            <h3>
+              ENTER THE<br />
+              <span>TEST.</span>
+            </h3>
+
+            <p>
+              After joining the group, open the Google Play
+              closed-test enrollment page and opt into the
+              RavenGrid test.
+            </p>
+
+            <a
+              class="primary"
+              href={optInLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JOIN CLOSED TEST
+            </a>
+
+          </div>
+
+        </article>
 
 
-        <label>
-          Additional comments
-          <span>(optional)</span>
+        <!-- STEP 03 -->
 
-          <textarea
-            name="comments"
-            placeholder="Tell us anything else you'd like us to know."
-          ></textarea>
+        <article class="step">
 
-        </label>
+          <div class="step-number">
+            03
+          </div>
 
+          <div class="step-content">
 
-        <div class="form-note">
-          <span class="status-dot"></span>
+            <div class="step-label">
+              INSTALL RAVENGRID
+            </div>
 
-          <p>
-            Submitting this form does not immediately grant
-            Google Play access. Your account must first be
-            added to the RavenGrid closed-test tester list.
-          </p>
-        </div>
+            <h3>
+              READY TO<br />
+              <span>FLY.</span>
+            </h3>
 
+            <p>
+              Once you've opted into the test, open the RavenGrid
+              Google Play listing and install the app on your
+              Android device.
+            </p>
 
-        <button type="submit" class="primary">
-          REQUEST BETA ACCESS
-        </button>
+            <a
+              class="primary"
+              href={installLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              INSTALL RAVENGRID
+            </a>
 
-      </form>
+          </div>
+
+        </article>
+
+      </div>
 
     </section>
 
@@ -243,7 +255,7 @@ const formspreeEndpoint =
       <div class="install-inner">
 
         <div class="section-label">
-          02 / ALREADY APPROVED?
+          FINAL CHECK
         </div>
 
         <h2>
@@ -252,14 +264,14 @@ const formspreeEndpoint =
         </h2>
 
         <p>
-          If you've already been added to the RavenGrid
-          closed-test tester list, use the Google Play link
-          below to enroll and install the app.
+          If you've completed the group and test enrollment
+          steps, you're ready to install RavenGrid from Google
+          Play.
         </p>
 
         <a
           class="primary"
-          href={playLink}
+          href={installLink}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -271,9 +283,10 @@ const formspreeEndpoint =
           <span class="status-dot"></span>
 
           <p>
-            If Google Play says you're not eligible for the
-            test, make sure you're signed into Google Play
-            with the same account you submitted above.
+            If Google Play says you're not eligible for the test,
+            verify that you joined the RavenGrid group and that
+            you're signed into Google Play with the same Google
+            account.
           </p>
 
         </div>
@@ -283,20 +296,27 @@ const formspreeEndpoint =
     </section>
 
 
-    <!-- FOOTER CTA -->
+    <!-- BETA FEEDBACK -->
 
-    <section class="closing">
+    <section class="feedback">
 
-      <div class="closing-inner">
+      <div class="feedback-inner">
 
         <div class="section-label">
-          RAVENØRIX / RAVENGRID
+          RAVENGRID / CLOSED BETA
         </div>
 
         <h2>
-          CHECK CONDITIONS.<br />
-          <span>FLY INFORMED.</span>
+          HELP US<br />
+          <span>BUILD IT.</span>
         </h2>
+
+        <p>
+          RavenGrid is being built for pilots who want fast,
+          clear flight-condition information without unnecessary
+          clutter. During the beta, your feedback helps shape
+          what comes next.
+        </p>
 
         <a href="/ravengrid" class="secondary">
           RETURN TO RAVENGRID
@@ -318,6 +338,7 @@ const formspreeEndpoint =
     <div class="footer-links">
       <a href="/ravengrid">RavenGrid</a>
       <a href="/ravengrid/privacy">Privacy Policy</a>
+
       <a
         href="https://ravenorix.com"
         target="_blank"
@@ -384,7 +405,8 @@ const formspreeEndpoint =
   .brand span,
   footer span,
   h1 span,
-  h2 span {
+  h2 span,
+  h3 span {
     color: #a71930;
   }
 
@@ -418,11 +440,12 @@ const formspreeEndpoint =
 
   .hero {
     position: relative;
-    min-height: 650px;
+    min-height: 700px;
     overflow: hidden;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #24262a;
+
     background:
       radial-gradient(
         circle at 80% 30%,
@@ -437,6 +460,7 @@ const formspreeEndpoint =
     content: "";
     position: absolute;
     inset: 0;
+
     background:
       linear-gradient(
         90deg,
@@ -444,6 +468,7 @@ const formspreeEndpoint =
         transparent 55%,
         rgba(167,25,48,0.04) 100%
       );
+
     pointer-events: none;
   }
 
@@ -477,9 +502,11 @@ const formspreeEndpoint =
   .hero-content {
     position: relative;
     z-index: 2;
+
     width: 100%;
     max-width: 1280px;
     margin: auto;
+
     padding: 110px 28px;
   }
 
@@ -488,10 +515,13 @@ const formspreeEndpoint =
     display: inline-flex;
     align-items: center;
     gap: 9px;
+
     color: #c0203b;
+
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.18em;
+
     margin-bottom: 24px;
   }
 
@@ -500,15 +530,20 @@ const formspreeEndpoint =
     width: 7px;
     height: 7px;
     flex: 0 0 auto;
+
     border-radius: 50%;
+
     background: #a71930;
-    box-shadow: 0 0 14px rgba(167, 25, 48, 0.8);
+
+    box-shadow:
+      0 0 14px rgba(167, 25, 48, 0.8);
   }
 
 
   .eyebrow,
   .section-label {
     color: #a71930;
+
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.2em;
@@ -517,9 +552,12 @@ const formspreeEndpoint =
 
   h1 {
     margin: 22px 0 0;
+
     font-size: clamp(58px, 9vw, 112px);
     line-height: 0.86;
+
     letter-spacing: -0.055em;
+
     font-weight: 900;
   }
 
@@ -527,16 +565,21 @@ const formspreeEndpoint =
   .hero-divider {
     width: 90px;
     height: 2px;
+
     margin: 34px 0 25px;
+
     background: #a71930;
   }
 
 
   .hero-tagline {
     margin: 0;
+
     color: #f3f4f6;
+
     font-size: clamp(22px, 3vw, 32px);
     line-height: 1.1;
+
     font-weight: 400;
     letter-spacing: 0.03em;
   }
@@ -548,9 +591,12 @@ const formspreeEndpoint =
 
 
   .hero-description {
-    max-width: 590px;
-    margin: 24px 0 0;
+    max-width: 600px;
+
+    margin: 24px 0 30px;
+
     color: #a3a8b0;
+
     font-size: 16px;
     line-height: 1.75;
   }
@@ -559,174 +605,22 @@ const formspreeEndpoint =
   .hero-corner {
     position: absolute;
     z-index: 2;
+
     right: 28px;
     bottom: 28px;
+
     display: flex;
     gap: 22px;
+
     color: #62666d;
+
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.15em;
   }
 
 
-  /* REQUEST */
-
-
-  .request {
-    max-width: 1280px;
-    margin: auto;
-    padding: 120px 28px;
-    display: grid;
-    grid-template-columns: 0.8fr 1fr;
-    gap: 100px;
-    border-bottom: 1px solid #24262a;
-  }
-
-
-  .request-intro h2 {
-    margin-bottom: 28px;
-  }
-
-
-  .request-intro > p {
-    max-width: 520px;
-    color: #92979f;
-    font-size: 15px;
-    line-height: 1.8;
-  }
-
-
-  .process {
-    margin-top: 55px;
-    border-top: 1px solid #24262a;
-  }
-
-
-  .process > div {
-    padding: 18px 0;
-    border-bottom: 1px solid #24262a;
-  }
-
-
-  .process span {
-    display: block;
-    margin-bottom: 9px;
-    color: #a71930;
-    font-size: 9px;
-    font-weight: 900;
-    letter-spacing: 0.15em;
-  }
-
-
-  .process strong {
-    color: #d7dae0;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.14em;
-  }
-
-
-  .process p {
-    margin: 7px 0 0;
-    color: #686d75;
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-
-  form {
-    max-width: 760px;
-  }
-
-
-  label {
-    display: block;
-    margin-bottom: 25px;
-    color: #c8ccd2;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-
-  label span {
-    color: #5f646b;
-    font-weight: 400;
-  }
-
-
-  input,
-  textarea,
-  select {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 14px 15px;
-    border: 1px solid #2d3035;
-    border-radius: 0;
-    outline: none;
-    background: #0d0f12;
-    color: #e5e7eb;
-    font-family: inherit;
-    font-size: 13px;
-    transition: border-color 0.2s ease;
-  }
-
-
-  input,
-  select {
-    min-height: 48px;
-  }
-
-
-  textarea {
-    min-height: 120px;
-    resize: vertical;
-  }
-
-
-  input::placeholder,
-  textarea::placeholder {
-    color: #4f535a;
-  }
-
-
-  select {
-    appearance: none;
-  }
-
-
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: #a71930;
-  }
-
-
-  .form-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin: 5px 0 25px;
-    padding: 17px;
-    border: 1px solid #2d3035;
-    background: #0c0e11;
-  }
-
-
-  .form-note .status-dot {
-    margin-top: 4px;
-  }
-
-
-  .form-note p {
-    margin: 0;
-    color: #777c84;
-    font-size: 11px;
-    line-height: 1.7;
-  }
+  /* BUTTONS */
 
 
   .primary,
@@ -734,44 +628,206 @@ const formspreeEndpoint =
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     min-height: 48px;
+
     padding: 0 22px;
+
+    border-radius: 0;
+
     text-decoration: none;
-    font-family: inherit;
+
     font-size: 10px;
     font-weight: 900;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    cursor: pointer;
+
     transition:
       background 0.2s ease,
       border-color 0.2s ease,
-      color 0.2s ease;
+      color 0.2s ease,
+      transform 0.2s ease;
   }
 
 
   .primary {
     border: 1px solid #a71930;
+
     background: #a71930;
-    color: #fff;
+    color: #ffffff;
   }
 
 
   .primary:hover {
     background: #c0203b;
     border-color: #c0203b;
+    transform: translateY(-1px);
   }
 
 
   .secondary {
-    border: 1px solid #4a4e55;
+    border: 1px solid #3a3d42;
+
     background: transparent;
     color: #d7dae0;
   }
 
 
   .secondary:hover {
-    border-color: #9a9fa7;
+    border-color: #a71930;
+    color: #ffffff;
+  }
+
+
+  /* STEPS */
+
+
+  .steps {
+    max-width: 1280px;
+    margin: auto;
+
+    padding: 120px 28px;
+
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+
+    gap: 100px;
+
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .steps-intro h2,
+  .install h2,
+  .feedback h2 {
+    margin: 22px 0 28px;
+
+    color: #f3f4f6;
+
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 0.92;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 900;
+  }
+
+
+  .steps-intro > p,
+  .install-inner > p,
+  .feedback-inner > p {
+    max-width: 520px;
+
+    color: #92979f;
+
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+
+  .account-note {
+    margin-top: 45px;
+
+    display: flex;
+    gap: 15px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #24262a;
+  }
+
+
+  .account-note .status-dot {
+    margin-top: 4px;
+  }
+
+
+  .account-note strong {
+    display: block;
+
+    color: #d7dae0;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 0.14em;
+  }
+
+
+  .account-note p {
+    margin: 8px 0 0;
+
+    color: #686d75;
+
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+
+  .step-list {
+    border-top: 1px solid #24262a;
+  }
+
+
+  .step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+
+    min-height: 250px;
+
+    border-bottom: 1px solid #24262a;
+  }
+
+
+  .step-number {
+    padding-top: 30px;
+
+    color: #a71930;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+
+  .step-content {
+    padding: 30px 0;
+  }
+
+
+  .step-label {
+    color: #a71930;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  h3 {
+    margin: 14px 0 18px;
+
+    color: #f3f4f6;
+
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+
+    font-weight: 900;
+  }
+
+
+  .step-content p {
+    max-width: 570px;
+
+    margin: 0 0 24px;
+
+    color: #858a92;
+
+    font-size: 14px;
+    line-height: 1.75;
   }
 
 
@@ -780,80 +836,70 @@ const formspreeEndpoint =
 
   .install {
     border-bottom: 1px solid #24262a;
+
     background:
       linear-gradient(
-        135deg,
-        rgba(167,25,48,0.07),
-        transparent 55%
-      ),
-      #0a0c0f;
+        90deg,
+        rgba(167,25,48,0.025),
+        transparent 60%
+      );
   }
 
 
   .install-inner {
-    max-width: 900px;
+    max-width: 1280px;
     margin: auto;
+
     padding: 120px 28px;
-    text-align: center;
-  }
-
-
-  .install-inner h2 {
-    margin-bottom: 25px;
   }
 
 
   .install-inner > p {
-    max-width: 600px;
-    margin: 0 auto 32px;
-    color: #858a92;
-    font-size: 15px;
-    line-height: 1.8;
+    margin-bottom: 30px;
   }
 
 
   .install-warning {
-    max-width: 570px;
-    margin: 32px auto 0;
-    padding: 17px;
-    border: 1px solid #2d3035;
+    max-width: 620px;
+
+    margin-top: 35px;
+
+    padding-top: 20px;
+
     display: flex;
     gap: 12px;
-    align-items: flex-start;
-    text-align: left;
-  }
 
-
-  .install-warning .status-dot {
-    margin-top: 4px;
+    border-top: 1px solid #24262a;
   }
 
 
   .install-warning p {
     margin: 0;
-    color: #6e737b;
-    font-size: 11px;
+
+    color: #686d75;
+
+    font-size: 12px;
     line-height: 1.7;
   }
 
 
-  /* CLOSING */
+  /* FEEDBACK */
 
 
-  .closing {
+  .feedback {
     border-bottom: 1px solid #24262a;
   }
 
 
-  .closing-inner {
+  .feedback-inner {
     max-width: 1280px;
     margin: auto;
-    padding: 110px 28px;
-    text-align: center;
+
+    padding: 120px 28px;
   }
 
 
-  .closing-inner h2 {
+  .feedback-inner > p {
     margin-bottom: 30px;
   }
 
@@ -864,39 +910,43 @@ const formspreeEndpoint =
   footer {
     max-width: 1280px;
     margin: auto;
+
     padding: 30px 28px;
-    display: flex;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto auto;
+
     align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    flex-wrap: wrap;
-    color: #555a61;
+
+    gap: 40px;
   }
 
 
   .footer-brand {
-    color: #8b9097;
-    font-size: 11px;
+    color: #f3f4f6;
+
+    font-size: 13px;
     font-weight: 900;
-    letter-spacing: 0.14em;
+
+    letter-spacing: 0.16em;
   }
 
 
   .footer-links {
     display: flex;
-    gap: 25px;
-  }
-
-
-  .footer-links a {
-    font-size: 9px;
+    gap: 24px;
   }
 
 
   .copyright {
-    color: #454950;
+    color: #4f5359;
+
     font-size: 9px;
-    letter-spacing: 0.1em;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
 
@@ -905,81 +955,86 @@ const formspreeEndpoint =
 
   @media (max-width: 850px) {
 
-    .request {
+    nav {
+      gap: 16px;
+    }
+
+    nav a {
+      font-size: 9px;
+    }
+
+    .steps {
       grid-template-columns: 1fr;
       gap: 60px;
+    }
+
+    .steps-intro > p {
+      max-width: 650px;
+    }
+
+    footer {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .footer-links {
+      flex-wrap: wrap;
     }
 
   }
 
 
-  @media (max-width: 650px) {
-
-    nav {
-      display: none;
-    }
-
+  @media (max-width: 600px) {
 
     .nav {
       padding: 18px 20px;
     }
 
-
-    .hero {
-      min-height: 600px;
-    }
-
-
-    .hero-content {
-      padding: 80px 20px;
-    }
-
-
-    .hero-description {
-      font-size: 14px;
-    }
-
-
-    .hero-corner {
+    nav a:nth-child(1) {
       display: none;
     }
 
+    .hero {
+      min-height: 650px;
+    }
 
-    .request,
+    .hero-content {
+      padding: 90px 20px;
+    }
+
+    .hero-corner {
+      right: 20px;
+      bottom: 20px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 7px;
+    }
+
+    .steps,
     .install-inner,
-    .closing-inner {
-      padding-left: 20px;
-      padding-right: 20px;
+    .feedback-inner {
+      padding: 90px 20px;
     }
 
-
-    .request {
-      padding-top: 85px;
-      padding-bottom: 85px;
+    .step {
+      grid-template-columns: 55px 1fr;
     }
 
-
-    .install-inner {
-      padding-top: 85px;
-      padding-bottom: 85px;
+    .step-number {
+      padding-top: 25px;
     }
 
-
-    .closing-inner {
-      padding-top: 85px;
-      padding-bottom: 85px;
+    .step-content {
+      padding: 25px 0;
     }
 
+    .primary,
+    .secondary {
+      width: 100%;
+    }
 
     footer {
-      padding: 25px 20px;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-
-    .footer-links {
-      flex-wrap: wrap;
+      padding: 30px 20px;
     }
 
   }
