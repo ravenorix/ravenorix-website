@@ -448,30 +448,52 @@ import Card from "../components/ui/Card.astro";
          and project complexity.
         </span>
 
-         <button
-          id="customize-button"
-           type="button"
-           class="estimate-button"
-         >
-           GET A MORE ACCURATE QUOTE
-          <span>→</span>
-          </button>
+         <div class="result-actions">
+
+  <div class="accuracy-cta">
+
+    <p class="accuracy-title">
+      Want a more accurate estimate?
+    </p>
+
+    <p class="accuracy-description">
+      Account for travel, time, editing, equipment, usage rights,
+      and project complexity.
+    </p>
+
+    <div class="result-actions">
+
+  <div class="accuracy-cta">
+
+    <p class="accuracy-title">
+      Want a more accurate estimate?
+    </p>
+
+    <p class="accuracy-description">
+      Account for travel, time, editing, equipment, usage rights,
+      and project complexity.
+    </p>
+
+    <button
+      id="customize-button"
+      type="button"
+      class="estimate-button"
+    >
+      GET A MORE ACCURATE QUOTE
+      <span>→</span>
+    </button>
+
+  </div>
+
+  <button
+    id="new-estimate"
+    type="button"
+    class="text-button"
+  >
+    Start a new estimate
+  </button>
 
 </div>
-
-          <button
-            id="new-estimate"
-            type="button"
-            class="text-button"
-          >
-            Start a new estimate
-          </button>
-
-        </div>
-
-      </Card>
-
-    </div>
 
 
     <!-- REPORT / EMAIL CAPTURE -->
@@ -1015,30 +1037,60 @@ import Card from "../components/ui/Card.astro";
 }
 
 .accuracy-cta {
-  max-width:650px;
-  margin-top:2rem;
+  max-width: 650px;
+  margin-top: 2.25rem;
 }
 
 .accuracy-cta > p {
-  margin:0;
-  color:#e5e7eb;
-  font-size:.9rem;
-  font-weight:600;
+  margin: 0;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .accuracy-cta > span {
-  display:block;
-  margin-top:.35rem;
-  color:#6b7280;
-  font-size:.72rem;
-  line-height:1.6;
+  display: block;
+  margin-top: 0.45rem;
+  color: #6b7280;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  max-width: 580px;
 }
 
 .accuracy-cta .estimate-button {
-  width:auto;
-  margin-top:1rem;
+  display: inline-flex;
+  width: auto;
+  margin-top: 1.25rem;
 }
 
+.accuracy-cta .secondary-action {
+  display: block;
+  margin-top: 1.25rem;
+  color: #6b7280;
+  font-size: 0.72rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.accuracy-cta .secondary-action:hover {
+  color: #e5e7eb;
+}
+
+@media (max-width: 700px) {
+  .accuracy-cta {
+    max-width: none;
+  }
+
+  .accuracy-cta .estimate-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .accuracy-cta .secondary-action {
+    text-align: center;
+  }
+}
 .result-actions .estimate-button {
   width:auto;
   margin-top:0;
@@ -1342,36 +1394,56 @@ import Card from "../components/ui/Card.astro";
 
 }
 
-</style>
+/* =========================================================
+   RESULT ACTIONS
+========================================================= */
 
-/* ACCURACY CTA */
+.result-actions {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
 .accuracy-cta {
   max-width: 650px;
-  margin-top: 2rem;
 }
 
-.accuracy-cta > p {
+.accuracy-title {
   margin: 0;
-  color: #e5e7eb;
-  font-size: 0.9rem;
+  color: #f3f4f6;
+  font-size: 1rem;
   font-weight: 600;
+  line-height: 1.4;
 }
 
-.accuracy-cta > span {
-  display: block;
-  margin-top: 0.35rem;
+.accuracy-description {
+  margin: .5rem 0 0;
+  max-width: 600px;
   color: #6b7280;
-  font-size: 0.72rem;
-  line-height: 1.6;
+  font-size: .8rem;
+  line-height: 1.65;
 }
 
 .accuracy-cta .estimate-button {
   width: auto;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
-/* MOBILE ACCURACY CTA */
+.result-actions .text-button {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 0;
+  color: #6b7280;
+  font-size: .72rem;
+  line-height: 1.4;
+}
+
+.result-actions .text-button:hover {
+  color: #e5e7eb;
+}
+
 @media (max-width: 700px) {
+
   .accuracy-cta {
     max-width: none;
   }
@@ -1379,7 +1451,15 @@ import Card from "../components/ui/Card.astro";
   .accuracy-cta .estimate-button {
     width: 100%;
   }
+
+  .result-actions .text-button {
+    margin-top: 1.25rem;
+    text-align: center;
+  }
+
 }
+
+</style>
 
 <script>
 
