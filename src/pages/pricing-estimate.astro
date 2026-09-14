@@ -435,65 +435,46 @@ import Card from "../components/ui/Card.astro";
         </div>
 
 
+        <!-- RESULT ACTIONS -->
+
         <div class="result-actions">
 
           <div class="accuracy-cta">
 
-         <p>
-            Want a more accurate estimate?
-        </p>
+            <p class="accuracy-title">
+              Want a more accurate estimate?
+            </p>
 
-        <span>
-         Account for travel, time, editing, equipment, usage rights,
-         and project complexity.
-        </span>
+            <p class="accuracy-description">
+              Account for travel, time, editing, equipment, usage rights,
+              and project complexity.
+            </p>
 
-         <div class="result-actions">
+            <button
+              id="customize-button"
+              type="button"
+              class="estimate-button"
+            >
+              GET A MORE ACCURATE QUOTE
+              <span>→</span>
+            </button>
 
-  <div class="accuracy-cta">
+          </div>
 
-    <p class="accuracy-title">
-      Want a more accurate estimate?
-    </p>
+          <button
+            id="new-estimate"
+            type="button"
+            class="text-button"
+          >
+            Start a new estimate
+          </button>
 
-    <p class="accuracy-description">
-      Account for travel, time, editing, equipment, usage rights,
-      and project complexity.
-    </p>
+        </div>
 
-    <div class="result-actions">
 
-  <div class="accuracy-cta">
+      </Card>
 
-    <p class="accuracy-title">
-      Want a more accurate estimate?
-    </p>
-
-    <p class="accuracy-description">
-      Account for travel, time, editing, equipment, usage rights,
-      and project complexity.
-    </p>
-
-    <button
-      id="customize-button"
-      type="button"
-      class="estimate-button"
-    >
-      GET A MORE ACCURATE QUOTE
-      <span>→</span>
-    </button>
-
-  </div>
-
-  <button
-    id="new-estimate"
-    type="button"
-    class="text-button"
-  >
-    Start a new estimate
-  </button>
-
-</div>
+    </div>
 
 
     <!-- REPORT / EMAIL CAPTURE -->
@@ -1031,81 +1012,66 @@ import Card from "../components/ui/Card.astro";
 
 .result-actions {
   display:flex;
-  align-items:center;
-  gap:1.5rem;
-  margin-top:2rem;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+  margin-top:2.5rem;
+  padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,.08);
 }
 
 .accuracy-cta {
-  max-width: 650px;
-  margin-top: 2.25rem;
+  max-width:650px;
 }
 
-.accuracy-cta > p {
-  margin: 0;
-  color: #e5e7eb;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.4;
+.accuracy-title {
+  margin:0;
+  color:#f3f4f6;
+  font-size:1rem;
+  font-weight:600;
+  line-height:1.4;
 }
 
-.accuracy-cta > span {
-  display: block;
-  margin-top: 0.45rem;
-  color: #6b7280;
-  font-size: 0.78rem;
-  line-height: 1.6;
-  max-width: 580px;
+.accuracy-description {
+  margin:.5rem 0 0;
+  max-width:600px;
+  color:#6b7280;
+  font-size:.8rem;
+  line-height:1.65;
 }
 
 .accuracy-cta .estimate-button {
-  display: inline-flex;
-  width: auto;
-  margin-top: 1.25rem;
-}
-
-.accuracy-cta .secondary-action {
-  display: block;
-  margin-top: 1.25rem;
-  color: #6b7280;
-  font-size: 0.72rem;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.accuracy-cta .secondary-action:hover {
-  color: #e5e7eb;
-}
-
-@media (max-width: 700px) {
-  .accuracy-cta {
-    max-width: none;
-  }
-
-  .accuracy-cta .estimate-button {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .accuracy-cta .secondary-action {
-    text-align: center;
-  }
-}
-.result-actions .estimate-button {
+  display:inline-flex;
   width:auto;
-  margin-top:0;
+  margin-top:1.25rem;
 }
 
 .text-button {
-  border:0;
-  background:transparent;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  margin-top:1.5rem;
+  padding:.75rem 1rem;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:.5rem;
+  background:rgba(255,255,255,.025);
   color:#9ca3af;
   cursor:pointer;
-  font-size:.78rem;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:
+    background .2s,
+    border-color .2s,
+    color .2s;
 }
 
 .text-button:hover {
-  color:white;
+  border-color:rgba(141,216,255,.45);
+  background:rgba(141,216,255,.06);
+  color:#8dd8ff;
 }
 
 
@@ -1311,7 +1277,7 @@ import Card from "../components/ui/Card.astro";
    MOBILE
 ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width:800px) {
 
   .pricing-page {
     padding-top:7rem;
@@ -1349,9 +1315,19 @@ import Card from "../components/ui/Card.astro";
     align-items:stretch;
   }
 
-  .result-actions .estimate-button {
-    width:100%;
+  .accuracy-cta {
+    max-width:none;
   }
+
+  .accuracy-cta .estimate-button {
+    width:100%;
+    justify-content:center;
+  }
+
+  .result-actions .text-button {
+  margin-top:1.25rem;
+  width:100%;
+}
 
   .report-cta {
     padding:2rem;
@@ -1372,7 +1348,7 @@ import Card from "../components/ui/Card.astro";
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
 
   .size-selector {
     grid-template-columns:1fr;
@@ -1394,72 +1370,8 @@ import Card from "../components/ui/Card.astro";
 
 }
 
-/* =========================================================
-   RESULT ACTIONS
-========================================================= */
-
-.result-actions {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,.08);
-}
-
-.accuracy-cta {
-  max-width: 650px;
-}
-
-.accuracy-title {
-  margin: 0;
-  color: #f3f4f6;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.accuracy-description {
-  margin: .5rem 0 0;
-  max-width: 600px;
-  color: #6b7280;
-  font-size: .8rem;
-  line-height: 1.65;
-}
-
-.accuracy-cta .estimate-button {
-  width: auto;
-  margin-top: 1.25rem;
-}
-
-.result-actions .text-button {
-  display: block;
-  margin-top: 1.5rem;
-  padding: 0;
-  color: #6b7280;
-  font-size: .72rem;
-  line-height: 1.4;
-}
-
-.result-actions .text-button:hover {
-  color: #e5e7eb;
-}
-
-@media (max-width: 700px) {
-
-  .accuracy-cta {
-    max-width: none;
-  }
-
-  .accuracy-cta .estimate-button {
-    width: 100%;
-  }
-
-  .result-actions .text-button {
-    margin-top: 1.25rem;
-    text-align: center;
-  }
-
-}
-
 </style>
+
 
 <script>
 
