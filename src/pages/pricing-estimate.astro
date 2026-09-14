@@ -1,0 +1,1746 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/ui/Container.astro";
+import Card from "../components/ui/Card.astro";
+---
+
+<BaseLayout
+  title="Drone Pricing Estimate | RavenØrix"
+  description="Estimate the local market rate for your drone photography and aerial media projects."
+>
+
+<section class="pricing-page">
+
+  <Container>
+
+    <!-- HEADER -->
+
+    <div class="pricing-header">
+
+      <p class="pricing-eyebrow">
+        RAVENØRIX // PRICING TOOL
+      </p>
+
+      <h1>
+        Drone Pricing<br />
+        <span>Estimate</span>
+      </h1>
+
+      <p class="pricing-intro">
+        Get an estimated local market rate for your drone work —
+        or build a more personalized estimate based on your actual
+        business costs.
+      </p>
+
+    </div>
+
+
+    <!-- MODE SELECTOR -->
+
+    <div class="mode-grid">
+
+      <!-- QUICK ESTIMATE -->
+
+      <Card padding="p-8 md:p-10" hover={false}>
+
+        <div class="mode-number">
+          01
+        </div>
+
+        <p class="mode-label">
+          QUICK ESTIMATE
+        </p>
+
+        <h2>
+          Estimated Local Market Rate
+        </h2>
+
+        <p class="mode-description">
+          Get a quick estimate based on your location, service type,
+          and approximate project size.
+        </p>
+
+
+        <div class="mode-fields">
+
+          <!-- ZIP -->
+
+          <div class="field">
+
+            <label for="zip">
+              ZIP CODE
+            </label>
+
+            <input
+              id="zip"
+              name="zip"
+              type="text"
+              inputmode="numeric"
+              maxlength="5"
+              placeholder="Enter ZIP code"
+              autocomplete="postal-code"
+            />
+
+          </div>
+
+
+          <!-- SERVICE -->
+
+          <div class="field">
+
+            <label for="service">
+              SERVICE
+            </label>
+
+            <select id="service" name="service">
+
+              <option value="">
+                Select service
+              </option>
+
+              <option value="photography">
+                Aerial Photography
+              </option>
+
+              <option value="video">
+                Aerial Video
+              </option>
+
+              <option value="photo-video">
+                Photo + Video
+              </option>
+
+              <option value="real-estate">
+                Real Estate
+              </option>
+
+              <option value="commercial">
+                Commercial / Business
+              </option>
+
+              <option value="construction">
+                Construction / Property
+              </option>
+
+              <option value="inspection">
+                Inspection
+              </option>
+
+              <option value="other">
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- PROJECT SIZE -->
+
+          <div class="field">
+
+            <div class="field-heading">
+
+              <label>
+                PROJECT SIZE
+              </label>
+
+              <span class="field-hint">
+                Select one
+              </span>
+
+            </div>
+
+
+            <div
+              class="size-selector"
+              role="radiogroup"
+              aria-label="Project size"
+            >
+
+              <label class="size-segment">
+
+                <input
+                  type="radio"
+                  name="project-size"
+                  value="quick"
+                />
+
+                <span>
+                  Quick
+                </span>
+
+              </label>
+
+
+              <label class="size-segment selected">
+
+                <input
+                  type="radio"
+                  name="project-size"
+                  value="standard"
+                  checked
+                />
+
+                <span>
+                  Standard
+                </span>
+
+              </label>
+
+
+              <label class="size-segment">
+
+                <input
+                  type="radio"
+                  name="project-size"
+                  value="large"
+                />
+
+                <span>
+                  Large / Complex
+                </span>
+
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <button
+          id="estimate-button"
+          type="button"
+          class="estimate-button"
+        >
+          GET MY ESTIMATE
+          <span>→</span>
+        </button>
+
+
+        <p
+          id="form-error"
+          class="form-error"
+          aria-live="polite"
+        ></p>
+
+      </Card>
+
+
+      <!-- ADVANCED -->
+
+      <Card padding="p-8 md:p-10" hover={false}>
+
+        <div class="mode-number muted">
+          02
+        </div>
+
+        <p class="mode-label muted">
+          ADVANCED PRICING
+        </p>
+
+        <h2>
+          Build Your Personalized Rate
+        </h2>
+
+        <p class="mode-description">
+          Go beyond market estimates. Account for the actual costs
+          and requirements of your business to build a more
+          personalized estimate.
+        </p>
+
+
+        <div class="advanced-list">
+
+          <div>
+            <span>01</span>
+            Time &amp; labor
+          </div>
+
+          <div>
+            <span>02</span>
+            Travel &amp; mileage
+          </div>
+
+          <div>
+            <span>03</span>
+            Equipment &amp; operating costs
+          </div>
+
+          <div>
+            <span>04</span>
+            Editing &amp; production
+          </div>
+
+          <div>
+            <span>05</span>
+            Usage rights &amp; licensing
+          </div>
+
+          <div>
+            <span>06</span>
+            Profit &amp; project complexity
+          </div>
+
+        </div>
+
+
+        <button
+          id="advanced-button"
+          type="button"
+          class="advanced-button"
+        >
+          BUILD ADVANCED ESTIMATE
+          <span>→</span>
+        </button>
+
+
+        <p class="carry-note">
+          Your Quick Estimate information will carry over automatically.
+        </p>
+
+      </Card>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div
+      id="results"
+      class="results-wrapper"
+      aria-hidden="true"
+    >
+
+      <Card padding="p-8 md:p-10" hover={false}>
+
+        <div class="results-top">
+
+          <div>
+
+            <p class="mode-label">
+              ESTIMATE RESULT
+            </p>
+
+            <h2>
+              Estimated Local Market
+            </h2>
+
+          </div>
+
+          <div
+            id="confidence"
+            class="confidence"
+          >
+            MODERATE CONFIDENCE
+          </div>
+
+        </div>
+
+
+        <div class="result-main">
+
+          <div>
+
+            <p class="result-label">
+              ESTIMATED MARKET RANGE
+            </p>
+
+            <div
+              id="result-range"
+              class="result-range"
+            >
+              $400 – $550
+            </div>
+
+          </div>
+
+
+          <div class="recommended">
+
+            <p class="result-label">
+              ESTIMATED RECOMMENDED QUOTE
+            </p>
+
+            <div
+              id="result-recommended"
+              class="result-recommended"
+            >
+              $475
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="result-details">
+
+          <div>
+
+            <p class="detail-label">
+              MARKET
+            </p>
+
+            <p id="result-market">
+              —
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <p class="detail-label">
+              SERVICE
+            </p>
+
+            <p id="result-service">
+              —
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <p class="detail-label">
+              PROJECT LEVEL
+            </p>
+
+            <p id="result-size">
+              —
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="result-explanation">
+
+          <p class="detail-label">
+            HOW TO INTERPRET THIS ESTIMATE
+          </p>
+
+          <p id="result-copy">
+            This estimate represents a starting point for evaluating
+            your project's local market position. Actual pricing can
+            vary based on deliverables, travel, production time,
+            licensing, experience, and project requirements.
+          </p>
+
+        </div>
+
+
+        <div class="result-actions">
+
+          <div class="accuracy-cta">
+
+         <p>
+            Want a more accurate estimate?
+        </p>
+
+        <span>
+         Account for travel, time, editing, equipment, usage rights,
+         and project complexity.
+        </span>
+
+         <button
+          id="customize-button"
+           type="button"
+           class="estimate-button"
+         >
+           GET A MORE ACCURATE QUOTE
+          <span>→</span>
+          </button>
+
+</div>
+
+          <button
+            id="new-estimate"
+            type="button"
+            class="text-button"
+          >
+            Start a new estimate
+          </button>
+
+        </div>
+
+      </Card>
+
+    </div>
+
+
+    <!-- REPORT / EMAIL CAPTURE -->
+
+    <div
+      id="report-cta"
+      class="report-cta"
+      aria-hidden="true"
+    >
+
+      <div class="report-header">
+
+        <div>
+
+          <p class="pricing-eyebrow">
+            RAVENØRIX // PRICING REPORT
+          </p>
+
+          <h2>
+            Get the complete<br />
+            pricing report.
+          </h2>
+
+          <p class="report-description">
+            We'll send you a professional breakdown of your estimated
+            local market, recommended quote, pricing factors, and
+            opportunities to increase your project value.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="report-form">
+
+        <div class="email-field">
+
+          <label for="report-email">
+            EMAIL ADDRESS
+          </label>
+
+          <input
+            id="report-email"
+            type="email"
+            placeholder="Enter your email address"
+            autocomplete="email"
+          />
+
+        </div>
+
+
+        <button
+          id="report-button"
+          type="button"
+          class="report-button"
+        >
+          SEND MY PRICING REPORT
+          <span>→</span>
+        </button>
+
+      </div>
+
+
+      <label class="marketing-consent">
+
+        <input
+          id="marketing-consent"
+          type="checkbox"
+          checked
+        />
+
+        <span class="consent-check"></span>
+
+        <span class="consent-copy">
+
+          <strong>
+            Keep me in the loop.
+          </strong>
+
+          <span>
+            Send me occasional RavenØrix drone-business resources,
+            pricing tips and updates.
+          </span>
+
+        </span>
+
+      </label>
+
+
+      <p class="report-note">
+        Your email is used to deliver your requested pricing report.
+      </p>
+
+    </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <div class="pricing-disclaimer">
+
+      <p class="detail-label">
+        PRICING DISCLAIMER
+      </p>
+
+      <p>
+        RavenØrix Drone Pricing Calculator provides estimates for
+        informational and educational purposes only. Results are
+        based on available market data, location information and
+        the inputs provided and are not a guarantee of what a
+        particular client, market or project will support. Actual
+        pricing should be determined by the operator based on their
+        experience, operating costs, equipment, insurance, travel,
+        production requirements, deliverables, licensing and
+        applicable laws and regulations. RavenØrix does not provide
+        legal, tax, financial or regulatory advice and is not
+        responsible for pricing decisions made using this tool.
+        Drone operators are responsible for ensuring their
+        operations comply with all applicable federal, state and
+        local requirements.
+      </p>
+
+    </div>
+
+  </Container>
+
+</section>
+
+
+<style>
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.pricing-page {
+  min-height:100vh;
+  padding:9rem 0 7rem;
+  background:#050505;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.pricing-header {
+  max-width:850px;
+  margin:0 auto 4rem;
+  text-align:center;
+}
+
+.pricing-eyebrow {
+  margin:0;
+  color:#8dd8ff;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+}
+
+.pricing-header h1 {
+  margin:1.5rem 0 1.5rem;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:clamp(4rem,9vw,7rem);
+  line-height:.88;
+  text-transform:uppercase;
+}
+
+.pricing-header h1 span {
+  color:rgba(255,255,255,.55);
+}
+
+.pricing-intro {
+  max-width:650px;
+  margin:0 auto;
+  color:#9ca3af;
+  font-size:1.1rem;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   MODE GRID
+========================================================= */
+
+.mode-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.5rem;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.mode-number {
+  color:#8dd8ff;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:2rem;
+  line-height:1;
+}
+
+.mode-number.muted {
+  color:#6b7280;
+}
+
+.mode-label {
+  margin-top:1rem;
+  color:#8dd8ff;
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.28em;
+}
+
+.mode-label.muted {
+  color:#9ca3af;
+}
+
+.mode-grid h2 {
+  margin-top:1rem;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:2.4rem;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.mode-description {
+  margin-top:1rem;
+  color:#9ca3af;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.mode-fields {
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.field {
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+}
+
+.field-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.field label,
+.result-label,
+.detail-label {
+  color:#9ca3af;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.field-hint {
+  color:#4b5563;
+  font-size:.62rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.field input,
+.field select {
+  width:100%;
+  padding:.95rem 1rem;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:.5rem;
+  background:#0b0d10;
+  color:white;
+  outline:none;
+  transition:border-color .2s, background .2s;
+}
+
+.field input::placeholder {
+  color:#4b5563;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color:#8dd8ff;
+  background:#101419;
+}
+
+.field select option {
+  background:#0b0d10;
+  color:white;
+}
+
+
+/* =========================================================
+   PROJECT SIZE
+========================================================= */
+
+.size-selector {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:.55rem;
+  background:#090b0e;
+}
+
+.size-segment {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:.75rem .65rem;
+  border-right:1px solid rgba(255,255,255,.10);
+  color:#9ca3af;
+  font-size:.74rem;
+  font-weight:600;
+  text-align:center;
+  cursor:pointer;
+  transition:
+    background .2s,
+    color .2s;
+}
+
+.size-segment:last-child {
+  border-right:0;
+}
+
+.size-segment input {
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.size-segment:hover {
+  background:rgba(255,255,255,.04);
+  color:white;
+}
+
+.size-segment:has(input:checked) {
+  background:#8dd8ff;
+  color:#050505;
+}
+
+.size-segment:has(input:checked) span {
+  color:#050505;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.estimate-button,
+.advanced-button {
+  width:100%;
+  margin-top:2rem;
+  padding:1rem 1.25rem;
+  border:1px solid #8dd8ff;
+  border-radius:.5rem;
+  background:#8dd8ff;
+  color:#050505;
+  font-weight:700;
+  font-size:.78rem;
+  letter-spacing:.12em;
+  cursor:pointer;
+  transition:transform .2s, background .2s;
+}
+
+.estimate-button:hover {
+  transform:translateY(-1px);
+}
+
+.estimate-button span,
+.advanced-button span {
+  margin-left:.5rem;
+}
+
+.advanced-button {
+  border-color:rgba(255,255,255,.25);
+  background:transparent;
+  color:white;
+}
+
+.advanced-button:hover {
+  background:rgba(255,255,255,.06);
+}
+
+.carry-note {
+  margin-top:1rem;
+  color:#6b7280;
+  font-size:.72rem;
+  text-align:center;
+}
+
+.form-error {
+  min-height:1.25rem;
+  margin-top:.8rem;
+  color:#fca5a5;
+  font-size:.75rem;
+}
+
+
+/* =========================================================
+   ADVANCED LIST
+========================================================= */
+
+.advanced-list {
+  margin-top:2rem;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.advanced-list div {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:.8rem 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  color:#d1d5db;
+  font-size:.88rem;
+}
+
+.advanced-list span {
+  width:24px;
+  color:#6b7280;
+  font-size:.65rem;
+  font-weight:700;
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.results-wrapper {
+  max-width:1100px;
+  margin:2rem auto 0;
+  display:none;
+}
+
+.results-wrapper.visible {
+  display:block;
+}
+
+.results-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.results-top h2 {
+  margin-top:.7rem;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:3rem;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.confidence {
+  padding:.55rem .8rem;
+  border:1px solid rgba(141,216,255,.35);
+  border-radius:999px;
+  color:#8dd8ff;
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  white-space:nowrap;
+}
+
+.result-main {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  padding:2.5rem 0;
+}
+
+.result-range {
+  margin-top:.6rem;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:clamp(3rem,7vw,5rem);
+  line-height:1;
+}
+
+.result-recommended {
+  margin-top:.6rem;
+  color:#8dd8ff;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:clamp(3rem,7vw,5rem);
+  line-height:1;
+}
+
+.result-details {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.result-details > div {
+  padding:1.5rem;
+  border-right:1px solid rgba(255,255,255,.1);
+}
+
+.result-details > div:last-child {
+  border-right:0;
+}
+
+.result-details p:last-child {
+  margin-top:.45rem;
+  color:#e5e7eb;
+  font-size:.9rem;
+}
+
+.result-explanation {
+  max-width:750px;
+  margin-top:2rem;
+}
+
+.result-explanation p:last-child {
+  margin-top:.6rem;
+  color:#9ca3af;
+  line-height:1.7;
+}
+
+.result-actions {
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.accuracy-cta {
+  max-width:650px;
+  margin-top:2rem;
+}
+
+.accuracy-cta > p {
+  margin:0;
+  color:#e5e7eb;
+  font-size:.9rem;
+  font-weight:600;
+}
+
+.accuracy-cta > span {
+  display:block;
+  margin-top:.35rem;
+  color:#6b7280;
+  font-size:.72rem;
+  line-height:1.6;
+}
+
+.accuracy-cta .estimate-button {
+  width:auto;
+  margin-top:1rem;
+}
+
+.result-actions .estimate-button {
+  width:auto;
+  margin-top:0;
+}
+
+.text-button {
+  border:0;
+  background:transparent;
+  color:#9ca3af;
+  cursor:pointer;
+  font-size:.78rem;
+}
+
+.text-button:hover {
+  color:white;
+}
+
+
+/* =========================================================
+   EMAIL / REPORT CAPTURE
+========================================================= */
+
+.report-cta {
+  display:none;
+  max-width:1100px;
+  margin:2rem auto 0;
+  padding:3rem;
+  border:1px solid rgba(141,216,255,.22);
+  border-radius:1rem;
+  background:#080b0e;
+}
+
+.report-cta.visible {
+  display:block;
+}
+
+.report-header {
+  max-width:760px;
+}
+
+.report-cta h2 {
+  margin-top:1rem;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:clamp(3rem,6vw,4.5rem);
+  line-height:.92;
+  text-transform:uppercase;
+}
+
+.report-description {
+  max-width:700px;
+  margin-top:1.25rem;
+  color:#9ca3af;
+  font-size:.95rem;
+  line-height:1.7;
+}
+
+.report-form {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:end;
+  gap:1rem;
+  margin-top:2.5rem;
+}
+
+.email-field {
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+}
+
+.email-field label {
+  color:#d1d5db;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.2em;
+}
+
+.email-field input {
+  width:100%;
+  min-height:54px;
+  padding:0 1rem;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:.5rem;
+  background:#050608;
+  color:white;
+  font-size:.9rem;
+  outline:none;
+  transition:border-color .2s, background .2s;
+}
+
+.email-field input::placeholder {
+  color:#4b5563;
+}
+
+.email-field input:focus {
+  border-color:#8dd8ff;
+  background:#0b0e12;
+}
+
+.report-button {
+  min-height:54px;
+  padding:0 1.5rem;
+  border:1px solid #8dd8ff;
+  border-radius:.5rem;
+  background:#8dd8ff;
+  color:#050505;
+  font-weight:700;
+  font-size:.72rem;
+  letter-spacing:.11em;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:transform .2s, background .2s;
+}
+
+.report-button:hover {
+  transform:translateY(-1px);
+}
+
+.report-button span {
+  margin-left:.5rem;
+}
+
+
+/* MARKETING CONSENT */
+
+.marketing-consent {
+  display:flex;
+  align-items:flex-start;
+  gap:.9rem;
+  margin-top:1.25rem;
+  padding:1rem 1.1rem;
+  border:1px solid rgba(141,216,255,.16);
+  border-radius:.55rem;
+  background:rgba(141,216,255,.035);
+  color:#9ca3af;
+  cursor:pointer;
+}
+
+.marketing-consent input {
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.consent-check {
+  position:relative;
+  flex:0 0 auto;
+  width:20px;
+  height:20px;
+  margin-top:.05rem;
+  border:1px solid #8dd8ff;
+  border-radius:.3rem;
+  background:#8dd8ff;
+}
+
+.consent-check::after {
+  content:"";
+  position:absolute;
+  width:6px;
+  height:11px;
+  left:6px;
+  top:2px;
+  border:solid #050505;
+  border-width:0 2px 2px 0;
+  transform:rotate(45deg);
+}
+
+.marketing-consent input:not(:checked) + .consent-check {
+  background:#050505;
+  border-color:#6b7280;
+}
+
+.marketing-consent input:not(:checked) + .consent-check::after {
+  display:none;
+}
+
+.consent-copy {
+  display:flex;
+  flex-direction:column;
+  gap:.2rem;
+  font-size:.75rem;
+  line-height:1.5;
+}
+
+.consent-copy strong {
+  color:#e5e7eb;
+  font-size:.78rem;
+}
+
+.report-note {
+  margin-top:.9rem;
+  color:#4b5563;
+  font-size:.65rem;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.pricing-disclaimer {
+  max-width:1100px;
+  margin:4rem auto 0;
+  padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.pricing-disclaimer p:last-child {
+  max-width:900px;
+  margin-top:.6rem;
+  color:#6b7280;
+  font-size:.72rem;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .pricing-page {
+    padding-top:7rem;
+  }
+
+  .mode-grid {
+    grid-template-columns:1fr;
+  }
+
+  .size-segment {
+    min-height:52px;
+    font-size:.7rem;
+  }
+
+  .result-main,
+  .result-details {
+    grid-template-columns:1fr;
+  }
+
+  .result-details > div {
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+
+  .result-details > div:last-child {
+    border-bottom:0;
+  }
+
+  .results-top {
+    flex-direction:column;
+  }
+
+  .result-actions {
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .result-actions .estimate-button {
+    width:100%;
+  }
+
+  .report-cta {
+    padding:2rem;
+  }
+
+  .report-form {
+    grid-template-columns:1fr;
+  }
+
+  .report-button {
+    width:100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .size-selector {
+    grid-template-columns:1fr;
+  }
+
+  .size-segment {
+    min-height:48px;
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+
+  .size-segment:last-child {
+    border-bottom:0;
+  }
+
+  .report-cta {
+    padding:1.5rem;
+  }
+
+}
+
+</style>
+
+/* ACCURACY CTA */
+.accuracy-cta {
+  max-width: 650px;
+  margin-top: 2rem;
+}
+
+.accuracy-cta > p {
+  margin: 0;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.accuracy-cta > span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #6b7280;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.accuracy-cta .estimate-button {
+  width: auto;
+  margin-top: 1rem;
+}
+
+/* MOBILE ACCURACY CTA */
+@media (max-width: 700px) {
+  .accuracy-cta {
+    max-width: none;
+  }
+
+  .accuracy-cta .estimate-button {
+    width: 100%;
+  }
+}
+
+<script>
+
+const estimateButton =
+  document.querySelector("#estimate-button");
+
+const advancedButton =
+  document.querySelector("#advanced-button");
+
+const customizeButton =
+  document.querySelector("#customize-button");
+
+const newEstimateButton =
+  document.querySelector("#new-estimate");
+
+const results =
+  document.querySelector("#results");
+
+const reportCta =
+  document.querySelector("#report-cta");
+
+const formError =
+  document.querySelector("#form-error");
+
+const zipInput =
+  document.querySelector("#zip");
+
+const serviceInput =
+  document.querySelector("#service");
+
+const resultRange =
+  document.querySelector("#result-range");
+
+const resultRecommended =
+  document.querySelector("#result-recommended");
+
+const resultMarket =
+  document.querySelector("#result-market");
+
+const resultService =
+  document.querySelector("#result-service");
+
+const resultSize =
+  document.querySelector("#result-size");
+
+const resultCopy =
+  document.querySelector("#result-copy");
+
+
+/* =========================================================
+   PROJECT SIZE
+========================================================= */
+
+function getProjectSize() {
+
+  const selected =
+    document.querySelector(
+      'input[name="project-size"]:checked'
+    );
+
+  return selected?.value || "";
+
+}
+
+
+/* =========================================================
+   FORMATTING
+========================================================= */
+
+function formatService(value) {
+
+  const services = {
+
+    photography: "Aerial Photography",
+
+    video: "Aerial Video",
+
+    "photo-video": "Photo + Video",
+
+    "real-estate": "Real Estate",
+
+    commercial: "Commercial / Business",
+
+    construction: "Construction / Property",
+
+    inspection: "Inspection",
+
+    other: "Other"
+
+  };
+
+  return services[value] || "—";
+
+}
+
+
+function formatSize(value) {
+
+  const sizes = {
+
+    quick: "Quick",
+
+    standard: "Standard",
+
+    large: "Large / Complex"
+
+  };
+
+  return sizes[value] || "—";
+
+}
+
+
+/* =========================================================
+   TEMPORARY PRICING MODEL
+========================================================= */
+
+function estimatePrice(service, size) {
+
+  /*
+   * TEMPORARY UI TESTING MODEL
+   *
+   * This is intentionally NOT the final pricing engine.
+   * We will replace this with the real market-data model.
+   */
+
+  const base = {
+
+    photography: 325,
+
+    video: 425,
+
+    "photo-video": 550,
+
+    "real-estate": 400,
+
+    commercial: 650,
+
+    construction: 700,
+
+    inspection: 600,
+
+    other: 400
+
+  };
+
+  const multipliers = {
+
+    quick: .8,
+
+    standard: 1,
+
+    large: 1.45
+
+  };
+
+  const center =
+    (base[service] || 400) *
+    (multipliers[size] || 1);
+
+  const low =
+    Math.round((center * .85) / 25) * 25;
+
+  const high =
+    Math.round((center * 1.15) / 25) * 25;
+
+  const recommended =
+    Math.round(center / 25) * 25;
+
+  return {
+    low,
+    high,
+    recommended
+  };
+
+}
+
+
+/* =========================================================
+   TEMPORARY MARKET RESOLUTION
+========================================================= */
+
+function getMarketFromZip(zip) {
+
+  /*
+   * TEMPORARY MARKET RESOLUTION
+   *
+   * This will eventually use real ZIP/geographic data.
+   */
+
+  const alaskaZips = {
+
+    "99801": "Juneau, Alaska",
+
+    "99802": "Juneau, Alaska",
+
+    "99803": "Juneau, Alaska",
+
+    "99824": "Juneau, Alaska",
+
+    "99827": "Juneau, Alaska"
+
+  };
+
+  return alaskaZips[zip] || "Local Market";
+
+}
+
+
+/* =========================================================
+   GENERATE ESTIMATE
+========================================================= */
+
+estimateButton?.addEventListener("click", () => {
+
+  const zip =
+    zipInput?.value.trim();
+
+  const service =
+    serviceInput?.value;
+
+  const size =
+    getProjectSize();
+
+
+  formError.textContent = "";
+
+
+  if (!/^\d{5}$/.test(zip)) {
+
+    formError.textContent =
+      "Enter a valid 5-digit ZIP code.";
+
+    zipInput?.focus();
+
+    return;
+
+  }
+
+
+  if (!service) {
+
+    formError.textContent =
+      "Select a service type.";
+
+    serviceInput?.focus();
+
+    return;
+
+  }
+
+
+  if (!size) {
+
+    formError.textContent =
+      "Select an approximate project size.";
+
+    return;
+
+  }
+
+
+  const pricing =
+    estimatePrice(service, size);
+
+
+  resultRange.textContent =
+    `$${pricing.low.toLocaleString()} – $${pricing.high.toLocaleString()}`;
+
+  resultRecommended.textContent =
+    `$${pricing.recommended.toLocaleString()}`;
+
+
+  resultMarket.textContent =
+    getMarketFromZip(zip);
+
+  resultService.textContent =
+    formatService(service);
+
+  resultSize.textContent =
+    formatSize(size);
+
+
+  resultCopy.textContent =
+    `This estimate is a starting point for ${formatService(service).toLowerCase()} in the ${getMarketFromZip(zip)} market at a ${formatSize(size).toLowerCase()} project level. Actual pricing can vary based on deliverables, travel, production time, licensing, experience, and project requirements.`;
+
+
+  results.classList.add("visible");
+
+  results.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  reportCta.classList.add("visible");
+
+  reportCta.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  results.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+});
+
+
+/* =========================================================
+   NEW ESTIMATE
+========================================================= */
+
+newEstimateButton?.addEventListener("click", () => {
+
+  results.classList.remove("visible");
+
+  reportCta.classList.remove("visible");
+
+  results.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  reportCta.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
+
+/* =========================================================
+   ADVANCED PRICING
+========================================================= */
+
+customizeButton?.addEventListener("click", () => {
+
+  advancedButton?.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+});
+
+
+advancedButton?.addEventListener("click", () => {
+
+  alert(
+    "Advanced Pricing is the next build phase. Your Quick Estimate information will carry over automatically."
+  );
+
+});
+
+</script>
+
+</BaseLayout>
