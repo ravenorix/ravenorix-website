@@ -60,7 +60,6 @@ import Card from "../components/ui/Card.astro";
           and approximate project size.
         </p>
 
-
         <div class="mode-fields">
 
           <!-- ZIP -->
@@ -151,7 +150,6 @@ import Card from "../components/ui/Card.astro";
 
             </div>
 
-
             <div
               class="size-selector"
               role="radiogroup"
@@ -172,7 +170,6 @@ import Card from "../components/ui/Card.astro";
 
               </label>
 
-
               <label class="size-segment selected">
 
                 <input
@@ -187,7 +184,6 @@ import Card from "../components/ui/Card.astro";
                 </span>
 
               </label>
-
 
               <label class="size-segment">
 
@@ -231,77 +227,540 @@ import Card from "../components/ui/Card.astro";
 
       <!-- ADVANCED -->
 
-      <Card padding="p-8 md:p-10" hover={false}>
+      <div id="advanced-card-wrapper">
 
-        <div class="mode-number muted">
-          02
-        </div>
+        <Card padding="p-8 md:p-10" hover={false}>
 
-        <p class="mode-label muted">
-          ADVANCED PRICING
-        </p>
+          <!-- ADVANCED INTRO -->
 
-        <h2>
-          Build Your Personalized Rate
-        </h2>
+          <div id="advanced-intro">
 
-        <p class="mode-description">
-          Go beyond market estimates. Account for the actual costs
-          and requirements of your business to build a more
-          personalized estimate.
-        </p>
+            <div class="mode-number muted">
+              02
+            </div>
 
+            <p class="mode-label muted">
+              ADVANCED PRICING
+            </p>
 
-        <div class="advanced-list">
+            <h2>
+              Build Your Personalized Rate
+            </h2>
 
-          <div>
-            <span>01</span>
-            Time &amp; labor
+            <p class="mode-description">
+              Go beyond market estimates. Account for the actual costs
+              and requirements of your business to build a more
+              personalized estimate.
+            </p>
+
+            <div class="advanced-list">
+
+              <div>
+                <span>01</span>
+                Time &amp; labor
+              </div>
+
+              <div>
+                <span>02</span>
+                Travel &amp; mileage
+              </div>
+
+              <div>
+                <span>03</span>
+                Editing &amp; production
+              </div>
+
+              <div>
+                <span>04</span>
+                Equipment &amp; operating costs
+              </div>
+
+              <div>
+                <span>05</span>
+                Usage rights &amp; licensing
+              </div>
+
+              <div>
+                <span>06</span>
+                Turnaround
+              </div>
+
+              <div>
+                <span>07</span>
+                Project complexity
+              </div>
+
+            </div>
+
+            <button
+              id="advanced-button"
+              type="button"
+              class="advanced-button"
+            >
+              BUILD ADVANCED ESTIMATE
+              <span>→</span>
+            </button>
+
+            <p class="carry-note">
+              Your Quick Estimate information will carry over automatically.
+            </p>
+
           </div>
 
-          <div>
-            <span>02</span>
-            Travel &amp; mileage
+
+          <!-- ADVANCED WORKFLOW -->
+
+          <div
+            id="advanced-panel"
+            class="advanced-panel"
+            aria-hidden="true"
+          >
+
+            <div class="advanced-panel-header">
+
+              <div>
+
+                <p class="mode-label">
+                  ADVANCED PRICING
+                </p>
+
+                <h3>
+                  Refine Your Estimate
+                </h3>
+
+                <p>
+                  Your Quick Estimate information is already included.
+                  Adjust the factors below to build a more personalized estimate.
+                </p>
+
+              </div>
+
+              <button
+                id="advanced-back"
+                type="button"
+                class="advanced-back"
+              >
+                ← BACK
+              </button>
+
+            </div>
+
+
+            <!-- QUICK SUMMARY -->
+
+            <div class="advanced-summary">
+
+              <div>
+                <span>MARKET</span>
+                <strong id="advanced-market">—</strong>
+              </div>
+
+              <div>
+                <span>SERVICE</span>
+                <strong id="advanced-service">—</strong>
+              </div>
+
+              <div>
+                <span>PROJECT</span>
+                <strong id="advanced-size">—</strong>
+              </div>
+
+            </div>
+
+
+            <!-- TIME -->
+
+            <div class="advanced-factor">
+
+              <div class="factor-heading">
+
+                <div>
+                  <span class="factor-number">01</span>
+                  <h4>TIME ON SITE</h4>
+                </div>
+
+              </div>
+
+              <p class="factor-description">
+                Consider setup, flight time, waiting, multiple flights,
+                and the total amount of time required on location.
+              </p>
+
+              <div class="factor-options">
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-time" value="0.95" checked />
+                  <span>
+                    <strong>Under 1 hour</strong>
+                    <small>Simple shoot with minimal setup and flight time.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-time" value="1" />
+                  <span>
+                    <strong>1–2 hours</strong>
+                    <small>Typical single-location project with some setup and multiple flights.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-time" value="1.15" />
+                  <span>
+                    <strong>2–4 hours</strong>
+                    <small>More extensive coverage, multiple flight sessions, or additional setup.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-time" value="1.3" />
+                  <span>
+                    <strong>4+ hours</strong>
+                    <small>Long production day, extensive coverage, or significant on-site requirements.</small>
+                  </span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- TRAVEL -->
+
+            <div class="advanced-factor">
+
+              <div class="factor-heading">
+                <div>
+                  <span class="factor-number">02</span>
+                  <h4>TRAVEL</h4>
+                </div>
+              </div>
+
+              <p class="factor-description">
+                Account for additional driving, mileage, remote locations,
+                ferry or air travel, and time spent getting to the project.
+              </p>
+
+              <div class="factor-options">
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-travel" value="1" checked />
+                  <span>
+                    <strong>Local</strong>
+                    <small>Nearby project with little additional travel time or mileage.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-travel" value="1.1" />
+                  <span>
+                    <strong>Moderate</strong>
+                    <small>Noticeable drive time, mileage, or travel between locations.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-travel" value="1.25" />
+                  <span>
+                    <strong>Significant</strong>
+                    <small>Long-distance travel, remote locations, ferry/air travel, or substantial travel time.</small>
+                  </span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- EDITING -->
+
+            <div class="advanced-factor">
+
+              <div class="factor-heading">
+                <div>
+                  <span class="factor-number">03</span>
+                  <h4>EDITING / PRODUCTION</h4>
+                </div>
+              </div>
+
+              <p class="factor-description">
+                Reflect the amount of post-production required before
+                the final files are ready for the client.
+              </p>
+
+              <div class="factor-options">
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-editing" value="0.9" checked />
+                  <span>
+                    <strong>None / Minimal</strong>
+                    <small>Delivered files require little or no editing.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-editing" value="1" />
+                  <span>
+                    <strong>Basic</strong>
+                    <small>Light color correction, cropping, stabilization, or basic photo processing.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-editing" value="1.15" />
+                  <span>
+                    <strong>Standard</strong>
+                    <small>Normal photo/video editing and color grading for client delivery.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-editing" value="1.35" />
+                  <span>
+                    <strong>Extensive</strong>
+                    <small>Detailed editing, cinematic production, multiple deliverables, or substantial post-production.</small>
+                  </span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- EQUIPMENT -->
+
+            <div class="advanced-factor">
+
+              <div class="factor-heading">
+                <div>
+                  <span class="factor-number">04</span>
+                  <h4>EQUIPMENT</h4>
+                </div>
+              </div>
+
+              <p class="factor-description">
+                Account for the level of equipment, supporting gear,
+                sensors, cameras, or aircraft required for the project.
+              </p>
+
+              <div class="factor-options">
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-equipment" value="1" checked />
+                  <span>
+                    <strong>Standard Drone</strong>
+                    <small>Normal drone and standard flight equipment.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-equipment" value="1.12" />
+                  <span>
+                    <strong>Advanced Equipment</strong>
+                    <small>Higher-end drone, additional lenses, batteries, or supporting equipment.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-equipment" value="1.3" />
+                  <span>
+                    <strong>Specialized Equipment</strong>
+                    <small>Specialized sensors, thermal, multiple aircraft, specialized cameras, or other project-specific equipment.</small>
+                  </span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- USAGE -->
+
+            <div class="advanced-factor">
+
+              <div class="factor-heading">
+                <div>
+                  <span class="factor-number">05</span>
+                  <h4>USAGE RIGHTS</h4>
+                </div>
+              </div>
+
+              <p class="factor-description">
+                Consider how broadly the client will use the finished
+                photography or video.
+              </p>
+
+              <div class="factor-options">
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-usage" value="0.95" checked />
+                  <span>
+                    <strong>Personal / Limited</strong>
+                    <small>Personal use or a limited, non-commercial purpose.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-usage" value="1.08" />
+                  <span>
+                    <strong>Business / Marketing</strong>
+                    <small>Website, social media, advertising, promotional material, or normal business use.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-usage" value="1.2" />
+                  <span>
+                    <strong>Commercial / Broad Usage</strong>
+                    <small>Extensive commercial use, advertising campaigns, resale, licensing, or broad distribution.</small>
+                  </span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- TURNAROUND -->
+
+            <div class="advanced-factor">
+
+              <div class="factor-heading">
+                <div>
+                  <span class="factor-number">06</span>
+                  <h4>TURNAROUND</h4>
+                </div>
+              </div>
+
+              <p class="factor-description">
+                Faster delivery can require schedule changes,
+                priority editing, or compressed production time.
+              </p>
+
+              <div class="factor-options">
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-turnaround" value="1" checked />
+                  <span>
+                    <strong>Standard</strong>
+                    <small>Normal delivery timeframe with no unusual deadline.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-turnaround" value="1.15" />
+                  <span>
+                    <strong>Rush</strong>
+                    <small>Client needs the project completed faster than your normal turnaround.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-turnaround" value="1.3" />
+                  <span>
+                    <strong>Same Day</strong>
+                    <small>Capture and/or delivery is required on the same day.</small>
+                  </span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- COMPLEXITY -->
+
+            <div class="advanced-factor">
+
+              <div class="factor-heading">
+                <div>
+                  <span class="factor-number">07</span>
+                  <h4>PROJECT COMPLEXITY</h4>
+                </div>
+              </div>
+
+              <p class="factor-description">
+                Reflect the planning, coordination, location difficulty,
+                number of deliverables, and other project-specific challenges.
+              </p>
+
+              <div class="factor-options">
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-complexity" value="1" checked />
+                  <span>
+                    <strong>Straightforward</strong>
+                    <small>Simple location, predictable flight, clear deliverables, minimal complications.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-complexity" value="1.12" />
+                  <span>
+                    <strong>Moderate</strong>
+                    <small>Multiple considerations such as several shots, locations, deliverables, or additional planning.</small>
+                  </span>
+                </label>
+
+                <label class="factor-option">
+                  <input type="radio" name="advanced-complexity" value="1.3" />
+                  <span>
+                    <strong>Complex</strong>
+                    <small>Challenging location, multiple locations, difficult conditions, extensive planning, specialized requirements, or significant coordination.</small>
+                  </span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- ADVANCED RESULT -->
+
+            <div class="advanced-result">
+
+              <div>
+
+                <p class="result-label">
+                  ESTIMATED ADVANCED QUOTE
+                </p>
+
+                <div
+                  id="advanced-recommended"
+                  class="advanced-recommended"
+                >
+                  $475
+                </div>
+
+                <p id="advanced-range" class="advanced-range">
+                  Estimated Market Range: $400 – $550
+                </p>
+
+              </div>
+
+              <button
+                id="advanced-update"
+                type="button"
+                class="estimate-button"
+              >
+                UPDATE ADVANCED ESTIMATE
+                <span>→</span>
+              </button>
+
+            </div>
+
+
+            <p class="advanced-disclaimer">
+              This is still an estimate. The Advanced workflow adjusts
+              the starting estimate based on the project factors you provide.
+              It is not a guarantee of what a client or market will support.
+            </p>
+
           </div>
 
-          <div>
-            <span>03</span>
-            Equipment &amp; operating costs
-          </div>
+        </Card>
 
-          <div>
-            <span>04</span>
-            Editing &amp; production
-          </div>
-
-          <div>
-            <span>05</span>
-            Usage rights &amp; licensing
-          </div>
-
-          <div>
-            <span>06</span>
-            Profit &amp; project complexity
-          </div>
-
-        </div>
-
-
-        <button
-          id="advanced-button"
-          type="button"
-          class="advanced-button"
-        >
-          BUILD ADVANCED ESTIMATE
-          <span>→</span>
-        </button>
-
-
-        <p class="carry-note">
-          Your Quick Estimate information will carry over automatically.
-        </p>
-
-      </Card>
+      </div>
 
     </div>
 
@@ -357,7 +816,6 @@ import Card from "../components/ui/Card.astro";
 
           </div>
 
-
           <div class="recommended">
 
             <p class="result-label">
@@ -390,7 +848,6 @@ import Card from "../components/ui/Card.astro";
 
           </div>
 
-
           <div>
 
             <p class="detail-label">
@@ -402,7 +859,6 @@ import Card from "../components/ui/Card.astro";
             </p>
 
           </div>
-
 
           <div>
 
@@ -434,8 +890,6 @@ import Card from "../components/ui/Card.astro";
 
         </div>
 
-
-        <!-- RESULT ACTIONS -->
 
         <div class="result-actions">
 
@@ -471,7 +925,6 @@ import Card from "../components/ui/Card.astro";
 
         </div>
 
-
       </Card>
 
     </div>
@@ -487,24 +940,20 @@ import Card from "../components/ui/Card.astro";
 
       <div class="report-header">
 
-        <div>
+        <p class="pricing-eyebrow">
+          RAVENØRIX // PRICING REPORT
+        </p>
 
-          <p class="pricing-eyebrow">
-            RAVENØRIX // PRICING REPORT
-          </p>
+        <h2>
+          Get the complete<br />
+          pricing report.
+        </h2>
 
-          <h2>
-            Get the complete<br />
-            pricing report.
-          </h2>
-
-          <p class="report-description">
-            We'll send you a professional breakdown of your estimated
-            local market, recommended quote, pricing factors, and
-            opportunities to increase your project value.
-          </p>
-
-        </div>
+        <p class="report-description">
+          We'll send you a professional breakdown of your estimated
+          local market, recommended quote, pricing factors, and
+          opportunities to increase your project value.
+        </p>
 
       </div>
 
@@ -525,7 +974,6 @@ import Card from "../components/ui/Card.astro";
           />
 
         </div>
-
 
         <button
           id="report-button"
@@ -606,20 +1054,11 @@ import Card from "../components/ui/Card.astro";
 
 <style>
 
-/* =========================================================
-   PAGE
-========================================================= */
-
 .pricing-page {
   min-height:100vh;
   padding:9rem 0 7rem;
   background:#050505;
 }
-
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .pricing-header {
   max-width:850px;
@@ -637,7 +1076,7 @@ import Card from "../components/ui/Card.astro";
 }
 
 .pricing-header h1 {
-  margin:1.5rem 0 1.5rem;
+  margin:1.5rem 0;
   font-family:"Bebas Neue",sans-serif;
   font-size:clamp(4rem,9vw,7rem);
   line-height:.88;
@@ -655,11 +1094,6 @@ import Card from "../components/ui/Card.astro";
   font-size:1.1rem;
   line-height:1.8;
 }
-
-
-/* =========================================================
-   MODE GRID
-========================================================= */
 
 .mode-grid {
   display:grid;
@@ -705,11 +1139,6 @@ import Card from "../components/ui/Card.astro";
   color:#9ca3af;
   line-height:1.7;
 }
-
-
-/* =========================================================
-   FORM
-========================================================= */
 
 .mode-fields {
   display:flex;
@@ -757,7 +1186,7 @@ import Card from "../components/ui/Card.astro";
   background:#0b0d10;
   color:white;
   outline:none;
-  transition:border-color .2s, background .2s;
+  transition:border-color .2s,background .2s;
 }
 
 .field input::placeholder {
@@ -774,11 +1203,6 @@ import Card from "../components/ui/Card.astro";
   background:#0b0d10;
   color:white;
 }
-
-
-/* =========================================================
-   PROJECT SIZE
-========================================================= */
 
 .size-selector {
   display:grid;
@@ -802,9 +1226,7 @@ import Card from "../components/ui/Card.astro";
   font-weight:600;
   text-align:center;
   cursor:pointer;
-  transition:
-    background .2s,
-    color .2s;
+  transition:background .2s,color .2s;
 }
 
 .size-segment:last-child {
@@ -831,11 +1253,6 @@ import Card from "../components/ui/Card.astro";
   color:#050505;
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
 .estimate-button,
 .advanced-button {
   width:100%;
@@ -849,7 +1266,7 @@ import Card from "../components/ui/Card.astro";
   font-size:.78rem;
   letter-spacing:.12em;
   cursor:pointer;
-  transition:transform .2s, background .2s;
+  transition:transform .2s,background .2s;
 }
 
 .estimate-button:hover {
@@ -885,11 +1302,6 @@ import Card from "../components/ui/Card.astro";
   font-size:.75rem;
 }
 
-
-/* =========================================================
-   ADVANCED LIST
-========================================================= */
-
 .advanced-list {
   margin-top:2rem;
   border-top:1px solid rgba(255,255,255,.08);
@@ -913,9 +1325,227 @@ import Card from "../components/ui/Card.astro";
 }
 
 
-/* =========================================================
-   RESULTS
-========================================================= */
+/* ADVANCED WORKFLOW */
+
+#advanced-card-wrapper.advanced-open {
+  grid-column:1 / -1;
+}
+
+.advanced-panel {
+  display:none;
+}
+
+.advanced-panel.visible {
+  display:block;
+}
+
+.advanced-panel-header {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:2rem;
+}
+
+.advanced-panel-header h3 {
+  margin-top:.8rem;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:3rem;
+  line-height:1;
+  text-transform:uppercase;
+}
+
+.advanced-panel-header p {
+  max-width:650px;
+  margin-top:.8rem;
+  color:#9ca3af;
+  line-height:1.7;
+}
+
+.advanced-back {
+  flex:0 0 auto;
+  min-height:42px;
+  padding:.65rem .9rem;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:.45rem;
+  background:rgba(255,255,255,.025);
+  color:#9ca3af;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  cursor:pointer;
+}
+
+.advanced-back:hover {
+  border-color:rgba(141,216,255,.4);
+  color:#8dd8ff;
+}
+
+.advanced-summary {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:2rem;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.advanced-summary div {
+  padding:1rem 1.25rem;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+
+.advanced-summary div:last-child {
+  border-right:0;
+}
+
+.advanced-summary span {
+  display:block;
+  color:#6b7280;
+  font-size:.6rem;
+  font-weight:700;
+  letter-spacing:.15em;
+}
+
+.advanced-summary strong {
+  display:block;
+  margin-top:.4rem;
+  color:#e5e7eb;
+  font-size:.82rem;
+}
+
+.advanced-factor {
+  margin-top:2rem;
+  padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.factor-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.factor-heading > div {
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+
+.factor-number {
+  color:#6b7280;
+  font-size:.65rem;
+  font-weight:700;
+}
+
+.factor-heading h4 {
+  margin:0;
+  color:#f3f4f6;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+
+.factor-description {
+  max-width:850px;
+  margin-top:.7rem;
+  color:#6b7280;
+  font-size:.78rem;
+  line-height:1.6;
+}
+
+.factor-options {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.7rem;
+  margin-top:1rem;
+}
+
+.factor-option {
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  min-height:76px;
+  padding:.9rem 1rem;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:.5rem;
+  background:#090b0e;
+  cursor:pointer;
+  transition:border-color .2s,background .2s;
+}
+
+.factor-option:hover {
+  border-color:rgba(141,216,255,.35);
+  background:#0c1014;
+}
+
+.factor-option input {
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.factor-option:has(input:checked) {
+  border-color:rgba(141,216,255,.75);
+  background:rgba(141,216,255,.06);
+}
+
+.factor-option span {
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+}
+
+.factor-option strong {
+  color:#e5e7eb;
+  font-size:.78rem;
+}
+
+.factor-option small {
+  color:#6b7280;
+  font-size:.7rem;
+  line-height:1.45;
+}
+
+.advanced-result {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  margin-top:2.5rem;
+  padding:1.5rem;
+  border:1px solid rgba(141,216,255,.22);
+  border-radius:.65rem;
+  background:#080b0e;
+}
+
+.advanced-recommended {
+  margin-top:.5rem;
+  color:#8dd8ff;
+  font-family:"Bebas Neue",sans-serif;
+  font-size:4rem;
+  line-height:1;
+}
+
+.advanced-range {
+  margin-top:.4rem;
+  color:#6b7280;
+  font-size:.72rem;
+}
+
+.advanced-result .estimate-button {
+  width:auto;
+  min-width:260px;
+  margin-top:0;
+}
+
+.advanced-disclaimer {
+  margin-top:1rem;
+  color:#4b5563;
+  font-size:.68rem;
+  line-height:1.6;
+}
+
+
+/* RESULTS */
 
 .results-wrapper {
   max-width:1100px;
@@ -1062,10 +1692,6 @@ import Card from "../components/ui/Card.astro";
   font-weight:700;
   letter-spacing:.12em;
   text-transform:uppercase;
-  transition:
-    background .2s,
-    border-color .2s,
-    color .2s;
 }
 
 .text-button:hover {
@@ -1075,9 +1701,7 @@ import Card from "../components/ui/Card.astro";
 }
 
 
-/* =========================================================
-   EMAIL / REPORT CAPTURE
-========================================================= */
+/* EMAIL / REPORT */
 
 .report-cta {
   display:none;
@@ -1091,10 +1715,6 @@ import Card from "../components/ui/Card.astro";
 
 .report-cta.visible {
   display:block;
-}
-
-.report-header {
-  max-width:760px;
 }
 
 .report-cta h2 {
@@ -1144,7 +1764,6 @@ import Card from "../components/ui/Card.astro";
   color:white;
   font-size:.9rem;
   outline:none;
-  transition:border-color .2s, background .2s;
 }
 
 .email-field input::placeholder {
@@ -1168,19 +1787,11 @@ import Card from "../components/ui/Card.astro";
   letter-spacing:.11em;
   white-space:nowrap;
   cursor:pointer;
-  transition:transform .2s, background .2s;
-}
-
-.report-button:hover {
-  transform:translateY(-1px);
 }
 
 .report-button span {
   margin-left:.5rem;
 }
-
-
-/* MARKETING CONSENT */
 
 .marketing-consent {
   display:flex;
@@ -1253,9 +1864,7 @@ import Card from "../components/ui/Card.astro";
 }
 
 
-/* =========================================================
-   DISCLAIMER
-========================================================= */
+/* DISCLAIMER */
 
 .pricing-disclaimer {
   max-width:1100px;
@@ -1273,9 +1882,7 @@ import Card from "../components/ui/Card.astro";
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width:800px) {
 
@@ -1285,6 +1892,10 @@ import Card from "../components/ui/Card.astro";
 
   .mode-grid {
     grid-template-columns:1fr;
+  }
+
+  #advanced-card-wrapper.advanced-open {
+    grid-column:auto;
   }
 
   .size-segment {
@@ -1325,9 +1936,44 @@ import Card from "../components/ui/Card.astro";
   }
 
   .result-actions .text-button {
-  margin-top:1.25rem;
-  width:100%;
-}
+    margin-top:1.25rem;
+    width:100%;
+  }
+
+  .advanced-panel-header {
+    flex-direction:column;
+  }
+
+  .advanced-back {
+    order:-1;
+  }
+
+  .advanced-summary {
+    grid-template-columns:1fr;
+  }
+
+  .advanced-summary div {
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .advanced-summary div:last-child {
+    border-bottom:0;
+  }
+
+  .factor-options {
+    grid-template-columns:1fr;
+  }
+
+  .advanced-result {
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .advanced-result .estimate-button {
+    width:100%;
+    min-width:0;
+  }
 
   .report-cta {
     padding:2rem;
@@ -1342,11 +1988,6 @@ import Card from "../components/ui/Card.astro";
   }
 
 }
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
 @media (max-width:480px) {
 
@@ -1384,6 +2025,21 @@ const advancedButton =
 const customizeButton =
   document.querySelector("#customize-button");
 
+const advancedBack =
+  document.querySelector("#advanced-back");
+
+const advancedUpdate =
+  document.querySelector("#advanced-update");
+
+const advancedIntro =
+  document.querySelector("#advanced-intro");
+
+const advancedPanel =
+  document.querySelector("#advanced-panel");
+
+const advancedCardWrapper =
+  document.querySelector("#advanced-card-wrapper");
+
 const newEstimateButton =
   document.querySelector("#new-estimate");
 
@@ -1420,6 +2076,21 @@ const resultSize =
 const resultCopy =
   document.querySelector("#result-copy");
 
+const advancedMarket =
+  document.querySelector("#advanced-market");
+
+const advancedService =
+  document.querySelector("#advanced-service");
+
+const advancedSize =
+  document.querySelector("#advanced-size");
+
+const advancedRecommended =
+  document.querySelector("#advanced-recommended");
+
+const advancedRange =
+  document.querySelector("#advanced-range");
+
 
 /* =========================================================
    PROJECT SIZE
@@ -1445,21 +2116,14 @@ function formatService(value) {
 
   const services = {
 
-    photography: "Aerial Photography",
-
-    video: "Aerial Video",
-
-    "photo-video": "Photo + Video",
-
-    "real-estate": "Real Estate",
-
-    commercial: "Commercial / Business",
-
-    construction: "Construction / Property",
-
-    inspection: "Inspection",
-
-    other: "Other"
+    photography:"Aerial Photography",
+    video:"Aerial Video",
+    "photo-video":"Photo + Video",
+    "real-estate":"Real Estate",
+    commercial:"Commercial / Business",
+    construction:"Construction / Property",
+    inspection:"Inspection",
+    other:"Other"
 
   };
 
@@ -1472,11 +2136,9 @@ function formatSize(value) {
 
   const sizes = {
 
-    quick: "Quick",
-
-    standard: "Standard",
-
-    large: "Large / Complex"
+    quick:"Quick",
+    standard:"Standard",
+    large:"Large / Complex"
 
   };
 
@@ -1489,42 +2151,33 @@ function formatSize(value) {
    TEMPORARY PRICING MODEL
 ========================================================= */
 
-function estimatePrice(service, size) {
+function estimatePrice(service,size) {
 
   /*
    * TEMPORARY UI TESTING MODEL
    *
    * This is intentionally NOT the final pricing engine.
-   * We will replace this with the real market-data model.
+   * It will eventually be replaced by the real market-data model.
    */
 
   const base = {
 
-    photography: 325,
-
-    video: 425,
-
-    "photo-video": 550,
-
-    "real-estate": 400,
-
-    commercial: 650,
-
-    construction: 700,
-
-    inspection: 600,
-
-    other: 400
+    photography:325,
+    video:425,
+    "photo-video":550,
+    "real-estate":400,
+    commercial:650,
+    construction:700,
+    inspection:600,
+    other:400
 
   };
 
   const multipliers = {
 
-    quick: .8,
-
-    standard: 1,
-
-    large: 1.45
+    quick:.8,
+    standard:1,
+    large:1.45
 
   };
 
@@ -1556,23 +2209,13 @@ function estimatePrice(service, size) {
 
 function getMarketFromZip(zip) {
 
-  /*
-   * TEMPORARY MARKET RESOLUTION
-   *
-   * This will eventually use real ZIP/geographic data.
-   */
-
   const alaskaZips = {
 
-    "99801": "Juneau, Alaska",
-
-    "99802": "Juneau, Alaska",
-
-    "99803": "Juneau, Alaska",
-
-    "99824": "Juneau, Alaska",
-
-    "99827": "Juneau, Alaska"
+    "99801":"Juneau, Alaska",
+    "99802":"Juneau, Alaska",
+    "99803":"Juneau, Alaska",
+    "99824":"Juneau, Alaska",
+    "99827":"Juneau, Alaska"
 
   };
 
@@ -1582,10 +2225,139 @@ function getMarketFromZip(zip) {
 
 
 /* =========================================================
-   GENERATE ESTIMATE
+   ADVANCED FACTORS
 ========================================================= */
 
-estimateButton?.addEventListener("click", () => {
+function getAdvancedMultiplier(name) {
+
+  const selected =
+    document.querySelector(
+      `input[name="${name}"]:checked`
+    );
+
+  return Number(selected?.value || 1);
+
+}
+
+
+function calculateAdvancedEstimate(basePrice) {
+
+  const multiplier =
+    getAdvancedMultiplier("advanced-time") *
+    getAdvancedMultiplier("advanced-travel") *
+    getAdvancedMultiplier("advanced-editing") *
+    getAdvancedMultiplier("advanced-equipment") *
+    getAdvancedMultiplier("advanced-usage") *
+    getAdvancedMultiplier("advanced-turnaround") *
+    getAdvancedMultiplier("advanced-complexity");
+
+  const center =
+    basePrice * multiplier;
+
+  const low =
+    Math.round((center * .9) / 25) * 25;
+
+  const high =
+    Math.round((center * 1.1) / 25) * 25;
+
+  const recommended =
+    Math.round(center / 25) * 25;
+
+  return {
+    low,
+    high,
+    recommended
+  };
+
+}
+
+
+/* =========================================================
+   ADVANCED WORKFLOW
+========================================================= */
+
+function openAdvanced() {
+
+  if (!zipInput?.value || !serviceInput?.value) {
+
+    advancedButton?.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+    return;
+
+  }
+
+  advancedIntro?.setAttribute(
+    "hidden",
+    ""
+  );
+
+  advancedPanel?.classList.add("visible");
+
+  advancedPanel?.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  advancedCardWrapper?.classList.add(
+    "advanced-open"
+  );
+
+  advancedMarket.textContent =
+    getMarketFromZip(zipInput.value.trim());
+
+  advancedService.textContent =
+    formatService(serviceInput.value);
+
+  advancedSize.textContent =
+    formatSize(getProjectSize());
+
+  updateAdvancedEstimate();
+
+  advancedPanel?.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+
+function updateAdvancedEstimate() {
+
+  const service =
+    serviceInput?.value;
+
+  const size =
+    getProjectSize();
+
+  if (!service || !size) {
+    return;
+  }
+
+  const basePricing =
+    estimatePrice(service,size);
+
+  const advanced =
+    calculateAdvancedEstimate(
+      basePricing.recommended
+    );
+
+  advancedRecommended.textContent =
+    `$${advanced.recommended.toLocaleString()}`;
+
+  advancedRange.textContent =
+    `Estimated Market Range: $${advanced.low.toLocaleString()} – $${advanced.high.toLocaleString()}`;
+
+}
+
+
+/* =========================================================
+   GENERATE QUICK ESTIMATE
+========================================================= */
+
+estimateButton?.addEventListener("click",() => {
 
   const zip =
     zipInput?.value.trim();
@@ -1596,9 +2368,7 @@ estimateButton?.addEventListener("click", () => {
   const size =
     getProjectSize();
 
-
   formError.textContent = "";
-
 
   if (!/^\d{5}$/.test(zip)) {
 
@@ -1611,7 +2381,6 @@ estimateButton?.addEventListener("click", () => {
 
   }
 
-
   if (!service) {
 
     formError.textContent =
@@ -1623,7 +2392,6 @@ estimateButton?.addEventListener("click", () => {
 
   }
 
-
   if (!size) {
 
     formError.textContent =
@@ -1633,17 +2401,14 @@ estimateButton?.addEventListener("click", () => {
 
   }
 
-
   const pricing =
-    estimatePrice(service, size);
-
+    estimatePrice(service,size);
 
   resultRange.textContent =
     `$${pricing.low.toLocaleString()} – $${pricing.high.toLocaleString()}`;
 
   resultRecommended.textContent =
     `$${pricing.recommended.toLocaleString()}`;
-
 
   resultMarket.textContent =
     getMarketFromZip(zip);
@@ -1654,10 +2419,17 @@ estimateButton?.addEventListener("click", () => {
   resultSize.textContent =
     formatSize(size);
 
-
   resultCopy.textContent =
     `This estimate is a starting point for ${formatService(service).toLowerCase()} in the ${getMarketFromZip(zip)} market at a ${formatSize(size).toLowerCase()} project level. Actual pricing can vary based on deliverables, travel, production time, licensing, experience, and project requirements.`;
 
+  advancedMarket.textContent =
+    getMarketFromZip(zip);
+
+  advancedService.textContent =
+    formatService(service);
+
+  advancedSize.textContent =
+    formatSize(size);
 
   results.classList.add("visible");
 
@@ -1666,14 +2438,12 @@ estimateButton?.addEventListener("click", () => {
     "false"
   );
 
-
   reportCta.classList.add("visible");
 
   reportCta.setAttribute(
     "aria-hidden",
     "false"
   );
-
 
   results.scrollIntoView({
     behavior:"smooth",
@@ -1687,7 +2457,7 @@ estimateButton?.addEventListener("click", () => {
    NEW ESTIMATE
 ========================================================= */
 
-newEstimateButton?.addEventListener("click", () => {
+newEstimateButton?.addEventListener("click",() => {
 
   results.classList.remove("visible");
 
@@ -1712,12 +2482,51 @@ newEstimateButton?.addEventListener("click", () => {
 
 
 /* =========================================================
-   ADVANCED PRICING
+   ADVANCED BUTTONS
 ========================================================= */
 
-customizeButton?.addEventListener("click", () => {
+customizeButton?.addEventListener("click",() => {
 
-  advancedButton?.scrollIntoView({
+  openAdvanced();
+
+});
+
+
+advancedButton?.addEventListener("click",() => {
+
+  openAdvanced();
+
+});
+
+
+advancedBack?.addEventListener("click",() => {
+
+  advancedPanel?.classList.remove("visible");
+
+  advancedPanel?.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  advancedIntro?.removeAttribute("hidden");
+
+  advancedCardWrapper?.classList.remove(
+    "advanced-open"
+  );
+
+  advancedIntro?.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+});
+
+
+advancedUpdate?.addEventListener("click",() => {
+
+  updateAdvancedEstimate();
+
+  advancedRecommended?.scrollIntoView({
     behavior:"smooth",
     block:"center"
   });
@@ -1725,13 +2534,22 @@ customizeButton?.addEventListener("click", () => {
 });
 
 
-advancedButton?.addEventListener("click", () => {
+/* =========================================================
+   LIVE ADVANCED UPDATES
+========================================================= */
 
-  alert(
-    "Advanced Pricing is the next build phase. Your Quick Estimate information will carry over automatically."
-  );
+document
+  .querySelectorAll(
+    '.factor-option input[type="radio"]'
+  )
+  .forEach((input) => {
 
-});
+    input.addEventListener(
+      "change",
+      updateAdvancedEstimate
+    );
+
+  });
 
 </script>
 
